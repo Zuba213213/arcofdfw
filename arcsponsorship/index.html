@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship Deck — Putts for Progress 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A; --ivory: #F5F0E8; --coral: #C95B38; --slate: #4A6274; --white: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 17px; line-height: 1.75; }
+  .topbar { background: var(--gold); color: var(--navy); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
+  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; }
+  .nav-back:hover { color: var(--gold); }
+  .hero { padding: 60px 24px 52px; text-align: center; border-bottom: 3px solid var(--gold); background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 65%); }
+  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 14px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 52px); font-weight: 700; line-height: 1.12; color: var(--white); margin-bottom: 16px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { max-width: 600px; margin: 0 auto; color: rgba(245,240,232,0.78); font-size: 17px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 52px 24px; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4.5vw, 36px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  h2.sec-title em { color: var(--gold); font-style: italic; }
+  .gold-rule { width: 44px; border: none; border-top: 2px solid var(--gold); margin: 0 0 28px; }
+  .body-text { color: rgba(245,240,232,0.8); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
+  .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
+
+  /* CREDIBILITY STATS */
+  .cred-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0; }
+  .cred-stat { flex: 1; min-width: 130px; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 20px 16px; text-align: center; }
+  .cred-num { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 6px; }
+  .cred-label { font-size: 13px; color: rgba(245,240,232,0.6); line-height: 1.4; }
+
+  /* TIERS */
+  .tier-stack { display: flex; flex-direction: column; gap: 20px; margin: 28px 0; }
+  .tier-card { border-radius: 10px; overflow: hidden; }
+  .tier-header { padding: 22px 24px; }
+  .tier-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .tier-price { font-size: 28px; font-weight: 700; font-family: 'Playfair Display', serif; line-height: 1; }
+  .tier-body { padding: 22px 24px; }
+  .tier-tagline { font-size: 15px; margin-bottom: 16px; line-height: 1.6; }
+  .tier-benefits { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .tier-benefits li { display: flex; gap: 10px; font-size: 15px; color: rgba(245,240,232,0.85); line-height: 1.55; }
+  .tier-check { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+
+  .tier-anchor { background: rgba(201,168,76,0.08); border: 2px solid var(--gold); }
+  .tier-anchor .tier-header { background: var(--gold); }
+  .tier-anchor .tier-name { color: var(--navy); }
+  .tier-anchor .tier-price { color: var(--navy); }
+  .tier-anchor .tier-check { color: var(--gold); }
+
+  .tier-champion { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.35); }
+  .tier-champion .tier-header { background: rgba(201,168,76,0.12); }
+  .tier-champion .tier-price { color: var(--gold); }
+  .tier-champion .tier-check { color: var(--gold); }
+
+  .tier-community { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,168,76,0.2); }
+  .tier-community .tier-header { background: rgba(255,255,255,0.04); }
+  .tier-community .tier-price { color: var(--gold-lt); }
+  .tier-community .tier-check { color: var(--gold-lt); }
+
+  .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 8px; }
+  .badge-anchor { background: var(--navy); color: var(--gold); }
+  .badge-limited { background: rgba(201,91,56,0.2); color: var(--coral); }
+
+  /* WHAT YOU GET TABLE */
+  .comparison { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+  .comparison th { padding: 10px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); border-bottom: 1px solid rgba(201,168,76,0.2); text-align: center; }
+  .comparison th:first-child { text-align: left; }
+  .comparison td { padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: rgba(245,240,232,0.78); text-align: center; vertical-align: middle; }
+  .comparison td:first-child { text-align: left; font-size: 14px; }
+  .check-yes { color: #7DC87D; font-size: 16px; }
+  .check-no { color: rgba(74,98,116,0.5); font-size: 16px; }
+
+  /* OBJECTION HANDLES */
+  .objection-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 22px 20px; margin-bottom: 14px; }
+  .objection-q { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold-lt); font-style: italic; margin-bottom: 10px; }
+  .objection-a { font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.7; }
+
+  /* CTA */
+  .cta-block { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 36px 28px; text-align: center; margin: 32px 0; }
+  .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); margin-bottom: 12px; }
+  .cta-block p { color: rgba(245,240,232,0.78); font-size: 16px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; }
+  .cta-note { display: block; margin-top: 14px; font-size: 13px; color: var(--slate); }
+
+  footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(201,168,76,0.2); padding: 32px 24px; text-align: center; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
+  .footer-note { font-size: 12px; color: var(--slate); }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; }
+  .back-link:hover { color: var(--gold); }
+  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; } }
+</style>
+</head>
+<body>
+<div class="topbar">Corporate Sponsorship Deck · Putts for Progress 2026 · The Arc of DFW Area</div>
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <a class="nav-back" href="../arc-vault-home.html">← Back to Vault Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Sponsorship Opportunities · 2026</div>
+  <h1>Invest in the<br><em>Community You Do Business In</em></h1>
+  <p class="hero-sub">Putts for Progress 2026 — September at Puttshack Addison. Sponsorship packages for companies that want real visibility, real community alignment, and a room full of DFW's most civic-minded professionals.</p>
+</section>
+
+<!-- WHY THE ARC -->
+<div class="wrap">
+  <span class="eyebrow">Why The Arc of DFW</span>
+  <h2 class="sec-title">55 Years of Credibility<br><em>No One Can Fake</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">The Arc of DFW Area has advocated for individuals with intellectual and developmental disabilities across the DFW Metroplex since 1971. We are 100% volunteer-run. No paid staff. Every dollar raised goes directly to advocacy, training, and community programs for the IDD community and their families.</p>
+  <p class="body-text">Sponsoring The Arc is one of the most credible community investments a DFW company can make — because the organization's 55-year track record speaks before you say a word.</p>
+
+  <div class="cred-row">
+    <div class="cred-stat"><div class="cred-num">55+</div><div class="cred-label">Years of Advocacy</div></div>
+    <div class="cred-stat"><div class="cred-num">100%</div><div class="cred-label">Volunteer-Run</div></div>
+    <div class="cred-stat"><div class="cred-num">$34K</div><div class="cred-label">Raised at 2025 Event</div></div>
+    <div class="cred-stat"><div class="cred-num">$42K+</div><div class="cred-label">2026 Goal</div></div>
+  </div>
+
+  <p class="body-text">Last year's Putts for Progress raised $34,000 in a single evening. Your sponsorship this year positions your company in that room — in front of community leaders, business professionals, advocates, and families who will remember who showed up.</p>
+</div>
+
+<hr class="divider">
+
+<!-- SPONSORSHIP TIERS -->
+<div class="wrap">
+  <span class="eyebrow">Sponsorship Tiers</span>
+  <h2 class="sec-title">Three Ways to<br><em>Show Up</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Every tier delivers real visibility, real access, and a real story for your team. Anchor sponsorships are limited to two companies — ensuring maximum brand impact at each level.</p>
+
+  <div class="tier-stack">
+
+    <!-- ANCHOR -->
+    <div class="tier-card tier-anchor">
+      <div class="tier-header">
+        <div class="tier-badge badge-anchor">Anchor Sponsor · 2 Available</div>
+        <div class="tier-name">Presenting Sponsor</div>
+        <div class="tier-price">$10,000</div>
+      </div>
+      <div class="tier-body">
+        <p class="tier-tagline" style="color:rgba(245,240,232,0.8);">Your company name is part of the event. "Putts for Progress 2026, presented by [Your Company]." This is the highest-visibility partnership available — and it is limited to two companies.</p>
+        <ul class="tier-benefits">
+          <li><span class="tier-check">◆</span>Co-presenting credit in all event marketing — digital, email, print, and on-site signage</li>
+          <li><span class="tier-check">◆</span>Named from stage at opening and closing remarks</li>
+          <li><span class="tier-check">◆</span>Reserved foursome entry (4 players) in the tournament</li>
+          <li><span class="tier-check">◆</span>Logo on all event promotional materials distributed to 500+ DFW community contacts</li>
+          <li><span class="tier-check">◆</span>Dedicated social post on Arc's Facebook and LinkedIn tagging your company</li>
+          <li><span class="tier-check">◆</span>Post-event impact recap delivered directly to your team — shareable for internal comms and social</li>
+          <li><span class="tier-check">◆</span>Priority placement in tournament inter-company competition announcement</li>
+          <li><span class="tier-check">◆</span>Inclusion in Arc's year-round donor recognition materials</li>
+          <li><span class="tier-check">◆</span>Personal thank-you call from Arc leadership</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAMPION -->
+    <div class="tier-card tier-champion">
+      <div class="tier-header">
+        <div class="tier-badge badge-limited" style="background:rgba(201,168,76,0.18);color:var(--gold);">Champion Sponsor</div>
+        <div class="tier-name">Champion Sponsor</div>
+        <div class="tier-price">$5,000</div>
+      </div>
+      <div class="tier-body">
+        <p class="tier-tagline" style="color:rgba(245,240,232,0.78);">High visibility in a room that notices. The Champion level places your brand prominently in every event touchpoint — and gives your team a seat at the tournament table.</p>
+        <ul class="tier-benefits">
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Named from stage at both opening and closing remarks</li>
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Reserved foursome entry in the tournament</li>
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Logo on event signage and all digital event materials</li>
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Social post on Arc Facebook and LinkedIn tagging your company</li>
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Post-event impact recap for your team</li>
+          <li><span class="tier-check" style="color:var(--gold);">◆</span>Inclusion in Arc donor recognition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COMMUNITY -->
+    <div class="tier-card tier-community">
+      <div class="tier-header">
+        <div class="tier-badge" style="background:rgba(74,98,116,0.3);color:#9BB5C8;">Community Sponsor</div>
+        <div class="tier-name">Community Sponsor</div>
+        <div class="tier-price">$2,500</div>
+      </div>
+      <div class="tier-body">
+        <p class="tier-tagline" style="color:rgba(245,240,232,0.7);">The entry point for companies that want to be in the room and be recognized for it. Community sponsors receive event visibility, social recognition, and two general admission tickets.</p>
+        <ul class="tier-benefits">
+          <li><span class="tier-check" style="color:var(--gold-lt);">◆</span>Named from stage at closing remarks</li>
+          <li><span class="tier-check" style="color:var(--gold-lt);">◆</span>Logo on event signage</li>
+          <li><span class="tier-check" style="color:var(--gold-lt);">◆</span>Two general admission tickets included</li>
+          <li><span class="tier-check" style="color:var(--gold-lt);">◆</span>Social shoutout on Arc's Facebook page</li>
+          <li><span class="tier-check" style="color:var(--gold-lt);">◆</span>Included in Arc donor recognition</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COMPARISON TABLE -->
+<div class="wrap">
+  <span class="eyebrow">At a Glance</span>
+  <h2 class="sec-title">What Each Tier<br><em>Delivers</em></h2>
+  <hr class="gold-rule">
+  <table class="comparison">
+    <thead>
+      <tr>
+        <th>Benefit</th>
+        <th>Presenting<br>$10K</th>
+        <th>Champion<br>$5K</th>
+        <th>Community<br>$2.5K</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Named from stage (opening + closing)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">—</span></td></tr>
+      <tr><td>Named from stage (closing only)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>Co-presenting credit in all marketing</td><td><span class="check-yes">✓</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td></tr>
+      <tr><td>Tournament foursome entry (4 players)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">—</span></td></tr>
+      <tr><td>General admission tickets included</td><td>4</td><td>4</td><td>2</td></tr>
+      <tr><td>Logo on all event materials</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>Dedicated social post (Facebook + LinkedIn)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td>Facebook only</td></tr>
+      <tr><td>Post-event impact recap for your team</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">—</span></td></tr>
+      <tr><td>Year-round donor recognition</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>Personal call from Arc leadership</td><td><span class="check-yes">✓</span></td><td><span class="check-no">—</span></td><td><span class="check-no">—</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider">
+
+<!-- OBJECTION HANDLING -->
+<div class="wrap">
+  <span class="eyebrow">Common Questions</span>
+  <h2 class="sec-title">What Companies<br><em>Ask Us</em></h2>
+  <hr class="gold-rule">
+
+  <div class="objection-card">
+    <div class="objection-q">"We already support [other nonprofit]. Why The Arc?"</div>
+    <div class="objection-a">The Arc of DFW fills a specific gap that most nonprofits don't touch: the systems-level advocacy that determines whether families with IDD can access housing, healthcare, education, and employment at all. Other organizations provide direct services — The Arc changes the rules those services operate under. Sponsoring The Arc is not an either/or decision; it's the civic infrastructure layer that makes everything else possible.</div>
+  </div>
+
+  <div class="objection-card">
+    <div class="objection-q">"How do we know this is a good use of our CSR budget?"</div>
+    <div class="objection-a">The Arc of DFW is 100% volunteer-run — meaning your sponsorship dollars go to programs and advocacy, not administrative overhead. The organization has a 55-year track record of fiscal responsibility. Last year's single event raised $34,000. We can provide a post-event impact report showing exactly how your sponsorship was used and what it produced — in a format you can share internally and externally.</div>
+  </div>
+
+  <div class="objection-card">
+    <div class="objection-q">"Will our employees actually want to attend this?"</div>
+    <div class="objection-a">Putts for Progress is held at Puttshack Addison — one of the most popular entertainment venues in DFW. It's tech-infused mini golf, great food, a full bar, and a live tournament with prizes. Most companies who send a team find their employees asking to come back the following year. This is not a formal gala; it is a genuinely fun evening with a cause behind it — which is exactly the combination that drives employee engagement.</div>
+  </div>
+
+  <div class="objection-card">
+    <div class="objection-q">"$10,000 is a significant commitment. Can we start smaller?"</div>
+    <div class="objection-a">Absolutely. The Community Sponsor level at $2,500 is a meaningful first partnership — and companies that start at the Community level and see what the event delivers consistently move up in subsequent years. We'd rather have you in the room at any tier than miss the opportunity to show you what The Arc of DFW is about.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CTA -->
+<div class="wrap">
+  <div class="cta-block">
+    <h3>Ready to Be Part of It?</h3>
+    <p>Presenting sponsorships are limited to two companies. Packages are available on a first-confirmed basis. Reach out directly to discuss which tier is right for your company — no pressure, no sales script.</p>
+    <a class="cta-btn" href="mailto:info@thearcofdfw.org">Contact The Arc of DFW</a>
+    <span class="cta-note">info@thearcofdfw.org · (903) 776-4955 · thearcofdfw.org</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-note">Sponsorship Deck · Putts for Progress 2026 · Built by JRZ Consulting Solutions · 2026</div>
+  <a class="back-link" href="../arc-vault-home.html">← Return to Vault Home</a>
+</footer>
+</body>
+</html>
