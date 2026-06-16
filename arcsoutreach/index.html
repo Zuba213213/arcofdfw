@@ -3,358 +3,670 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TX Outreach Kit — Putts for Progress 2026</title>
+<title>P4P 2026 — Campaign Execution Roadmap</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A; --ivory: #F5F0E8; --coral: #C95B38; --teal: #2A7B6F; --teal-lt: #4FBFB0; --slate: #4A6274; --white: #FFFFFF; }
+  :root {
+    --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A;
+    --ivory: #F5F0E8; --coral: #C95B38; --green: #3A7D44;
+    --green-lt: #7DC87D; --slate: #4A6274; --white: #FFFFFF;
+    --teal: #2A7B6F; --teal-lt: #4FBFB0;
+  }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 17px; line-height: 1.75; }
-  .topbar { background: var(--teal); color: var(--white); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 16px; line-height: 1.7; }
+
+  .topbar { background: var(--green); color: var(--white); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 100; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
-  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; }
-  .nav-back:hover { color: var(--gold); }
-  .hero { padding: 60px 24px 48px; text-align: center; border-bottom: 3px solid var(--teal); background: radial-gradient(ellipse at 50% 0%, rgba(42,123,111,0.1) 0%, transparent 65%); }
-  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-lt); border: 1px solid var(--teal-lt); padding: 4px 14px; margin-bottom: 24px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 16px; }
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; list-style: none; }
+  .nav-links a { color: var(--ivory); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero { padding: 56px 24px 44px; text-align: center; border-bottom: 3px solid var(--green); background: radial-gradient(ellipse at 50% 0%, rgba(58,125,68,0.1) 0%, transparent 65%); }
+  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-lt); border: 1px solid var(--green-lt); padding: 4px 14px; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5.5vw, 46px); font-weight: 700; line-height: 1.12; color: var(--white); margin-bottom: 14px; }
   .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub { max-width: 580px; margin: 0 auto; color: rgba(245,240,232,0.78); font-size: 17px; }
-  .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 24px; overflow-x: auto; white-space: nowrap; }
-  .section-nav a { display: inline-block; padding: 14px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .hero-sub { max-width: 580px; margin: 0 auto 32px; color: rgba(245,240,232,0.75); font-size: 16px; }
+
+  /* NORTH STAR */
+  .north-star { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 680px; margin: 0 auto; }
+  .ns-block { flex: 1; min-width: 130px; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 18px 14px; text-align: center; border: 1px solid rgba(201,168,76,0.2); }
+  .ns-num { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 5px; }
+  .ns-label { font-size: 11px; color: rgba(245,240,232,0.55); letter-spacing: 0.06em; line-height: 1.4; text-transform: uppercase; }
+  .ns-block.target { border-color: var(--green-lt); }
+  .ns-block.target .ns-num { color: var(--green-lt); }
+
+  /* SECTION NAV */
+  .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 20px; overflow-x: auto; white-space: nowrap; }
+  .section-nav a { display: inline-block; padding: 13px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
   .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 52px 24px; }
-  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4.5vw, 36px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 48px 20px; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
   h2.sec-title em { color: var(--gold); font-style: italic; }
-  .gold-rule { width: 44px; border: none; border-top: 2px solid var(--gold); margin: 0 0 28px; }
-  .teal-rule { width: 44px; border: none; border-top: 2px solid var(--teal-lt); margin: 0 0 28px; }
-  .body-text { color: rgba(245,240,232,0.8); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
+  .gold-rule { width: 40px; border: none; border-top: 2px solid var(--gold); margin: 0 0 24px; }
+  .body-text { color: rgba(245,240,232,0.78); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
   .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
 
-  /* COPY BLOCKS */
-  .copy-block { border-radius: 8px; padding: 24px 22px; margin-bottom: 16px; position: relative; }
-  .copy-block-teal { background: rgba(42,123,111,0.1); border: 1px solid rgba(79,191,176,0.3); border-left: 3px solid var(--teal-lt); }
-  .copy-block-gold { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); border-left: 3px solid var(--gold); }
-  .copy-block-coral { background: rgba(201,91,56,0.07); border: 1px solid rgba(201,91,56,0.25); border-left: 3px solid var(--coral); }
-  .copy-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
-  .label-teal { color: var(--teal-lt); }
-  .label-gold { color: var(--gold); }
-  .label-coral { color: var(--coral); }
-  .copy-text { font-size: 16px; line-height: 1.75; color: rgba(245,240,232,0.88); white-space: pre-line; }
-  .copy-note { font-size: 13px; color: var(--slate); margin-top: 12px; font-style: italic; }
+  /* ROLES LEGEND */
+  .roles-grid { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+  .role-pill { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 12px 16px; }
+  .role-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .role-info { flex: 1; }
+  .role-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+  .role-desc { font-size: 13px; color: rgba(245,240,232,0.6); line-height: 1.5; }
 
-  .copy-btn { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(245,240,232,0.6); cursor: pointer; }
-  .copy-btn:hover { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.3); color: var(--gold); }
+  /* PHASE BLOCKS */
+  .phase-block { margin-bottom: 32px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); }
+  .phase-header { padding: 20px 22px; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; cursor: pointer; }
+  .phase-header-left { display: flex; align-items: center; gap: 14px; }
+  .phase-num { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; font-family: 'Playfair Display', serif; }
+  .phase-title-wrap { }
+  .phase-name { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); font-weight: 600; }
+  .phase-window { font-size: 12px; color: rgba(245,240,232,0.55); margin-top: 2px; letter-spacing: 0.04em; }
+  .phase-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .phase-date-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
+  .phase-toggle { font-size: 18px; color: var(--gold); margin-left: 8px; }
 
-  /* ORG LIST */
-  .org-grid { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
-  .org-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(79,191,176,0.18); border-radius: 8px; padding: 18px 20px; }
-  .org-name { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); margin-bottom: 4px; }
-  .org-type { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 6px; }
-  .org-desc { font-size: 14px; color: rgba(245,240,232,0.68); line-height: 1.6; }
+  .phase-body { display: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  .phase-body.open { display: block; }
 
-  /* FLYER PREVIEW */
-  .flyer-preview { background: var(--ivory); border-radius: 10px; overflow: hidden; margin: 24px 0; color: var(--navy); }
-  .flyer-header { background: var(--navy); padding: 28px 24px; text-align: center; border-bottom: 4px solid var(--gold); }
-  .flyer-header h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 4px; }
-  .flyer-header em { color: var(--gold); font-style: italic; }
-  .flyer-header .subtitle { font-size: 14px; color: rgba(245,240,232,0.7); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 6px; }
-  .flyer-body { padding: 28px 24px; }
-  .flyer-body h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 12px; }
-  .flyer-body p { font-size: 15px; color: #2A3A4A; line-height: 1.7; margin-bottom: 14px; }
-  .flyer-details { background: rgba(13,27,42,0.06); border-radius: 6px; padding: 16px 18px; margin: 16px 0; }
-  .flyer-detail { display: flex; gap: 10px; font-size: 15px; color: var(--navy); margin-bottom: 6px; }
-  .flyer-detail:last-child { margin-bottom: 0; }
-  .flyer-icon { flex-shrink: 0; }
-  .flyer-cta { background: var(--gold); text-align: center; padding: 18px 24px; }
-  .flyer-cta p { font-size: 14px; font-weight: 700; color: var(--navy); letter-spacing: 0.06em; }
-  .flyer-cta .url { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); }
-  .flyer-footer { padding: 16px 24px; text-align: center; font-size: 13px; color: var(--slate); border-top: 1px solid rgba(13,27,42,0.1); }
+  /* TASK TABLE */
+  .task-table { width: 100%; border-collapse: collapse; }
+  .task-table thead tr { background: rgba(0,0,0,0.2); }
+  .task-table th { padding: 10px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .task-table td { padding: 13px 14px; font-size: 14px; color: rgba(245,240,232,0.82); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; line-height: 1.5; }
+  .task-table tr:last-child td { border-bottom: none; }
+  .task-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .task-name { color: var(--white); font-weight: 400; }
+  .task-deliverable { color: rgba(245,240,232,0.65); font-size: 13px; margin-top: 3px; }
+
+  .owner-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+  .o-ed        { background: rgba(201,168,76,0.18); color: var(--gold); }
+  .o-board     { background: rgba(201,91,56,0.18); color: #E88A70; }
+  .o-mktg      { background: rgba(42,123,111,0.2); color: var(--teal-lt); }
+  .o-vol       { background: rgba(74,98,116,0.3); color: #9BB5C8; }
+  .o-jrz       { background: rgba(100,80,160,0.2); color: #B0A0E0; }
+  .o-sponsor   { background: rgba(58,125,68,0.2); color: var(--green-lt); }
+
+  .status-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
+  .s-todo   { background: rgba(74,98,116,0.6); }
+  .s-active { background: var(--gold); }
+  .s-done   { background: var(--green-lt); }
+
+  .week-tag { font-size: 11px; color: var(--slate); white-space: nowrap; }
+
+  /* SPONSOR TRACKER */
+  .tracker-note { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; font-size: 14px; color: rgba(245,240,232,0.75); line-height: 1.6; }
+  .sponsor-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .sponsor-table th { padding: 10px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-align: left; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .sponsor-table td { padding: 13px 12px; color: rgba(245,240,232,0.78); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+  .sponsor-table tr:last-child td { border-bottom: none; }
+  .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; }
+  .t-anchor { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .t-champ  { background: rgba(201,91,56,0.15); color: #E88A70; }
+  .t-comm   { background: rgba(74,98,116,0.3); color: #9BB5C8; }
+  .status-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; }
+  .st-target   { background: rgba(74,98,116,0.2); color: var(--slate); }
+  .st-contact  { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .st-warm     { background: rgba(58,125,68,0.2); color: var(--green-lt); }
+  .st-confirmed{ background: rgba(58,125,68,0.35); color: #A8E8A8; }
+  .st-declined { background: rgba(139,46,46,0.2); color: #C98080; }
+
+  .add-row { width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); border-radius: 4px; margin-top: 8px; font-size: 13px; color: var(--slate); text-align: center; cursor: default; font-style: italic; }
+
+  /* THERMOMETER */
+  .thermo-wrap { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 28px 24px; margin: 24px 0; }
+  .thermo-label { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px; }
+  .thermo-current { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--green-lt); font-weight: 700; }
+  .thermo-goal { font-size: 14px; color: var(--slate); }
+  .thermo-bar-bg { background: rgba(255,255,255,0.06); border-radius: 6px; height: 16px; overflow: hidden; margin-bottom: 10px; }
+  .thermo-bar-fill { background: linear-gradient(90deg, var(--green), var(--green-lt)); height: 100%; border-radius: 6px; transition: width 0.5s; }
+  .thermo-sources { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+  .thermo-source { display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding: 8px 12px; background: rgba(255,255,255,0.02); border-radius: 4px; }
+  .ts-label { color: rgba(245,240,232,0.7); }
+  .ts-amount { color: var(--gold); font-weight: 700; }
+  .ts-amount.locked { color: var(--green-lt); }
+
+  /* ROLES KEY INLINE */
+  .roles-key { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+  .rk-pill { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(245,240,232,0.65); }
+  .rk-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* KICKOFF BLOCK */
+  .kickoff-block { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 28px 24px; margin: 24px 0; }
+  .kickoff-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 12px; }
+  .kickoff-block p { font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.7; margin-bottom: 14px; }
+  .kickoff-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .kickoff-items li { display: flex; gap: 10px; font-size: 14px; color: rgba(245,240,232,0.8); line-height: 1.55; }
+  .ki-icon { color: var(--gold); flex-shrink: 0; }
 
   footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(201,168,76,0.2); padding: 32px 24px; text-align: center; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
   .footer-note { font-size: 12px; color: var(--slate); }
-  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; }
+  .back-link { display: inline-block; margin-top: 14px; font-size: 13px; color: var(--slate); text-decoration: none; }
   .back-link:hover { color: var(--gold); }
-  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; } }
+
+  @media (min-width: 600px) {
+    nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; }
+    .phase-header { flex-wrap: nowrap; }
+  }
 </style>
 </head>
 <body>
-<div class="topbar">TX Special Needs Outreach Kit · Putts for Progress 2026 · The Arc of DFW Area</div>
+
+<div class="topbar">Campaign Execution Roadmap · Putts for Progress 2026 · Confidential</div>
+
 <nav>
   <div class="nav-brand">The Arc of DFW Area</div>
-  <a class="nav-back" href="../arc-vault-home.html">← Back to Vault Home</a>
+  <ul class="nav-links">
+    <li><a href="#kickoff">Kickoff</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#sponsors">Sponsor Tracker</a></li>
+    <li><a href="#thermometer">Revenue</a></li>
+    <li><a href="../index.html">← Vault Home</a></li>
+  </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-eyebrow">Outreach Kit · Texas IDD Community</div>
-  <h1>Spread the Word<br>to the <em>People Who Need It</em></h1>
-  <p class="hero-sub">Ready-to-send copy for schools, parent groups, therapy centers, and disability organizations across Texas. Every template requires zero editing — just copy, paste, and send.</p>
+  <div class="hero-eyebrow">Execution Roadmap · P4P 2026</div>
+  <h1>The Plan That<br><em>Actually Runs the Campaign</em></h1>
+  <p class="hero-sub">Phases, deadlines, owners, and a live revenue tracker. This is the document that turns the vault into a winning campaign.</p>
+  <div class="north-star">
+    <div class="ns-block"><div class="ns-num">$34K</div><div class="ns-label">2025 Baseline</div></div>
+    <div class="ns-block target"><div class="ns-num">$42K</div><div class="ns-label">2026 North Star Goal</div></div>
+    <div class="ns-block"><div class="ns-num">Sept</div><div class="ns-label">Event Month</div></div>
+    <div class="ns-block"><div class="ns-num">8 Wks</div><div class="ns-label">Campaign Runway</div></div>
+    <div class="ns-block"><div class="ns-num">TBD</div><div class="ns-label">Event Date — Lock First</div></div>
+  </div>
 </section>
 
 <div class="section-nav">
-  <a href="#how">How to Use</a>
-  <a href="#targets">Target Orgs</a>
-  <a href="#flyer">Event Flyer</a>
-  <a href="#email">Email Templates</a>
-  <a href="#social">Social Copy</a>
-  <a href="#script">Phone Script</a>
+  <a href="#kickoff">Kickoff Meeting</a>
+  <a href="#roles">Roles &amp; Owners</a>
+  <a href="#roadmap">Phase Roadmap</a>
+  <a href="#sponsors">Sponsor Tracker</a>
+  <a href="#thermometer">Revenue Tracker</a>
 </div>
 
-<!-- HOW TO USE -->
-<div class="wrap" id="how">
-  <span class="eyebrow">How to Use This Kit</span>
-  <h2 class="sec-title">Zero Friction.<br><em>Maximum Reach.</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">This kit is designed so that any Arc member, board member, or volunteer can send outreach to a Texas special needs organization in under 5 minutes. No customization required — the copy is already written, the ask is already framed, and the recipient can share it with their community with one forward or copy-paste.</p>
-  <p class="body-text">The ask is not for a donation. It is a community awareness partnership — "share this with your families." Zero cost to them. Massive reach for The Arc.</p>
+<!-- FIRST THING FIRST -->
+<div class="wrap" id="kickoff">
+  <span class="eyebrow">Before Anything Else</span>
+  <h2 class="sec-title">The Kickoff <em>Meeting</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Nothing in this roadmap moves until one meeting happens. 60 minutes. The right people in the room. Every phase gets a date and a name on it. This is the meeting that converts the vault from a document into a campaign.</p>
 
-  <div style="background:rgba(42,123,111,0.1);border:1px solid rgba(79,191,176,0.25);border-radius:8px;padding:22px 20px;margin:24px 0;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:12px;">The 3-Step Outreach Process</div>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">1.</span>Find the contact (use the Target Org list below)</div>
-      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">2.</span>Copy the email template that matches their org type</div>
-      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">3.</span>Paste it, add their name and org, hit send</div>
-    </div>
+  <div class="kickoff-block">
+    <h3>Kickoff Meeting Agenda — 60 Minutes</h3>
+    <p>Schedule within the next 7 days. Can be Zoom or in-person. Required attendees: Executive Director or Board Chair, Event Lead, Marketing or Communications Lead, and JRZ (if involved in execution).</p>
+    <ul class="kickoff-items">
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Confirm event date. Everything else dates backward from this. Nothing else matters until this is locked.</li>
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Adopt the $42K north star goal officially. Align on the realistic scenario ($38–42K) as the working target.</li>
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">15 min —</strong>Assign a name to every phase and every major task in this roadmap. Ownerless tasks do not get done.</li>
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Identify the first 5–10 corporate sponsor prospects by name. Assign who makes each call personally.</li>
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Identify 3–4 family/advocate story video volunteers by name. Set a date to film each one.</li>
+      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">5 min —</strong>Set next check-in date — weekly or biweekly, same time, same people.</li>
+    </ul>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- TARGET ORGS -->
-<div class="wrap" id="targets">
-  <span class="eyebrow">Priority Outreach Targets</span>
-  <h2 class="sec-title">Who to<br><em>Reach First</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">These are the highest-leverage contacts in the Texas IDD ecosystem. One email to the right person in each category can reach hundreds of families.</p>
+<!-- ROLES -->
+<div class="wrap" id="roles">
+  <span class="eyebrow">Who Does What</span>
+  <h2 class="sec-title">Roles &amp; <em>Owners</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Every task in this roadmap is tagged with a role. Fill in the actual names at the kickoff meeting. The roles below reflect the functions needed — one person may hold more than one role in a small volunteer org.</p>
 
-  <div class="org-grid">
-    <div class="org-card">
-      <div class="org-type">DFW School Districts — SPED Departments</div>
-      <div class="org-name">DISD, FWISD, PISD, Carroll ISD, HEB ISD, Grapevine-Colleyville ISD, Richardson ISD, Garland ISD, Arlington ISD</div>
-      <div class="org-desc">Contact the Special Education Director at each district. Ask them to share P4P with their parent communication channels and special education family networks. One email from a SPED director reaches hundreds of families.</div>
-    </div>
-    <div class="org-card">
-      <div class="org-type">Parent Support Organizations</div>
-      <div class="org-name">Texas Parent to Parent · Down Syndrome Guild of Dallas · FEAT of North Texas · Autism Speaks DFW</div>
-      <div class="org-desc">These organizations run active parent listservs, Facebook groups, and email newsletters. A single share or forward from their leadership reaches their entire membership instantly.</div>
-    </div>
-    <div class="org-card">
-      <div class="org-type">Disability Advocacy &amp; Service Organizations</div>
-      <div class="org-name">United Cerebral Palsy Texas · Easterseals Texas · DARS (Disability and Rehab Services) · Navigate Life Texas · Special Olympics Texas</div>
-      <div class="org-desc">Peer organizations in the IDD ecosystem. Outreach should be framed as community partnership and awareness — not competition. "We want your families to know about this event" is the right framing.</div>
-    </div>
-    <div class="org-card">
-      <div class="org-type">Therapy Centers &amp; Clinical Practices</div>
-      <div class="org-name">ABA therapy centers, pediatric occupational therapy practices, speech therapy groups, developmental pediatricians across DFW</div>
-      <div class="org-desc">Clinicians see IDD families weekly. A flyer in the waiting room or a social media share from a therapy center's account reaches families at a high-trust moment.</div>
-    </div>
-    <div class="org-card">
-      <div class="org-type">Online Parent Communities</div>
-      <div class="org-name">Facebook Groups: "DFW Special Needs Parents," "North Texas Autism Moms," "IDD Families Dallas Fort Worth," Nextdoor disability community boards</div>
-      <div class="org-desc">These groups are organic, high-trust, and actively looking for local events and resources. A post from an Arc member or admin share can generate significant ticket sales quickly.</div>
-    </div>
-  </div>
-</div>
-
-<hr class="divider">
-
-<!-- EVENT FLYER -->
-<div class="wrap" id="flyer">
-  <span class="eyebrow">Shareable Event Flyer</span>
-  <h2 class="sec-title">The Event<br><em>At a Glance</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">This flyer is designed to be shared digitally — as a screenshot, a PDF attachment, or embedded in an email. It contains everything a family needs to decide to come.</p>
-
-  <div class="flyer-preview">
-    <div class="flyer-header">
-      <div style="font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">The Arc of DFW Area Presents</div>
-      <h3>Putts for Progress <em>2026</em></h3>
-      <div class="subtitle">An Evening of Mini Golf, Community &amp; Real Impact</div>
-    </div>
-    <div class="flyer-body">
-      <h4>Join us this September in Addison</h4>
-      <p>The Arc of DFW Area — 55 years of advocacy for individuals with intellectual and developmental disabilities — is hosting our annual fundraising event at Puttshack Addison. A fun night for a cause that matters in your community.</p>
-      <div class="flyer-details">
-        <div class="flyer-detail"><span class="flyer-icon">📅</span><strong>Date:</strong>&nbsp;[DATE] · September 2026</div>
-        <div class="flyer-detail"><span class="flyer-icon">📍</span><strong>Location:</strong>&nbsp;Puttshack Addison — 5100 Belt Line Rd, Addison, TX 75254</div>
-        <div class="flyer-detail"><span class="flyer-icon">🎟</span><strong>General Admission:</strong>&nbsp;$50 per person · Includes heavy hors d'oeuvres + non-alcoholic drinks</div>
-        <div class="flyer-detail"><span class="flyer-icon">⛳</span><strong>Tournament Entry:</strong>&nbsp;$75 individual / $225 foursome · Prizes for top scores</div>
-        <div class="flyer-detail"><span class="flyer-icon">🍹</span><strong>Full cash bar</strong>&nbsp;available</div>
+  <div class="roles-grid">
+    <div class="role-pill">
+      <div class="role-dot" style="background:#C9A84C;"></div>
+      <div class="role-info">
+        <div class="role-title">ED / Board Chair <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
+        <div class="role-desc">Final decision authority. Approves budget, signs off on sponsor commitments, delivers remarks at event. Makes anchor sponsor calls personally — no one else closes at $10K.</div>
       </div>
-      <p>All proceeds support The Arc of DFW Area's advocacy programs for individuals with IDD and their families across the DFW Metroplex.</p>
+      <span class="owner-tag o-ed">ED</span>
     </div>
-    <div class="flyer-cta">
-      <p>Register &amp; Learn More:</p>
-      <div class="url">thearcofdfw.org</div>
+    <div class="role-pill">
+      <div class="role-dot" style="background:#E88A70;"></div>
+      <div class="role-info">
+        <div class="role-title">Board Lead / Event Chair <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
+        <div class="role-desc">Day-to-day campaign ownership. Runs weekly check-ins, manages ambassador program, owns the sponsor outreach tracker, coordinates Puttshack logistics.</div>
+      </div>
+      <span class="owner-tag o-board">Board</span>
     </div>
-    <div class="flyer-footer">The Arc of DFW Area · 391 E. Las Colinas Blvd · Irving, TX 75039 · info@thearcofdfw.org · (903) 776-4955</div>
+    <div class="role-pill">
+      <div class="role-dot" style="background:#4FBFB0;"></div>
+      <div class="role-info">
+        <div class="role-title">Marketing / Communications Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
+        <div class="role-desc">Executes the content calendar. Posts social content, sends emails, coordinates video filming schedule, manages the TX outreach kit distribution.</div>
+      </div>
+      <span class="owner-tag o-mktg">Mktg</span>
+    </div>
+    <div class="role-pill">
+      <div class="role-dot" style="background:#9BB5C8;"></div>
+      <div class="role-info">
+        <div class="role-title">Volunteer Coordinator / Ambassador Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
+        <div class="role-desc">Recruits and briefs the 10–15 community ambassadors. Manages the volunteer social takeover week. Coordinates story video volunteers and filming logistics.</div>
+      </div>
+      <span class="owner-tag o-vol">Vol</span>
+    </div>
+    <div class="role-pill">
+      <div class="role-dot" style="background:#B0A0E0;"></div>
+      <div class="role-info">
+        <div class="role-title">JRZ Consulting Solutions <span style="color:var(--slate);font-weight:400;font-size:13px;">— Joey Zubillaga</span></div>
+        <div class="role-desc">Marketing infrastructure, vault maintenance, copy support, campaign strategy oversight, and any additional collateral builds during the campaign runway.</div>
+      </div>
+      <span class="owner-tag o-jrz">JRZ</span>
+    </div>
+    <div class="role-pill">
+      <div class="role-dot" style="background:#7DC87D;"></div>
+      <div class="role-info">
+        <div class="role-title">Sponsor Relations Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
+        <div class="role-desc">Manages the corporate sponsor outreach list, tracks all contact activity, handles proposal delivery, and coordinates post-event sponsor impact reports.</div>
+      </div>
+      <span class="owner-tag o-sponsor">Sponsor</span>
+    </div>
+  </div>
+
+  <div class="roles-key" style="margin-top:24px;">
+    <div class="rk-pill"><div class="rk-dot" style="background:#C9A84C;"></div>ED = Executive Director / Board Chair</div>
+    <div class="rk-pill"><div class="rk-dot" style="background:#E88A70;"></div>Board = Board Lead / Event Chair</div>
+    <div class="rk-pill"><div class="rk-dot" style="background:#4FBFB0;"></div>Mktg = Marketing Lead</div>
+    <div class="rk-pill"><div class="rk-dot" style="background:#9BB5C8;"></div>Vol = Volunteer Coordinator</div>
+    <div class="rk-pill"><div class="rk-dot" style="background:#B0A0E0;"></div>JRZ = JRZ Consulting</div>
+    <div class="rk-pill"><div class="rk-dot" style="background:#7DC87D;"></div>Sponsor = Sponsor Relations</div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- EMAIL TEMPLATES -->
-<div class="wrap" id="email">
-  <span class="eyebrow">Email Templates</span>
-  <h2 class="sec-title">Copy. Paste.<br><em>Send.</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">Three templates for three different recipient types. Replace bracketed fields only — everything else is ready to go.</p>
+<!-- PHASE ROADMAP -->
+<div class="wrap" id="roadmap">
+  <span class="eyebrow">Campaign Phases</span>
+  <h2 class="sec-title">Phase by Phase <em>Roadmap</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Six phases from now through post-event. Click any phase to expand its full task list with owners and deliverables. All dates are relative to the event — fill in actuals at the kickoff meeting.</p>
 
-  <div class="copy-block copy-block-teal">
-    <div class="copy-label label-teal">Template A — SPED Directors &amp; School Districts</div>
-    <div class="copy-text">Subject: Sharing a DFW Community Event for Your IDD Families
-
-Hi [Name],
-
-My name is [Your Name], and I'm reaching out on behalf of The Arc of DFW Area — a 55-year-old, all-volunteer nonprofit advocating for individuals with intellectual and developmental disabilities across the DFW Metroplex.
-
-This September, we're hosting Putts for Progress 2026 at Puttshack in Addison — a fundraising event that brings together the DFW community in support of IDD advocacy, training, and family resources.
-
-I'm writing to ask if you'd be willing to share this event with your special education families through your parent communication channels. We know your families are always looking for community events that feel relevant to their experience — and this one is.
-
-Event details:
-📅 Date: [DATE] · September 2026
-📍 Puttshack Addison, 5100 Belt Line Rd, Addison TX
-🎟 $50 general / $75 tournament entry
-🌐 thearcofdfw.org
-
-A shareable flyer is attached. There is no cost or commitment for your school — just a 30-second share with your families.
-
-Thank you for everything you do for our community's students. We'd love to see some of your families in the room this September.
-
-Warm regards,
-[Your Name]
-The Arc of DFW Area
-info@thearcofdfw.org | (903) 776-4955</div>
-    <p class="copy-note">Best sent to: Special Education Director, Parent Liaison, or Community Outreach Coordinator at each district.</p>
+  <!-- PHASE 0 -->
+  <div class="phase-block" style="border-color:rgba(201,168,76,0.4);">
+    <div class="phase-header" style="background:rgba(201,168,76,0.08);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:var(--gold);color:var(--navy);">0</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Foundation — Lock Everything</div>
+          <div class="phase-window">Now → Complete before Week 8</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Do This First</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body open">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Confirm event date with Puttshack Addison</div><div class="task-deliverable">Deliverable: Signed venue agreement or email confirmation</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">This week</td></tr>
+          <tr><td><div class="task-name">Adopt $42K as official fundraising goal</div><div class="task-deliverable">Deliverable: Board alignment — confirmed in writing or meeting notes</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">This week</td></tr>
+          <tr><td><div class="task-name">Assign names to all roles in this document</div><div class="task-deliverable">Deliverable: Filled-in role sheet — who owns what</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">Kickoff meeting</td></tr>
+          <tr><td><div class="task-name">Set up event registration page (ticket sales live)</div><div class="task-deliverable">Deliverable: Live registration link ready to share</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Build corporate prospect list — 20–30 named DFW companies</div><div class="task-deliverable">Deliverable: Spreadsheet with company, contact name, email, and assigned caller</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Identify 3–4 story video volunteers (families or self-advocates)</div><div class="task-deliverable">Deliverable: Names confirmed, filming dates scheduled</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Identify 10–15 community ambassadors</div><div class="task-deliverable">Deliverable: List of ambassadors, each committed to inviting 5 people</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Finalize sponsorship tier packages and confirm pricing</div><div class="task-deliverable">Deliverable: Approved sponsor deck (see vault) ready to send</div></td><td><span class="owner-tag o-ed">ED</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Set recurring weekly check-in — same time, same people</div><div class="task-deliverable">Deliverable: Calendar invite sent to all role holders</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">Kickoff meeting</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="copy-block copy-block-gold">
-    <div class="copy-label label-gold">Template B — Parent Organizations &amp; Advocacy Groups</div>
-    <div class="copy-text">Subject: Would You Share This With Your Community? — P4P 2026
-
-Hi [Name / Organization Name],
-
-I hope this finds you well. I'm reaching out from The Arc of DFW Area — fellow travelers in the DFW IDD community.
-
-We're hosting Putts for Progress 2026 this September at Puttshack in Addison, and we'd love your help spreading the word to your members and families.
-
-This event raises money for advocacy work that benefits the entire IDD community in DFW — housing, healthcare access, civil rights, education funding, and caregiver support. The families you serve are the families this work is for.
-
-If you're able to share the event with your email list, Facebook group, or newsletter, we'd be deeply grateful. We can provide a copy-paste social post, a shareable flyer, or whatever format works best for your community.
-
-Event info:
-📅 [DATE] · September 2026
-📍 Puttshack Addison, Addison TX
-🎟 $50 General / $75 Tournament
-🌐 thearcofdfw.org
-
-We believe in the work your organization does. Thank you for helping amplify ours.
-
-With gratitude,
-[Your Name]
-The Arc of DFW Area</div>
-    <p class="copy-note">Best sent to: Executive Directors, Program Managers, or Community Coordinators at peer advocacy orgs.</p>
+  <!-- PHASE 1 -->
+  <div class="phase-block">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">1</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Activation — Go Public</div>
+          <div class="phase-window">8–7 Weeks Before Event</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Send personalized corporate sponsor outreach — wave 1</div><div class="task-deliverable">Deliverable: 10+ personal emails sent, calls scheduled for anchor prospects</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 8</td></tr>
+          <tr><td><div class="task-name">Post Save the Date — Facebook and LinkedIn</div><div class="task-deliverable">Deliverable: Posts live on both platforms, copy from Brand Guide</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
+          <tr><td><div class="task-name">Send Save the Date email to full Arc list</div><div class="task-deliverable">Deliverable: Email sent, open rate tracked</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
+          <tr><td><div class="task-name">Brief all ambassadors — provide invite scripts and assets</div><div class="task-deliverable">Deliverable: Ambassador briefing meeting held, assets distributed</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 7</td></tr>
+          <tr><td><div class="task-name">Send TX Outreach Kit — wave 1 (school districts, major orgs)</div><div class="task-deliverable">Deliverable: 20+ outreach emails sent using kit templates</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 7</td></tr>
+          <tr><td><div class="task-name">Submit event to local media calendars</div><div class="task-deliverable">Deliverable: Submitted to DMN, WFAA, NBC5, CultureMap, Do214, Addison Magazine</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
+          <tr><td><div class="task-name">Request co-branded social post from Puttshack Addison</div><div class="task-deliverable">Deliverable: Email sent to Puttshack marketing contact, follow-up scheduled</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">Week 7</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="copy-block copy-block-coral">
-    <div class="copy-label label-coral">Template C — Therapy Centers &amp; Clinical Practices</div>
-    <div class="copy-text">Subject: Community Event for Your IDD Families — September 2026
+  <!-- PHASE 2 -->
+  <div class="phase-block">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">2</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Momentum — Stories &amp; Tickets</div>
+          <div class="phase-window">6–5 Weeks Before Event</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Film and post Story Video 1 — The Parent</div><div class="task-deliverable">Deliverable: Video live on Facebook, script from P4P Campaign Plan</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
+          <tr><td><div class="task-name">Open ticket sales — push early bird deadline</div><div class="task-deliverable">Deliverable: Registration link active, early bird window communicated</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
+          <tr><td><div class="task-name">Send "Tickets Are Live" email</div><div class="task-deliverable">Deliverable: Email sent to full list, one clear CTA</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
+          <tr><td><div class="task-name">TX Outreach Kit — wave 2 (parent Facebook groups, therapy centers)</div><div class="task-deliverable">Deliverable: 20+ additional outreach messages sent</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 6</td></tr>
+          <tr><td><div class="task-name">Corporate sponsor follow-up calls — warm leads</div><div class="task-deliverable">Deliverable: Every wave-1 email followed up with a phone call</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 6</td></tr>
+          <tr><td><div class="task-name">Film and post Story Video 2 — The Self-Advocate</div><div class="task-deliverable">Deliverable: Video live on Facebook — most authentic of the series, minimal direction</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
+          <tr><td><div class="task-name">Send press release to local media</div><div class="task-deliverable">Deliverable: Press release sent to all outlets on the media list</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
+          <tr><td><div class="task-name">Post awareness content — Arc mission, 55 years, all-volunteer</div><div class="task-deliverable">Deliverable: Facebook post live, copy from Brand Guide</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-Hi [Name],
+  <!-- PHASE 3 -->
+  <div class="phase-block">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">3</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Push — Corporate &amp; Urgency</div>
+          <div class="phase-window">4–3 Weeks Before Event</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Film and post Story Video 3 — The Urgency Video</div><div class="task-deliverable">Deliverable: Video live on Facebook AND LinkedIn</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
+          <tr><td><div class="task-name">Launch inter-company tournament competition on LinkedIn</div><div class="task-deliverable">Deliverable: Post framing the corporate team competition, trophy named</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
+          <tr><td><div class="task-name">Announce confirmed corporate sponsors publicly — tag them</div><div class="task-deliverable">Deliverable: Posts on Facebook + LinkedIn naming and tagging each sponsor</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">Week 4</td></tr>
+          <tr><td><div class="task-name">Send mid-campaign email to full list — show progress toward goal</div><div class="task-deliverable">Deliverable: Email with current ticket count and fundraising momentum</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
+          <tr><td><div class="task-name">Early bird ticket deadline</div><div class="task-deliverable">Deliverable: Email reminder + social post — prize drawing entrants announced</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 3</td></tr>
+          <tr><td><div class="task-name">NTXGD alignment post — tie P4P to North Texas Giving Day</div><div class="task-deliverable">Deliverable: Facebook post connecting September P4P and NTXGD narratives</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 3</td></tr>
+          <tr><td><div class="task-name">Ambassador check-in — confirm guest counts</div><div class="task-deliverable">Deliverable: Personal outreach to all 10–15 ambassadors, updated headcount</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 3</td></tr>
+          <tr><td><div class="task-name">Send corporate follow-up — second wave outreach to new prospects</div><div class="task-deliverable">Deliverable: 10 additional companies contacted</div></td><td><span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">Week 3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-My name is [Your Name] from The Arc of DFW Area. We're a nonprofit that has advocated for individuals with intellectual and developmental disabilities in DFW since 1971.
+  <!-- PHASE 4 -->
+  <div class="phase-block">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">4</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Final Sprint — FOMO &amp; Sell Out</div>
+          <div class="phase-window">2 Weeks Before → Day Of</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Film and post Story Video 4 — The Final Call</div><div class="task-deliverable">Deliverable: Montage video live on all channels</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 2</td></tr>
+          <tr><td><div class="task-name">Volunteer Social Takeover Week</div><div class="task-deliverable">Deliverable: 5 advocates briefed and posting daily to Arc Facebook stories Mon–Fri</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 2</td></tr>
+          <tr><td><div class="task-name">Send "Last Chance" email — 72 hours out</div><div class="task-deliverable">Deliverable: Email with final ticket count remaining and event preview</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">72 hrs out</td></tr>
+          <tr><td><div class="task-name">Send day-before logistics email to all registrants</div><div class="task-deliverable">Deliverable: Email with parking, check-in time, what to bring, tournament assignments</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-board">Board</span></td><td class="week-tag">Day before</td></tr>
+          <tr><td><div class="task-name">Prepare stage remarks — opening, mid-event update, closing reveal</div><div class="task-deliverable">Deliverable: Speaker notes for all three moments, scripts in Day-Of Guide</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">Day before</td></tr>
+          <tr><td><div class="task-name">Day-of live social coverage</div><div class="task-deliverable">Deliverable: Check-in posts, tournament action, real-time fundraising updates</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Day of</td></tr>
+          <tr><td><div class="task-name">Real-time fundraising total tracked and revealed from stage</div><div class="task-deliverable">Deliverable: Running total visible at event, final reveal at closing remarks</div></td><td><span class="owner-tag o-board">Board</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Day of</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-We're hosting Putts for Progress 2026 in September at Puttshack in Addison — a fun community fundraiser for IDD advocacy. We think many of your families would enjoy attending, and all proceeds support the advocacy work that creates better systems for the individuals you serve.
-
-Would you be open to posting our event flyer in your waiting area or sharing it with your patient families? It's a fun night out for a meaningful cause — and it directly supports the DFW community you work in.
-
-Flyer and digital assets attached.
-
-Details: [DATE] · Puttshack Addison · $50 General / $75 Tournament · thearcofdfw.org
-
-Thank you for considering it — and for the work you do every day.
-
-Best,
-[Your Name]
-The Arc of DFW Area</div>
-    <p class="copy-note">Best sent to: Practice Manager, Clinical Director, or Front Desk Coordinator at ABA centers, OT practices, speech therapy groups.</p>
+  <!-- PHASE 5 -->
+  <div class="phase-block" style="border-color:rgba(125,200,125,0.3);">
+    <div class="phase-header" style="background:rgba(58,125,68,0.06);" onclick="togglePhase(this)">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(58,125,68,0.2);color:var(--green-lt);border:1px solid rgba(125,200,125,0.3);">5</div>
+        <div class="phase-title-wrap">
+          <div class="phase-name">Retention — Turn Attendees into Donors</div>
+          <div class="phase-window">48 Hours – 2 Weeks After Event</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <span class="phase-date-tag" style="background:rgba(58,125,68,0.15);color:var(--green-lt);">Post-Event</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><div class="task-name">Send personalized thank-you email — include final total</div><div class="task-deliverable">Deliverable: Email within 24 hours, template from Brand Guide, impact statement included</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">24 hrs after</td></tr>
+          <tr><td><div class="task-name">Post event recap on all channels</div><div class="task-deliverable">Deliverable: Photos, final total, sponsor recognition, one-sentence impact statement</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">48 hrs after</td></tr>
+          <tr><td><div class="task-name">Deliver sponsor impact recap packages</div><div class="task-deliverable">Deliverable: Email to each sponsor with their visibility documentation and impact numbers</div></td><td><span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">1 week after</td></tr>
+          <tr><td><div class="task-name">Soft ask for recurring membership or year-round giving</div><div class="task-deliverable">Deliverable: Follow-up email to all attendees with membership link and low-pressure ask</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">1 week after</td></tr>
+          <tr><td><div class="task-name">Add all new attendees to Arc email list</div><div class="task-deliverable">Deliverable: All opt-in contacts added to main list, segmented as P4P 2026 attendees</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">1 week after</td></tr>
+          <tr><td><div class="task-name">Lock in Puttshack date for 2027</div><div class="task-deliverable">Deliverable: Preliminary 2027 date confirmed while relationship and momentum are fresh</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">2 weeks after</td></tr>
+          <tr><td><div class="task-name">Campaign debrief — what worked, what didn't, what to do first next year</div><div class="task-deliverable">Deliverable: One-page debrief document saved for 2027 campaign planning</div></td><td><span class="owner-tag o-ed">ED</span> <span class="owner-tag o-board">Board</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">2 weeks after</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- SOCIAL COPY FOR ORG PARTNERS -->
-<div class="wrap" id="social">
-  <span class="eyebrow">Social Copy for Partner Orgs</span>
-  <h2 class="sec-title">Copy-Paste Posts<br><em>For Your Partners</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">Send these directly to partner organizations — ready for them to post on their own Facebook or Instagram with zero editing required.</p>
+<!-- SPONSOR TRACKER -->
+<div class="wrap" id="sponsors">
+  <span class="eyebrow">Corporate Sponsor Pipeline</span>
+  <h2 class="sec-title">Sponsor <em>Tracker</em></h2>
+  <hr class="gold-rule">
 
-  <div class="copy-block copy-block-teal">
-    <div class="copy-label label-teal">Facebook Post — For Partner Orgs to Share</div>
-    <div class="copy-text">We wanted to share this with our community 💙
+  <div class="tracker-note">This tracker is the single source of truth for all corporate sponsor activity. Every contact gets a row. Update status after every interaction. The goal: 1 Presenting ($10K), 2–3 Champions ($5K), 2–3 Community ($2.5K). One anchor sponsor alone covers 25% of the $42K goal.</div>
 
-The Arc of DFW Area — a 55-year-old advocacy organization for individuals with intellectual and developmental disabilities — is hosting Putts for Progress 2026 this September at Puttshack in Addison.
+  <table class="sponsor-table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Contact / Title</th>
+        <th>Tier Target</th>
+        <th>Status</th>
+        <th>Owner</th>
+        <th>Next Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-anchor">Presenting</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-ed">ED</span></td>
+        <td style="font-size:13px;">Personal call from ED</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-anchor">Presenting</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-ed">ED</span></td>
+        <td style="font-size:13px;">Personal call from ED</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-champ">Champion</span></td>
+        <td><span class="status-badge st-contact">Contacted</span></td>
+        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
+        <td style="font-size:13px;">Follow-up call this week</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-champ">Champion</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
+        <td style="font-size:13px;">Send deck + intro email</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-champ">Champion</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
+        <td style="font-size:13px;">Warm intro needed — who knows them?</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-comm">Community</span></td>
+        <td><span class="status-badge st-warm">Warm</span></td>
+        <td><span class="owner-tag o-board">Board</span></td>
+        <td style="font-size:13px;">Send proposal, close by Week 5</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-comm">Community</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-board">Board</span></td>
+        <td style="font-size:13px;">Initial outreach</td>
+      </tr>
+      <tr>
+        <td>[Company Name]</td>
+        <td>[Name · Title]</td>
+        <td><span class="tier-badge t-comm">Community</span></td>
+        <td><span class="status-badge st-target">Target</span></td>
+        <td><span class="owner-tag o-board">Board</span></td>
+        <td style="font-size:13px;">Initial outreach</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="add-row">+ Add rows as needed — copy any row above as a template</div>
 
-This event raises funds for advocacy, training, and family resources for the IDD community right here in DFW. If you or someone you know would enjoy a fun night of mini golf while supporting an incredible cause, tickets are $50.
-
-📅 [DATE]
-📍 Puttshack Addison — 5100 Belt Line Rd, Addison TX
-🎟 $50 General / $75 Tournament
-🌐 thearcofdfw.org
-
-Share this with a family who needs a night out. 🙌
-
-#ArcDFW #PuttsForProgress #IDD #DFWCommunity #DisabilityAdvocacy</div>
-  </div>
-
-  <div class="copy-block copy-block-gold">
-    <div class="copy-label label-gold">Short Version — For Text Messages or WhatsApp Groups</div>
-    <div class="copy-text">Hey — wanted to share this: The Arc of DFW is hosting Putts for Progress at Puttshack Addison in September. Fun night out + supports IDD advocacy in DFW. $50 general / $75 tournament. Details at thearcofdfw.org. Pass it along if you know someone who'd be interested!</div>
+  <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;">
+    <span style="font-size:11px;font-weight:700;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;">Status key:</span>
+    <span class="status-badge st-target">Target</span>
+    <span class="status-badge st-contact">Contacted</span>
+    <span class="status-badge st-warm">Warm</span>
+    <span class="status-badge st-confirmed">Confirmed</span>
+    <span class="status-badge st-declined">Declined</span>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- PHONE SCRIPT -->
-<div class="wrap" id="script">
-  <span class="eyebrow">Phone / Voicemail Script</span>
-  <h2 class="sec-title">When You're<br><em>Calling Directly</em></h2>
-  <hr class="teal-rule">
-  <p class="body-text">For warm calls to SPED directors, org leaders, or community contacts you already know. Keep it under 90 seconds.</p>
+<!-- REVENUE THERMOMETER -->
+<div class="wrap" id="thermometer">
+  <span class="eyebrow">Live Revenue Tracker</span>
+  <h2 class="sec-title">Running Toward <em>$42,000</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Update this tracker at each weekly check-in. Fill in actuals as revenue is confirmed. The goal is to know where you stand against the $42K target at every phase of the campaign — not just on event night.</p>
 
-  <div class="copy-block copy-block-teal">
-    <div class="copy-label label-teal">Phone Script — Warm Call to Known Contact</div>
-    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area — [how you know them if applicable].
+  <div class="thermo-wrap">
+    <div class="thermo-label">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);margin-bottom:4px;">Total Confirmed Revenue</div>
+        <div class="thermo-current">$_______ raised</div>
+      </div>
+      <div class="thermo-goal">Goal: $42,000</div>
+    </div>
+    <div class="thermo-bar-bg">
+      <div class="thermo-bar-fill" style="width: 0%;"></div>
+    </div>
+    <div style="font-size:12px;color:var(--slate);margin-bottom:4px;">Fill in and update manually — or track in a shared Google Sheet</div>
 
-I'm calling about our annual fundraiser, Putts for Progress — it's this September at Puttshack in Addison. Last year we raised $34,000 in one evening for IDD advocacy in DFW, and we're aiming higher this year.
-
-I'm reaching out specifically because I think your [families / members / community] would be interested in attending, and I was hoping you'd be willing to share the event through your channels — email list, Facebook group, whatever works for you.
-
-I'll send you a copy-paste email template and a shareable flyer so all you'd have to do is forward it. Literally five minutes of your time could put this event in front of a lot of families who'd love to hear about it.
-
-Can I send that over? [Get email] — great. I'll send it today. Thank you so much, [Name] — really appreciate it.
-
-Talk soon.</div>
+    <div class="thermo-sources">
+      <div class="thermo-source">
+        <span class="ts-label">🏢 Presenting Sponsor(s) · Target $10–20K</span>
+        <span class="ts-amount">$_______ confirmed</span>
+      </div>
+      <div class="thermo-source">
+        <span class="ts-label">🤝 Champion &amp; Community Sponsors · Target $10K</span>
+        <span class="ts-amount">$_______ confirmed</span>
+      </div>
+      <div class="thermo-source">
+        <span class="ts-label">🎟 General Admission Tickets · Target $7,500</span>
+        <span class="ts-amount">$_______ / 150 tickets sold</span>
+      </div>
+      <div class="thermo-source">
+        <span class="ts-label">⛳ Tournament Foursomes · Target $4,500</span>
+        <span class="ts-amount">$_______ / 20 teams registered</span>
+      </div>
+      <div class="thermo-source">
+        <span class="ts-label">📅 North Texas Giving Day · Target $4,000–6,000</span>
+        <span class="ts-amount">$_______ raised</span>
+      </div>
+      <div class="thermo-source">
+        <span class="ts-label">🎰 Raffle / Auction · Target $2,500–4,000</span>
+        <span class="ts-amount">$_______ raised</span>
+      </div>
+      <div class="thermo-source" style="border-top:1px solid rgba(201,168,76,0.2);margin-top:8px;padding-top:16px;">
+        <span class="ts-label" style="color:var(--white);font-weight:700;">TOTAL</span>
+        <span class="ts-amount locked">$_______ of $42,000</span>
+      </div>
+    </div>
   </div>
 
-  <div class="copy-block copy-block-gold">
-    <div class="copy-label label-gold">Voicemail Version — If They Don't Pick Up</div>
-    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area. I'm calling about our Putts for Progress fundraiser this September — an event that last year raised $34,000 for IDD advocacy in DFW.
-
-I was hoping to share it with your community and was wondering if you'd be open to a quick five-minute conversation. I'll send an email too with all the details and copy-paste assets — easy to share if it feels right for your families.
-
-You can reach me at [number] or reply to my email. Thanks so much, [Name] — hope to connect soon.</div>
+  <div style="background:rgba(58,125,68,0.08);border:1px solid rgba(125,200,125,0.2);border-radius:8px;padding:20px 20px;margin-top:8px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:10px;">The Rule: Know Your Number Every Week</div>
+    <div style="font-size:14px;color:rgba(245,240,232,0.75);line-height:1.65;">Update this tracker at every weekly check-in. If you're behind on ticket sales by Week 5, you have time to activate ambassadors harder. If sponsor revenue is behind by Week 4, you have time for a second outreach push. The only way to course-correct is to know the number while there's still runway to use.</div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
-  <div class="footer-note">TX Special Needs Outreach Kit · Putts for Progress 2026 · Built by JRZ Consulting Solutions · 2026</div>
-  <a class="back-link" href="../arc-vault-home.html">← Return to Vault Home</a>
+  <div class="footer-brand">The Arc of DFW Area — Campaign Execution Roadmap</div>
+  <div class="footer-note">Putts for Progress 2026 · Built by JRZ Consulting Solutions · 2026 · Confidential</div>
+  <a class="back-link" href="../index.html">← Return to Vault Home</a>
 </footer>
+
+<script>
+  function togglePhase(header) {
+    const body = header.nextElementSibling;
+    const toggle = header.querySelector('.phase-toggle');
+    body.classList.toggle('open');
+    toggle.textContent = body.classList.contains('open') ? '▴' : '▾';
+  }
+  // Phase 0 open by default
+  document.addEventListener('DOMContentLoaded', () => {
+    const firstBody = document.querySelector('.phase-body.open');
+    if (firstBody) {
+      const toggle = firstBody.previousElementSibling.querySelector('.phase-toggle');
+      if (toggle) toggle.textContent = '▴';
+    }
+  });
+</script>
 </body>
 </html>
