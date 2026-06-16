@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arc of DFW Area — Marketing Vault</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0D1B2A;
+    --gold:   #C9A84C;
+    --gold-lt:#E8D49A;
+    --ivory:  #F5F0E8;
+    --coral:  #C95B38;
+    --slate:  #4A6274;
+    --white:  #FFFFFF;
+    --text:   #1A2A38;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--navy);
+    color: var(--ivory);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 72px 24px 60px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 5px 16px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 7vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    max-width: 620px;
+    margin: 0 auto 36px;
+    color: rgba(245,240,232,0.8);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .dual-bar {
+    display: flex;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 44px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .dual-bar-half {
+    flex: 1;
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dual-bar-half.donor {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .dual-bar-half.client {
+    background: var(--coral);
+    color: var(--white);
+  }
+
+  .hero-meta {
+    font-size: 13px;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SECTION BASE ── */
+  .section {
+    padding: 60px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin: 0;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  h2.section-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .section-body {
+    color: rgba(245,240,232,0.82);
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 30px;
+  }
+
+  /* ── MISSION BLOCK ── */
+  .mission-block {
+    background: rgba(201,168,76,0.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 28px 28px;
+    margin: 36px 0;
+  }
+
+  .mission-block p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold-lt);
+    line-height: 1.6;
+  }
+
+  /* ── DUAL AUDIENCE CARDS ── */
+  .dual-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .audience-card {
+    border-radius: 8px;
+    padding: 28px 24px;
+  }
+
+  .audience-card.donor-card {
+    background: rgba(201,168,76,0.09);
+    border: 1px solid rgba(201,168,76,0.35);
+  }
+
+  .audience-card.client-card {
+    background: rgba(201,91,56,0.09);
+    border: 1px solid rgba(201,91,56,0.35);
+  }
+
+  .card-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .donor-label { background: var(--gold); color: var(--navy); }
+  .client-label { background: var(--coral); color: var(--white); }
+
+  .audience-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .audience-card p {
+    color: rgba(245,240,232,0.82);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── VAULT NAV GRID ── */
+  .vault-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .vault-card {
+    display: block;
+    text-decoration: none;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 24px 22px;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .vault-card:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+
+  .vault-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .vault-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .icon-gold { background: rgba(201,168,76,0.18); }
+  .icon-coral { background: rgba(201,91,56,0.18); }
+  .icon-slate { background: rgba(74,98,116,0.3); }
+
+  .vault-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .vault-card-desc {
+    color: rgba(245,240,232,0.65);
+    font-size: 15px;
+    line-height: 1.6;
+    padding-left: 54px;
+  }
+
+  .vault-card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .tag-gold { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .tag-coral { background: rgba(201,91,56,0.2); color: var(--coral); }
+  .tag-both { background: rgba(74,98,116,0.3); color: #9BB5C8; }
+  .tag-event { background: rgba(100,160,100,0.2); color: #7DC87D; }
+
+  /* ── ABOUT ARC ── */
+  .about-bg {
+    background: rgba(245,240,232,0.03);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 8px;
+    padding: 20px 14px;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: rgba(245,240,232,0.65);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  .pillar-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .pillar-dot.coral { background: var(--coral); }
+
+  .pillar-text {
+    font-size: 15px;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.6;
+  }
+
+  .pillar-text strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 16px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-size: 13px;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-divider {
+    width: 60px;
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    margin: 20px auto;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: rgba(74,98,116,0.7);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── UTILITY ── */
+  .gold-rule {
+    width: 48px;
+    border: none;
+    border-top: 2px solid var(--gold);
+    margin: 20px 0 28px;
+  }
+
+  @media (min-width: 600px) {
+    nav { flex-direction: row; justify-content: space-between; padding: 18px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Marketing Vault — Confidential · Built by JRZ Consulting Solutions</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#vault">Vault Docs</a></li>
+    <li><a href="./icp/index.html">ICP</a></li>
+    <li><a href="./brand/index.html">Brand Guide</a></li>
+    <li><a href="./p4p/index.html">Putts for Progress</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Vault · 2026</div>
+  <h1>Where <em>Feel-Good</em><br>Meets Real Change</h1>
+  <p class="hero-sub">A complete marketing infrastructure for The Arc of DFW Area — built to speak to every audience, activate every donor, and amplify every life changed.</p>
+
+  <div class="dual-bar">
+    <div class="dual-bar-half donor">⬤ &nbsp;Donor &amp; Corporate Strategy</div>
+    <div class="dual-bar-half client">⬤ &nbsp;Client &amp; Mission Advocacy</div>
+  </div>
+
+  <p class="hero-meta">Prepared by JRZ Consulting Solutions &nbsp;·&nbsp; Irving, TX</p>
+</section>
+
+<!-- ABOUT ARC -->
+<div class="about-bg" id="about">
+  <div class="section">
+    <span class="eyebrow">Who They Are</span>
+    <h2 class="section-title">Over 50 Years of<br><em>Advocacy Without Apology</em></h2>
+    <hr class="gold-rule">
+    <p class="section-body">Founded in 1971, The Arc of DFW Area has grown from a single Birdville town hall to the leading all-volunteer advocacy organization for individuals with intellectual and developmental disabilities across the entire DFW Metroplex. They don't provide direct services — they do something harder. They change the systems, the laws, and the culture that shape every life with IDD.</p>
+
+    <div class="mission-block">
+      <p>"The Arc of DFW Area empowers individuals with intellectual and developmental disabilities and their families to live life as they define it through advocacy, awareness, training, and support."</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-num">55+</div>
+        <div class="stat-label">Years Serving the IDD Community</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Volunteer-Powered Organization</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Core Advocacy Priorities</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Active Community Programs</div>
+      </div>
+    </div>
+
+    <span class="eyebrow" style="margin-top:10px;">5 Advocacy Pillars</span>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-dot"></div>
+        <div class="pillar-text"><strong>Independence</strong> Housing, transportation, HCBS funding, and integrated employment for individuals with IDD.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-dot"></div>
+        <div class="pillar-text"><strong>Education</strong> Inclusive funding models, classroom safety, and technology to support students with disabilities.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-dot"></div>
+        <div class="pillar-text"><strong>Civil Rights</strong> Anti-discrimination policies, abuse safeguards, and justice system reform for the IDD community.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-dot"></div>
+        <div class="pillar-text"><strong>Support Systems</strong> Wages for direct support professionals and resources for families and caregivers.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-dot coral"></div>
+        <div class="pillar-text"><strong>Health &amp; Safety</strong> Mental health access, Medicaid expansion, emergency preparedness tailored to individuals with IDD.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- DUAL AUDIENCE EXPLAINER -->
+<div class="section">
+  <span class="eyebrow">The Marketing Insight</span>
+  <h2 class="section-title">Two Audiences.<br><em>One Powerful Story.</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">The Arc runs two parallel conversations simultaneously — one with the people who fund the mission, and one with the people the mission exists to serve. These audiences have completely different motivations, language, and conversion triggers. This vault is built to honor both without confusing them.</p>
+
+  <div class="dual-cards">
+    <div class="audience-card donor-card">
+      <span class="card-label donor-label">Audience 01 — Donors &amp; Corporate Partners</span>
+      <h3>They're buying belonging, visibility, and purpose.</h3>
+      <p>Corporate sponsors want ESG alignment, employee engagement, and brand association with a cause their community respects. Individual donors want to feel like their giving matters — they want to see the face behind the mission, not just a tax receipt. Both audiences respond to story, social proof, and the sense that they are part of something lasting.</p>
+    </div>
+    <div class="audience-card client-card">
+      <span class="card-label client-label">Audience 02 — Individuals with IDD &amp; Families</span>
+      <h3>They're navigating a system that was not built for them.</h3>
+      <p>Families with IDD members are often overwhelmed, undertrained, and underresourced. They need a navigator — someone who speaks their language, knows the Medicaid waitlists, the IEP process, the housing gaps. The Arc's communication to this audience must be warm, clear, and empowering — never clinical, never condescending.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- VAULT NAV -->
+<div class="section" id="vault">
+  <span class="eyebrow">Marketing Vault</span>
+  <h2 class="section-title">Your Complete<br><em>Marketing Infrastructure</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">Five strategic documents. One unified system. Navigate each section below — built to be used by staff, board members, volunteers, and anyone creating content or outreach on behalf of The Arc of DFW Area.</p>
+
+  <div class="vault-grid">
+
+    <a class="vault-card" href="./icp/index.html">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-gold">🎯</div>
+        <div class="vault-card-title">Ideal Client Profiles</div>
+        <span class="vault-card-tag tag-both">Dual Audience</span>
+      </div>
+      <p class="vault-card-desc">Three detailed ICPs — the Corporate Donor, the Individual Donor, and the IDD Family Member. Who they are, what they fear, what they need to hear, and how to reach them.</p>
+    </a>
+
+    <a class="vault-card" href="./brand/index.html">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-gold">✦</div>
+        <div class="vault-card-title">Brand Consistency &amp; Copy Guide</div>
+        <span class="vault-card-tag tag-gold">Voice &amp; Tone</span>
+      </div>
+      <p class="vault-card-desc">On-brand copy examples for email, social, event promotion, and donor outreach. Tone frameworks for both audiences. On-brand vs. off-brand examples. Built to be used by anyone writing for The Arc.</p>
+    </a>
+
+    <a class="vault-card" href="./p4p/index.html">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-coral">⛳</div>
+        <div class="vault-card-title">Putts for Progress 2026 — Campaign Plan</div>
+        <span class="vault-card-tag tag-event">Event Marketing</span>
+      </div>
+      <p class="vault-card-desc">Full campaign plan for the September Puttshack fundraiser — video script ideas, social content calendar, email cadence, sponsorship decks, and day-of logistics messaging. Built to beat 2025's numbers.</p>
+    </a>
+
+    <a class="vault-card" href="#" style="opacity:0.5; pointer-events:none;">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-slate">📅</div>
+        <div class="vault-card-title">Annual Marketing Roadmap</div>
+        <span class="vault-card-tag tag-both">Coming Soon</span>
+      </div>
+      <p class="vault-card-desc">A 12-month campaign calendar — awareness moments, giving days, advocacy pushes, and event marketing tied to The Arc's real schedule.</p>
+    </a>
+
+    <a class="vault-card" href="#" style="opacity:0.5; pointer-events:none;">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-slate">📣</div>
+        <div class="vault-card-title">Story Bank &amp; Advocacy Messaging</div>
+        <span class="vault-card-tag tag-coral">Coming Soon</span>
+      </div>
+      <p class="vault-card-desc">Real story frameworks for collecting, formatting, and deploying community testimonials. Advocacy message maps for legislative outreach, media, and social campaigns.</p>
+    </a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-sub">391 E. Las Colinas Blvd · Irving, TX 75039</div>
+  <hr class="footer-divider">
+  <div class="footer-note">Built &amp; designed by JRZ Consulting Solutions &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Confidential</div>
+</footer>
+
+</body>
+</html>
