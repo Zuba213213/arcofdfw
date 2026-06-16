@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TX Outreach Kit — Putts for Progress 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A; --ivory: #F5F0E8; --coral: #C95B38; --teal: #2A7B6F; --teal-lt: #4FBFB0; --slate: #4A6274; --white: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 17px; line-height: 1.75; }
+  .topbar { background: var(--teal); color: var(--white); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
+  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; }
+  .nav-back:hover { color: var(--gold); }
+  .hero { padding: 60px 24px 48px; text-align: center; border-bottom: 3px solid var(--teal); background: radial-gradient(ellipse at 50% 0%, rgba(42,123,111,0.1) 0%, transparent 65%); }
+  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-lt); border: 1px solid var(--teal-lt); padding: 4px 14px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 16px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { max-width: 580px; margin: 0 auto; color: rgba(245,240,232,0.78); font-size: 17px; }
+  .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 24px; overflow-x: auto; white-space: nowrap; }
+  .section-nav a { display: inline-block; padding: 14px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 52px 24px; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4.5vw, 36px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  h2.sec-title em { color: var(--gold); font-style: italic; }
+  .gold-rule { width: 44px; border: none; border-top: 2px solid var(--gold); margin: 0 0 28px; }
+  .teal-rule { width: 44px; border: none; border-top: 2px solid var(--teal-lt); margin: 0 0 28px; }
+  .body-text { color: rgba(245,240,232,0.8); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
+  .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
+
+  /* COPY BLOCKS */
+  .copy-block { border-radius: 8px; padding: 24px 22px; margin-bottom: 16px; position: relative; }
+  .copy-block-teal { background: rgba(42,123,111,0.1); border: 1px solid rgba(79,191,176,0.3); border-left: 3px solid var(--teal-lt); }
+  .copy-block-gold { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); border-left: 3px solid var(--gold); }
+  .copy-block-coral { background: rgba(201,91,56,0.07); border: 1px solid rgba(201,91,56,0.25); border-left: 3px solid var(--coral); }
+  .copy-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+  .label-teal { color: var(--teal-lt); }
+  .label-gold { color: var(--gold); }
+  .label-coral { color: var(--coral); }
+  .copy-text { font-size: 16px; line-height: 1.75; color: rgba(245,240,232,0.88); white-space: pre-line; }
+  .copy-note { font-size: 13px; color: var(--slate); margin-top: 12px; font-style: italic; }
+
+  .copy-btn { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(245,240,232,0.6); cursor: pointer; }
+  .copy-btn:hover { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.3); color: var(--gold); }
+
+  /* ORG LIST */
+  .org-grid { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+  .org-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(79,191,176,0.18); border-radius: 8px; padding: 18px 20px; }
+  .org-name { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); margin-bottom: 4px; }
+  .org-type { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 6px; }
+  .org-desc { font-size: 14px; color: rgba(245,240,232,0.68); line-height: 1.6; }
+
+  /* FLYER PREVIEW */
+  .flyer-preview { background: var(--ivory); border-radius: 10px; overflow: hidden; margin: 24px 0; color: var(--navy); }
+  .flyer-header { background: var(--navy); padding: 28px 24px; text-align: center; border-bottom: 4px solid var(--gold); }
+  .flyer-header h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 4px; }
+  .flyer-header em { color: var(--gold); font-style: italic; }
+  .flyer-header .subtitle { font-size: 14px; color: rgba(245,240,232,0.7); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 6px; }
+  .flyer-body { padding: 28px 24px; }
+  .flyer-body h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 12px; }
+  .flyer-body p { font-size: 15px; color: #2A3A4A; line-height: 1.7; margin-bottom: 14px; }
+  .flyer-details { background: rgba(13,27,42,0.06); border-radius: 6px; padding: 16px 18px; margin: 16px 0; }
+  .flyer-detail { display: flex; gap: 10px; font-size: 15px; color: var(--navy); margin-bottom: 6px; }
+  .flyer-detail:last-child { margin-bottom: 0; }
+  .flyer-icon { flex-shrink: 0; }
+  .flyer-cta { background: var(--gold); text-align: center; padding: 18px 24px; }
+  .flyer-cta p { font-size: 14px; font-weight: 700; color: var(--navy); letter-spacing: 0.06em; }
+  .flyer-cta .url { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); }
+  .flyer-footer { padding: 16px 24px; text-align: center; font-size: 13px; color: var(--slate); border-top: 1px solid rgba(13,27,42,0.1); }
+
+  footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(201,168,76,0.2); padding: 32px 24px; text-align: center; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
+  .footer-note { font-size: 12px; color: var(--slate); }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; }
+  .back-link:hover { color: var(--gold); }
+  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; } }
+</style>
+</head>
+<body>
+<div class="topbar">TX Special Needs Outreach Kit · Putts for Progress 2026 · The Arc of DFW Area</div>
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <a class="nav-back" href="../arc-vault-home.html">← Back to Vault Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Outreach Kit · Texas IDD Community</div>
+  <h1>Spread the Word<br>to the <em>People Who Need It</em></h1>
+  <p class="hero-sub">Ready-to-send copy for schools, parent groups, therapy centers, and disability organizations across Texas. Every template requires zero editing — just copy, paste, and send.</p>
+</section>
+
+<div class="section-nav">
+  <a href="#how">How to Use</a>
+  <a href="#targets">Target Orgs</a>
+  <a href="#flyer">Event Flyer</a>
+  <a href="#email">Email Templates</a>
+  <a href="#social">Social Copy</a>
+  <a href="#script">Phone Script</a>
+</div>
+
+<!-- HOW TO USE -->
+<div class="wrap" id="how">
+  <span class="eyebrow">How to Use This Kit</span>
+  <h2 class="sec-title">Zero Friction.<br><em>Maximum Reach.</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">This kit is designed so that any Arc member, board member, or volunteer can send outreach to a Texas special needs organization in under 5 minutes. No customization required — the copy is already written, the ask is already framed, and the recipient can share it with their community with one forward or copy-paste.</p>
+  <p class="body-text">The ask is not for a donation. It is a community awareness partnership — "share this with your families." Zero cost to them. Massive reach for The Arc.</p>
+
+  <div style="background:rgba(42,123,111,0.1);border:1px solid rgba(79,191,176,0.25);border-radius:8px;padding:22px 20px;margin:24px 0;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-lt);margin-bottom:12px;">The 3-Step Outreach Process</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">1.</span>Find the contact (use the Target Org list below)</div>
+      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">2.</span>Copy the email template that matches their org type</div>
+      <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">3.</span>Paste it, add their name and org, hit send</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TARGET ORGS -->
+<div class="wrap" id="targets">
+  <span class="eyebrow">Priority Outreach Targets</span>
+  <h2 class="sec-title">Who to<br><em>Reach First</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">These are the highest-leverage contacts in the Texas IDD ecosystem. One email to the right person in each category can reach hundreds of families.</p>
+
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-type">DFW School Districts — SPED Departments</div>
+      <div class="org-name">DISD, FWISD, PISD, Carroll ISD, HEB ISD, Grapevine-Colleyville ISD, Richardson ISD, Garland ISD, Arlington ISD</div>
+      <div class="org-desc">Contact the Special Education Director at each district. Ask them to share P4P with their parent communication channels and special education family networks. One email from a SPED director reaches hundreds of families.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-type">Parent Support Organizations</div>
+      <div class="org-name">Texas Parent to Parent · Down Syndrome Guild of Dallas · FEAT of North Texas · Autism Speaks DFW</div>
+      <div class="org-desc">These organizations run active parent listservs, Facebook groups, and email newsletters. A single share or forward from their leadership reaches their entire membership instantly.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-type">Disability Advocacy &amp; Service Organizations</div>
+      <div class="org-name">United Cerebral Palsy Texas · Easterseals Texas · DARS (Disability and Rehab Services) · Navigate Life Texas · Special Olympics Texas</div>
+      <div class="org-desc">Peer organizations in the IDD ecosystem. Outreach should be framed as community partnership and awareness — not competition. "We want your families to know about this event" is the right framing.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-type">Therapy Centers &amp; Clinical Practices</div>
+      <div class="org-name">ABA therapy centers, pediatric occupational therapy practices, speech therapy groups, developmental pediatricians across DFW</div>
+      <div class="org-desc">Clinicians see IDD families weekly. A flyer in the waiting room or a social media share from a therapy center's account reaches families at a high-trust moment.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-type">Online Parent Communities</div>
+      <div class="org-name">Facebook Groups: "DFW Special Needs Parents," "North Texas Autism Moms," "IDD Families Dallas Fort Worth," Nextdoor disability community boards</div>
+      <div class="org-desc">These groups are organic, high-trust, and actively looking for local events and resources. A post from an Arc member or admin share can generate significant ticket sales quickly.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EVENT FLYER -->
+<div class="wrap" id="flyer">
+  <span class="eyebrow">Shareable Event Flyer</span>
+  <h2 class="sec-title">The Event<br><em>At a Glance</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">This flyer is designed to be shared digitally — as a screenshot, a PDF attachment, or embedded in an email. It contains everything a family needs to decide to come.</p>
+
+  <div class="flyer-preview">
+    <div class="flyer-header">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">The Arc of DFW Area Presents</div>
+      <h3>Putts for Progress <em>2026</em></h3>
+      <div class="subtitle">An Evening of Mini Golf, Community &amp; Real Impact</div>
+    </div>
+    <div class="flyer-body">
+      <h4>Join us this September in Addison</h4>
+      <p>The Arc of DFW Area — 55 years of advocacy for individuals with intellectual and developmental disabilities — is hosting our annual fundraising event at Puttshack Addison. A fun night for a cause that matters in your community.</p>
+      <div class="flyer-details">
+        <div class="flyer-detail"><span class="flyer-icon">📅</span><strong>Date:</strong>&nbsp;[DATE] · September 2026</div>
+        <div class="flyer-detail"><span class="flyer-icon">📍</span><strong>Location:</strong>&nbsp;Puttshack Addison — 5100 Belt Line Rd, Addison, TX 75254</div>
+        <div class="flyer-detail"><span class="flyer-icon">🎟</span><strong>General Admission:</strong>&nbsp;$50 per person · Includes heavy hors d'oeuvres + non-alcoholic drinks</div>
+        <div class="flyer-detail"><span class="flyer-icon">⛳</span><strong>Tournament Entry:</strong>&nbsp;$75 individual / $225 foursome · Prizes for top scores</div>
+        <div class="flyer-detail"><span class="flyer-icon">🍹</span><strong>Full cash bar</strong>&nbsp;available</div>
+      </div>
+      <p>All proceeds support The Arc of DFW Area's advocacy programs for individuals with IDD and their families across the DFW Metroplex.</p>
+    </div>
+    <div class="flyer-cta">
+      <p>Register &amp; Learn More:</p>
+      <div class="url">thearcofdfw.org</div>
+    </div>
+    <div class="flyer-footer">The Arc of DFW Area · 391 E. Las Colinas Blvd · Irving, TX 75039 · info@thearcofdfw.org · (903) 776-4955</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EMAIL TEMPLATES -->
+<div class="wrap" id="email">
+  <span class="eyebrow">Email Templates</span>
+  <h2 class="sec-title">Copy. Paste.<br><em>Send.</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">Three templates for three different recipient types. Replace bracketed fields only — everything else is ready to go.</p>
+
+  <div class="copy-block copy-block-teal">
+    <div class="copy-label label-teal">Template A — SPED Directors &amp; School Districts</div>
+    <div class="copy-text">Subject: Sharing a DFW Community Event for Your IDD Families
+
+Hi [Name],
+
+My name is [Your Name], and I'm reaching out on behalf of The Arc of DFW Area — a 55-year-old, all-volunteer nonprofit advocating for individuals with intellectual and developmental disabilities across the DFW Metroplex.
+
+This September, we're hosting Putts for Progress 2026 at Puttshack in Addison — a fundraising event that brings together the DFW community in support of IDD advocacy, training, and family resources.
+
+I'm writing to ask if you'd be willing to share this event with your special education families through your parent communication channels. We know your families are always looking for community events that feel relevant to their experience — and this one is.
+
+Event details:
+📅 Date: [DATE] · September 2026
+📍 Puttshack Addison, 5100 Belt Line Rd, Addison TX
+🎟 $50 general / $75 tournament entry
+🌐 thearcofdfw.org
+
+A shareable flyer is attached. There is no cost or commitment for your school — just a 30-second share with your families.
+
+Thank you for everything you do for our community's students. We'd love to see some of your families in the room this September.
+
+Warm regards,
+[Your Name]
+The Arc of DFW Area
+info@thearcofdfw.org | (903) 776-4955</div>
+    <p class="copy-note">Best sent to: Special Education Director, Parent Liaison, or Community Outreach Coordinator at each district.</p>
+  </div>
+
+  <div class="copy-block copy-block-gold">
+    <div class="copy-label label-gold">Template B — Parent Organizations &amp; Advocacy Groups</div>
+    <div class="copy-text">Subject: Would You Share This With Your Community? — P4P 2026
+
+Hi [Name / Organization Name],
+
+I hope this finds you well. I'm reaching out from The Arc of DFW Area — fellow travelers in the DFW IDD community.
+
+We're hosting Putts for Progress 2026 this September at Puttshack in Addison, and we'd love your help spreading the word to your members and families.
+
+This event raises money for advocacy work that benefits the entire IDD community in DFW — housing, healthcare access, civil rights, education funding, and caregiver support. The families you serve are the families this work is for.
+
+If you're able to share the event with your email list, Facebook group, or newsletter, we'd be deeply grateful. We can provide a copy-paste social post, a shareable flyer, or whatever format works best for your community.
+
+Event info:
+📅 [DATE] · September 2026
+📍 Puttshack Addison, Addison TX
+🎟 $50 General / $75 Tournament
+🌐 thearcofdfw.org
+
+We believe in the work your organization does. Thank you for helping amplify ours.
+
+With gratitude,
+[Your Name]
+The Arc of DFW Area</div>
+    <p class="copy-note">Best sent to: Executive Directors, Program Managers, or Community Coordinators at peer advocacy orgs.</p>
+  </div>
+
+  <div class="copy-block copy-block-coral">
+    <div class="copy-label label-coral">Template C — Therapy Centers &amp; Clinical Practices</div>
+    <div class="copy-text">Subject: Community Event for Your IDD Families — September 2026
+
+Hi [Name],
+
+My name is [Your Name] from The Arc of DFW Area. We're a nonprofit that has advocated for individuals with intellectual and developmental disabilities in DFW since 1971.
+
+We're hosting Putts for Progress 2026 in September at Puttshack in Addison — a fun community fundraiser for IDD advocacy. We think many of your families would enjoy attending, and all proceeds support the advocacy work that creates better systems for the individuals you serve.
+
+Would you be open to posting our event flyer in your waiting area or sharing it with your patient families? It's a fun night out for a meaningful cause — and it directly supports the DFW community you work in.
+
+Flyer and digital assets attached.
+
+Details: [DATE] · Puttshack Addison · $50 General / $75 Tournament · thearcofdfw.org
+
+Thank you for considering it — and for the work you do every day.
+
+Best,
+[Your Name]
+The Arc of DFW Area</div>
+    <p class="copy-note">Best sent to: Practice Manager, Clinical Director, or Front Desk Coordinator at ABA centers, OT practices, speech therapy groups.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SOCIAL COPY FOR ORG PARTNERS -->
+<div class="wrap" id="social">
+  <span class="eyebrow">Social Copy for Partner Orgs</span>
+  <h2 class="sec-title">Copy-Paste Posts<br><em>For Your Partners</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">Send these directly to partner organizations — ready for them to post on their own Facebook or Instagram with zero editing required.</p>
+
+  <div class="copy-block copy-block-teal">
+    <div class="copy-label label-teal">Facebook Post — For Partner Orgs to Share</div>
+    <div class="copy-text">We wanted to share this with our community 💙
+
+The Arc of DFW Area — a 55-year-old advocacy organization for individuals with intellectual and developmental disabilities — is hosting Putts for Progress 2026 this September at Puttshack in Addison.
+
+This event raises funds for advocacy, training, and family resources for the IDD community right here in DFW. If you or someone you know would enjoy a fun night of mini golf while supporting an incredible cause, tickets are $50.
+
+📅 [DATE]
+📍 Puttshack Addison — 5100 Belt Line Rd, Addison TX
+🎟 $50 General / $75 Tournament
+🌐 thearcofdfw.org
+
+Share this with a family who needs a night out. 🙌
+
+#ArcDFW #PuttsForProgress #IDD #DFWCommunity #DisabilityAdvocacy</div>
+  </div>
+
+  <div class="copy-block copy-block-gold">
+    <div class="copy-label label-gold">Short Version — For Text Messages or WhatsApp Groups</div>
+    <div class="copy-text">Hey — wanted to share this: The Arc of DFW is hosting Putts for Progress at Puttshack Addison in September. Fun night out + supports IDD advocacy in DFW. $50 general / $75 tournament. Details at thearcofdfw.org. Pass it along if you know someone who'd be interested!</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PHONE SCRIPT -->
+<div class="wrap" id="script">
+  <span class="eyebrow">Phone / Voicemail Script</span>
+  <h2 class="sec-title">When You're<br><em>Calling Directly</em></h2>
+  <hr class="teal-rule">
+  <p class="body-text">For warm calls to SPED directors, org leaders, or community contacts you already know. Keep it under 90 seconds.</p>
+
+  <div class="copy-block copy-block-teal">
+    <div class="copy-label label-teal">Phone Script — Warm Call to Known Contact</div>
+    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area — [how you know them if applicable].
+
+I'm calling about our annual fundraiser, Putts for Progress — it's this September at Puttshack in Addison. Last year we raised $34,000 in one evening for IDD advocacy in DFW, and we're aiming higher this year.
+
+I'm reaching out specifically because I think your [families / members / community] would be interested in attending, and I was hoping you'd be willing to share the event through your channels — email list, Facebook group, whatever works for you.
+
+I'll send you a copy-paste email template and a shareable flyer so all you'd have to do is forward it. Literally five minutes of your time could put this event in front of a lot of families who'd love to hear about it.
+
+Can I send that over? [Get email] — great. I'll send it today. Thank you so much, [Name] — really appreciate it.
+
+Talk soon.</div>
+  </div>
+
+  <div class="copy-block copy-block-gold">
+    <div class="copy-label label-gold">Voicemail Version — If They Don't Pick Up</div>
+    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area. I'm calling about our Putts for Progress fundraiser this September — an event that last year raised $34,000 for IDD advocacy in DFW.
+
+I was hoping to share it with your community and was wondering if you'd be open to a quick five-minute conversation. I'll send an email too with all the details and copy-paste assets — easy to share if it feels right for your families.
+
+You can reach me at [number] or reply to my email. Thanks so much, [Name] — hope to connect soon.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-note">TX Special Needs Outreach Kit · Putts for Progress 2026 · Built by JRZ Consulting Solutions · 2026</div>
+  <a class="back-link" href="../arc-vault-home.html">← Return to Vault Home</a>
+</footer>
+</body>
+</html>
