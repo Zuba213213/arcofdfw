@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Consistency Guide — The Arc of DFW Area</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A;
+    --gold: #C9A84C;
+    --gold-lt: #E8D49A;
+    --ivory: #F5F0E8;
+    --coral: #C95B38;
+    --teal: #2A7B6F;
+    --teal-lt: #4FBFB0;
+    --slate: #4A6274;
+    --white: #FFFFFF;
+    --green-yes: #3D7A3D;
+    --red-no: #8B2E2E;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--navy);
+    color: var(--ivory);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .topbar {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  nav {
+    background: var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
+  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; letter-spacing: 0.08em; }
+  .nav-back:hover { color: var(--gold); }
+
+  .hero {
+    padding: 60px 24px 48px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 4px 14px; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--white); margin-bottom: 16px;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { max-width: 580px; margin: 0 auto; color: rgba(245,240,232,0.75); font-size: 17px; }
+
+  /* SECTION NAV */
+  .section-nav {
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 0 24px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .section-nav a {
+    display: inline-block;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 52px 24px; }
+
+  .eyebrow {
+    display: block; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  h2.sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4.5vw, 36px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.2; margin-bottom: 18px;
+  }
+  h2.sec-title em { color: var(--gold); font-style: italic; }
+  .gold-rule { width: 44px; border: none; border-top: 2px solid var(--gold); margin: 0 0 28px; }
+
+  .body-text {
+    color: rgba(245,240,232,0.8);
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
+
+  /* COLOR SWATCHES */
+  .swatch-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0; }
+  .swatch {
+    flex: 1; min-width: 130px;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .swatch-color { height: 70px; }
+  .swatch-info { padding: 12px 14px; background: rgba(255,255,255,0.04); }
+  .swatch-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+  .swatch-hex { font-size: 12px; color: var(--slate); font-family: monospace; letter-spacing: 0.06em; }
+  .swatch-role { font-size: 11px; color: rgba(245,240,232,0.55); margin-top: 4px; line-height: 1.4; }
+
+  /* VOICE PRINCIPLES */
+  .voice-grid { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+  .voice-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 8px;
+    padding: 22px 20px;
+  }
+  .voice-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .voice-card p { font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.65; }
+
+  /* YES/NO EXAMPLES */
+  .yesno { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+  .yes-block, .no-block {
+    border-radius: 6px;
+    padding: 18px 18px 18px 52px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .yes-block {
+    background: rgba(61,122,61,0.12);
+    border: 1px solid rgba(61,122,61,0.35);
+    color: rgba(245,240,232,0.88);
+  }
+  .no-block {
+    background: rgba(139,46,46,0.1);
+    border: 1px solid rgba(139,46,46,0.3);
+    color: rgba(245,240,232,0.7);
+    text-decoration-line: none;
+  }
+  .yes-block::before {
+    content: '✓';
+    position: absolute;
+    left: 18px; top: 17px;
+    font-size: 18px; font-weight: 700;
+    color: #5CBF5C;
+  }
+  .no-block::before {
+    content: '✗';
+    position: absolute;
+    left: 18px; top: 17px;
+    font-size: 18px; font-weight: 700;
+    color: #C95B5B;
+  }
+  .yn-label {
+    display: block; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .yn-label-yes { color: #5CBF5C; }
+  .yn-label-no { color: #C95B5B; }
+
+  /* EMAIL CADENCE */
+  .email-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .email-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: rgba(201,168,76,0.05);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .email-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--white);
+  }
+  .email-card-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 2px;
+  }
+  .tag-donor { background: rgba(201,168,76,0.18); color: var(--gold); }
+  .tag-corp { background: rgba(201,91,56,0.18); color: var(--coral); }
+  .tag-family { background: rgba(79,191,176,0.18); color: var(--teal-lt); }
+  .tag-event { background: rgba(100,160,100,0.2); color: #7DC87D; }
+
+  .email-card-body { display: none; padding: 22px 20px; }
+  .email-card-body.open { display: block; }
+
+  .email-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .email-key { color: var(--gold); font-weight: 700; }
+  .email-val { color: rgba(245,240,232,0.8); }
+
+  .email-body-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.82);
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 18px 18px;
+    border-left: 3px solid var(--gold);
+    white-space: pre-line;
+  }
+
+  /* SOCIAL COPY */
+  .social-card {
+    border-radius: 8px;
+    padding: 22px 20px;
+    margin-bottom: 14px;
+  }
+  .social-card-gold { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); }
+  .social-card-coral { background: rgba(201,91,56,0.07); border: 1px solid rgba(201,91,56,0.25); }
+  .social-card-teal { background: rgba(42,123,111,0.1); border: 1px solid rgba(79,191,176,0.25); }
+
+  .social-platform {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .sp-gold { color: var(--gold); }
+  .sp-coral { color: var(--coral); }
+  .sp-teal { color: var(--teal-lt); }
+
+  .social-copy {
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.88);
+  }
+  .social-hashtags {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--slate);
+    letter-spacing: 0.02em;
+  }
+
+  /* TYPOGRAPHY */
+  .type-sample {
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 24px 22px;
+    margin-bottom: 14px;
+    background: rgba(255,255,255,0.03);
+  }
+  .type-role { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--slate); margin-bottom: 10px; }
+  .type-spec { font-size: 12px; color: var(--slate); margin-top: 8px; font-family: monospace; }
+
+  footer {
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 32px 24px; text-align: center;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
+  .footer-note { font-size: 12px; color: var(--slate); }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; }
+  .back-link:hover { color: var(--gold); }
+
+  @media (min-width: 600px) {
+    nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Brand Consistency Guide · The Arc of DFW Area · JRZ Consulting Solutions</div>
+
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <a class="nav-back" href="../arc-vault-home.html">← Back to Vault Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Vault — Document 02</div>
+  <h1>Brand Consistency<br>&amp; <em>Copy Guide</em></h1>
+  <p class="hero-sub">The voice, tone, color, and copy frameworks that make every piece of Arc communication feel like it came from the same place — and means it.</p>
+</section>
+
+<div class="section-nav">
+  <a href="#voice">Voice &amp; Tone</a>
+  <a href="#colors">Colors</a>
+  <a href="#type">Typography</a>
+  <a href="#yesno">On-Brand Examples</a>
+  <a href="#email">Email Templates</a>
+  <a href="#social">Social Copy</a>
+</div>
+
+<!-- ═══ VOICE & TONE ═══ -->
+<div class="wrap" id="voice">
+  <span class="eyebrow">Section 01</span>
+  <h2 class="sec-title">Voice &amp; <em>Tone</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">The Arc of DFW Area speaks from a position of earned authority and deep human care. This is not a brand that shouts. It doesn't need to. Fifty-five years of showing up for families no one else was fighting for gives this organization a quiet, powerful credibility — and every piece of copy should honor that.</p>
+  <p class="body-text">The voice is different depending on which audience you're speaking to, but the core character never changes: warm, clear, purposeful, and deeply human.</p>
+
+  <div class="voice-grid">
+    <div class="voice-card">
+      <h3>Warm — Not Sentimental</h3>
+      <p>The Arc's tone is filled with genuine care for the people it serves. But it doesn't wallow in pity or use disability as a prop. The families and individuals The Arc serves are resilient, capable, and deserving of dignity — the copy reflects that. Emotion earns its place through specificity, not manipulation.</p>
+    </div>
+    <div class="voice-card">
+      <h3>Clear — Not Clinical</h3>
+      <p>The systems surrounding IDD are complex. The Arc's language is not. Whether explaining a Medicaid waitlist or a sponsorship package, write in plain language that a parent, a donor, or a CEO can absorb quickly. Jargon is only used when it serves the reader — and always explained when it does.</p>
+    </div>
+    <div class="voice-card">
+      <h3>Purposeful — Not Pushy</h3>
+      <p>Every communication has a clear reason to exist. Every CTA asks for one thing. The Arc does not use scarcity tactics, guilt, or high-pressure language. It leads with value, shares proof, and trusts the reader to respond. Because they will, when the story is told well.</p>
+    </div>
+    <div class="voice-card">
+      <h3>Credible — Not Boastful</h3>
+      <p>55 years. 100% volunteer-run. Real families, real outcomes, real advocacy wins. The Arc's credibility lives in its track record, not its marketing language. Let the facts do the work. Lead with them, state them simply, and let readers draw their own conclusions about the organization's integrity.</p>
+    </div>
+    <div class="voice-card">
+      <h3>Dual-Tuned: Donor vs. Family</h3>
+      <p>Donor copy is confident, community-oriented, and impact-focused — it speaks to belonging, visibility, and legacy. Family and client copy is warm, practical, and empowering — it speaks to navigation, knowledge, and not being alone. These two tones should never be mixed in the same piece of communication.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ COLORS ═══ -->
+<div class="wrap" id="colors">
+  <span class="eyebrow">Section 02</span>
+  <h2 class="sec-title">Color <em>Palette</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">The Arc's official brand colors are gold and navy. The marketing vault expands this into a working palette that assigns specific emotional jobs to each color — ensuring consistency across all materials.</p>
+
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0D1B2A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Navy</div>
+        <div class="swatch-hex">#0D1B2A</div>
+        <div class="swatch-role">Authority, trust, professionalism. Backgrounds, headers.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C9A84C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Arc Gold</div>
+        <div class="swatch-hex">#C9A84C</div>
+        <div class="swatch-role">Warmth, legacy, impact. Primary accent, donor communications, CTAs.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C95B38;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mission Coral</div>
+        <div class="swatch-hex">#C95B38</div>
+        <div class="swatch-role">Humanity, urgency, heart. IDD family communications, individual donor stories.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2A7B6F;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Advocacy Teal</div>
+        <div class="swatch-hex">#2A7B6F</div>
+        <div class="swatch-role">Empowerment, growth, community. Self-Determination Group, advocacy programs.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F5F0E8;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Ivory</div>
+        <div class="swatch-hex">#F5F0E8</div>
+        <div class="swatch-role">Approachability, readability. Body text on dark, light-mode section backgrounds.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="body-text" style="margin-top:8px;"><strong style="color:var(--white)">Color Assignment Rule:</strong> Gold = Donor/Corporate communications. Coral = Individual donor and human-story content. Teal = IDD families and client-facing programs. Navy = Always the foundation. Never use gold and coral together in the same headline — they represent different audiences and should stay in their lanes.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ TYPOGRAPHY ═══ -->
+<div class="wrap" id="type">
+  <span class="eyebrow">Section 03</span>
+  <h2 class="sec-title">Typography</h2>
+  <hr class="gold-rule">
+  <p class="body-text">Two typefaces. Used consistently, they give every Arc communication a recognizable, elevated identity without ever looking templated.</p>
+
+  <div class="type-sample">
+    <div class="type-role">Display / Headlines — Playfair Display</div>
+    <div style="font-family:'Playfair Display',serif; font-size:clamp(28px,5vw,42px); color:var(--white); line-height:1.15; margin:8px 0;">Every Life, <em style="color:var(--gold)">Self-Determined.</em></div>
+    <div class="type-spec">Playfair Display · Serif · Weight 700 for headlines, 400 italic for pull quotes · Google Fonts</div>
+    <p style="margin-top:12px; font-size:14px; color:rgba(245,240,232,0.65);">Use for: All major headlines, event titles, quote callouts, document titles. Creates gravitas and warmth simultaneously — reads like a publication that has been around a long time.</p>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-role">Body / UI — Lato</div>
+    <div style="font-family:'Lato',sans-serif; font-size:17px; color:rgba(245,240,232,0.85); line-height:1.75; margin:8px 0;">The Arc of DFW Area has been advocating for individuals with intellectual and developmental disabilities since 1971. We are 100% volunteer-run. Every dollar raised goes directly to programs, advocacy, and the families we serve.</div>
+    <div class="type-spec">Lato · Sans-serif · Weight 400 for body, 700 for labels/eyebrows · Google Fonts</div>
+    <p style="margin-top:12px; font-size:14px; color:rgba(245,240,232,0.65);">Use for: All body text, navigation, captions, data labels, email body. Clean and highly legible across all ages and screen sizes.</p>
+  </div>
+
+  <p class="body-text"><strong style="color:var(--white)">Minimum size rule:</strong> No body text below 16px in print or digital. Aim for 18px on screens. Many of The Arc's audience members are older adults or individuals with visual processing differences — readability is an accessibility issue, not just an aesthetic one.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ YES/NO EXAMPLES ═══ -->
+<div class="wrap" id="yesno">
+  <span class="eyebrow">Section 04</span>
+  <h2 class="sec-title">On-Brand vs.<br><em>Off-Brand</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">The fastest way to internalize The Arc's voice is to see what it is — and what it isn't. These examples cover email, social, and event copy.</p>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--white); font-size:20px; margin:28px 0 14px;">Talking About the People We Serve</h3>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"Maria's son has the right to a self-determined life. The Arc exists to make sure the systems around him make that possible."</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"These disabled individuals need our help. Without donors like you, they would have no hope."</div>
+  </div>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"Individuals with intellectual and developmental disabilities (IDD)"</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"the disabled," "special needs," "suffers from," "afflicted with"</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--white); font-size:20px; margin:28px 0 14px;">Donor Ask Language</h3>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"Your support makes the next family's first phone call a little less lonely. Give today."</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"DONATE NOW before it's too late! These families are counting on YOU!!!"</div>
+  </div>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"We've been at this for 55 years. We'll be here for 55 more. Your gift continues that work."</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"We desperately need your help to keep our organization alive."</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--white); font-size:20px; margin:28px 0 14px;">Corporate Partner Language</h3>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"Sponsoring The Arc of DFW is one of the most credible community investments a DFW business can make. Here's exactly what you receive at each tier."</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"Please consider donating to our cause. Any amount helps and we really appreciate your generosity."</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--white); font-size:20px; margin:28px 0 14px;">Event Promotion</h3>
+  <div class="yesno">
+    <div class="yes-block"><span class="yn-label yn-label-yes">On-Brand</span>"Putts for Progress. Mini golf. Real change. September 2026 at Puttshack Addison. $50 gets you in. Every dollar stays in DFW."</div>
+    <div class="no-block"><span class="yn-label yn-label-no">Off-Brand</span>"Come join us for our annual fundraising gala in support of our mission to empower individuals with intellectual and developmental disabilities across the greater Dallas-Fort Worth metropolitan area."</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ EMAIL TEMPLATES ═══ -->
+<div class="wrap" id="email">
+  <span class="eyebrow">Section 05</span>
+  <h2 class="sec-title">Email <em>Templates</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Ready-to-use email templates for key communication moments. Click any card to expand the full copy. Customize names, dates, and figures as needed.</p>
+
+  <!-- EMAIL 1 -->
+  <div class="email-card">
+    <div class="email-card-header" onclick="toggleEmail(this)">
+      <h3>Putts for Progress — Save the Date</h3>
+      <span class="email-card-tag tag-event">Event · All Audiences</span>
+    </div>
+    <div class="email-card-body">
+      <div class="email-meta">
+        <span class="email-key">Subject:</span><span class="email-val">⛳ It's Back. Putts for Progress 2026 — Mark Your Calendar</span>
+        <span class="email-key">Audience:</span><span class="email-val">General list — donors, members, community</span>
+        <span class="email-key">Timing:</span><span class="email-val">6–8 weeks before event</span>
+      </div>
+      <div class="email-body-text">Hi [First Name],
+
+Last year, a room full of DFW's most community-minded people came together at Puttshack in Addison — and together, they made a real difference for families navigating intellectual and developmental disabilities across the Metroplex.
+
+It's happening again.
+
+Putts for Progress 2026 returns this September. Same venue. More momentum. And a lot more to celebrate.
+
+📅 Date: [DATE]
+📍 Location: Puttshack Addison — 5100 Belt Line Rd, Addison, TX
+🎟 Tickets: $50 General / $75 with Tournament Entry
+🏆 Tournament Foursomes: $225
+
+Early tickets go fast. Reserve yours today and help us build on last year's success.
+
+[REGISTER NOW — BUTTON]
+
+This year, we're setting a bigger goal. And we need you in the room to hit it.
+
+With gratitude,
+[Name]
+The Arc of DFW Area</div>
+    </div>
+  </div>
+
+  <!-- EMAIL 2 -->
+  <div class="email-card">
+    <div class="email-card-header" onclick="toggleEmail(this)">
+      <h3>Corporate Sponsorship Outreach</h3>
+      <span class="email-card-tag tag-corp">Corporate Donors</span>
+    </div>
+    <div class="email-card-body">
+      <div class="email-meta">
+        <span class="email-key">Subject:</span><span class="email-val">A Sponsorship Opportunity Worth Talking About — Putts for Progress 2026</span>
+        <span class="email-key">Audience:</span><span class="email-val">Corporate decision-makers, CSR leads, business owners</span>
+        <span class="email-key">Timing:</span><span class="email-val">8–10 weeks before event, personalized outreach</span>
+      </div>
+      <div class="email-body-text">Hi [Name],
+
+I'm reaching out on behalf of The Arc of DFW Area — a 55-year-old, 100% volunteer-run nonprofit advocating for individuals with intellectual and developmental disabilities across the DFW Metroplex.
+
+This September, we're hosting Putts for Progress 2026 at Puttshack in Addison — an evening of tech-infused mini golf, great food, and genuine community investment. Last year's event raised $[X] and drew [X] attendees from across the DFW business and nonprofit community.
+
+We're inviting a select group of corporate partners to help make this year even bigger.
+
+Sponsorship levels start at $2,500 and include:
+→ Brand visibility on all event materials and social promotion
+→ Reserved team entry in the tournament
+→ Recognition from the stage at the event
+→ A compelling, shareable story of community leadership for your team
+
+[COMPANY NAME]'s presence at this event tells DFW that you invest in the community you do business in. That matters — to your customers, your employees, and the families we serve.
+
+I'd love 20 minutes to walk you through the sponsorship packages. What does your schedule look like this week?
+
+[Name]
+The Arc of DFW Area</div>
+    </div>
+  </div>
+
+  <!-- EMAIL 3 -->
+  <div class="email-card">
+    <div class="email-card-header" onclick="toggleEmail(this)">
+      <h3>Post-Event Thank You — Individual Donors</h3>
+      <span class="email-card-tag tag-donor">Individual Donors</span>
+    </div>
+    <div class="email-card-body">
+      <div class="email-meta">
+        <span class="email-key">Subject:</span><span class="email-val">You Were Part of Something Real Last Night</span>
+        <span class="email-key">Audience:</span><span class="email-val">Event attendees and donors</span>
+        <span class="email-key">Timing:</span><span class="email-val">24–48 hours after event</span>
+      </div>
+      <div class="email-body-text">Hi [First Name],
+
+Last night, you showed up. And it meant something.
+
+Together, the Putts for Progress 2026 community raised $[TOTAL] for families navigating intellectual and developmental disabilities across DFW. Every dollar stays local. Every dollar funds advocacy, training, and community — for the families who need it most.
+
+You were part of that.
+
+Here's where the money goes:
+→ A Look Ahead Conference Series — free expert training for families and caregivers
+→ Self-Determination Group — peer-led community for individuals with IDD ages 14+
+→ Legislative advocacy — fighting for housing, healthcare, and civil rights at the state level
+
+We'll be sharing a full recap and impact update in the coming weeks. But today, we just wanted to say:
+
+Thank you. From every family that needed someone in their corner — and found us.
+
+With deep gratitude,
+[Name]
+The Arc of DFW Area
+
+P.S. If you'd like to stay involved year-round, consider becoming a member. It's the best way to stay in the fight with us. [MEMBERSHIP LINK]</div>
+    </div>
+  </div>
+
+  <!-- EMAIL 4 -->
+  <div class="email-card">
+    <div class="email-card-header" onclick="toggleEmail(this)">
+      <h3>Family Resource Welcome Email</h3>
+      <span class="email-card-tag tag-family">IDD Families</span>
+    </div>
+    <div class="email-card-body">
+      <div class="email-meta">
+        <span class="email-key">Subject:</span><span class="email-val">Welcome to The Arc of DFW — Here's Where to Start</span>
+        <span class="email-key">Audience:</span><span class="email-val">New members and new family subscribers</span>
+        <span class="email-key">Timing:</span><span class="email-val">Immediately after sign-up</span>
+      </div>
+      <div class="email-body-text">Hi [First Name],
+
+Welcome. We're really glad you found us.
+
+Whatever brought you here — a diagnosis, a deadline, a conversation, a search at midnight — you're in the right place. The Arc of DFW Area has been advocating for individuals with intellectual and developmental disabilities and their families since 1971. We're not going anywhere.
+
+Here's what we want you to know first:
+
+You don't have to figure this out alone. Our community of members includes parents, siblings, self-advocates, educators, and professionals who have been exactly where you are — and who show up for each other.
+
+Here's where to start:
+
+📚 A Look Ahead Conference Series
+Expert speakers. Real answers. Training on IEPs, Medicaid, transition to adulthood, and more. Free for members.
+[LEARN MORE]
+
+🌱 Self-Determination Group
+A peer-led community run by and for individuals with IDD, ages 14 and older. If your loved one is looking for a community — this is it.
+[LEARN MORE]
+
+📣 Tell Your Story
+Your experience matters. The Arc amplifies community voices to drive real policy change. When you're ready, we'd love to hear from you.
+[STORY BANK]
+
+If you have questions, don't wait. Reach out directly at info@thearcofdfw.org or call (903) 776-4955.
+
+We're here.
+
+With care,
+The Arc of DFW Area Team</div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ═══ SOCIAL COPY ═══ -->
+<div class="wrap" id="social">
+  <span class="eyebrow">Section 06</span>
+  <h2 class="sec-title">Social Media<br><em>Copy Bank</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Ready-to-use social posts across audiences and moments. Customize photos and specific details — the voice and structure are done. Facebook is The Arc's primary social platform; LinkedIn for corporate outreach.</p>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--gold); font-size:18px; margin:24px 0 14px; letter-spacing:0.04em;">AWARENESS — General</h3>
+  <div class="social-card social-card-gold">
+    <div class="social-platform sp-gold">Facebook · Awareness Post</div>
+    <div class="social-copy">In Texas, the waitlist for Medicaid Home and Community-Based Services can be years long. Years. Families find out too late, navigate it alone, and lose access to support that could change everything.
+
+That's the gap The Arc of DFW fills. Not with direct services — with knowledge, advocacy, and a community that shows up. For 55 years, we've made sure families know what they don't know.
+
+If you know a family navigating an IDD diagnosis, share this. The right information at the right time changes everything.</div>
+    <div class="social-hashtags">#ArcDFW #DisabilityAdvocacy #IDD #DFWNonprofit #InclusionMatters</div>
+  </div>
+
+  <div class="social-card social-card-teal">
+    <div class="social-platform sp-teal">Facebook · Self-Determination Group Promo</div>
+    <div class="social-copy">The Self-Determination Group isn't run for people with disabilities. It's run by them.
+
+Founded in 2014, this cross-disability community is a space where individuals with IDD ages 14 and older educate, advocate, and support one another. No experts at the front of the room. Just people who believe in self-determined lives — living it.
+
+If you or someone you love is looking for a community that actually gets it — this is it. Learn more at the link below.</div>
+    <div class="social-hashtags">#SelfDetermination #IDD #DisabilityRights #ArcDFW #Inclusion</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--coral); font-size:18px; margin:28px 0 14px; letter-spacing:0.04em;">PUTTS FOR PROGRESS — Event Promotion</h3>
+  <div class="social-card social-card-coral">
+    <div class="social-platform sp-coral">Facebook · Event Countdown (4 Weeks Out)</div>
+    <div class="social-copy">4 weeks until Putts for Progress 2026 ⛳
+
+Here's what you get for $50: A night at Puttshack Addison. Tech-infused mini golf. Heavy hors d'oeuvres. A full cash bar. And the knowledge that every dollar you spent stayed in DFW — funding advocacy for families who needed someone in their corner.
+
+Here's what you give: The same.
+
+Tickets at the link. Bring your team. Bring your friends. Let's build on last year.</div>
+    <div class="social-hashtags">#PuttsForProgress #ArcDFW #DFWEvents #GiveLocal #PuttshackAddison</div>
+  </div>
+
+  <div class="social-card social-card-gold">
+    <div class="social-platform sp-gold">LinkedIn · Corporate Audience</div>
+    <div class="social-copy">The Arc of DFW Area has advocated for individuals with intellectual and developmental disabilities for over 55 years. 100% volunteer-run. Deeply rooted in the DFW community.
+
+This September, we're hosting Putts for Progress 2026 at Puttshack in Addison — and we're looking for corporate partners who want to show up for this community in a real, visible way.
+
+Sponsorship starts at $2,500. Your team plays. Your brand is seen. Your community leadership is documented and shared.
+
+DM us or visit [LINK] to see this year's packages. Spots are limited.</div>
+    <div class="social-hashtags">#CSR #CorporateGiving #DFWBusiness #ArcDFW #PuttsForProgress #CommunityLeadership</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--teal-lt); font-size:18px; margin:28px 0 14px; letter-spacing:0.04em;">NORTH TEXAS GIVING DAY (September)</h3>
+  <div class="social-card social-card-teal">
+    <div class="social-platform sp-teal">Facebook · North Texas Giving Day Push</div>
+    <div class="social-copy">Today is North Texas Giving Day — the biggest giving moment of the year for DFW nonprofits.
+
+The Arc of DFW Area has been fighting for families with intellectual and developmental disabilities since 1971. We fight at the policy level, the community level, and the kitchen-table level.
+
+Today, you can join that fight for as little as $25.
+
+Every dollar given today through [LINK] goes directly to advocacy, training, and programs for IDD individuals and families across the Metroplex.
+
+Give today. Share today. It all counts.</div>
+    <div class="social-hashtags">#NTxGivingDay #ArcDFW #GiveLocal #IDD #NorthTexas</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-note">Document 02: Brand Consistency &amp; Copy Guide · Built by JRZ Consulting Solutions · 2026</div>
+  <a class="back-link" href="../arc-vault-home.html">← Return to Vault Home</a>
+</footer>
+
+<script>
+  function toggleEmail(header) {
+    const body = header.nextElementSibling;
+    body.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
