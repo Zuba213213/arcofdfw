@@ -3,604 +3,471 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ideal Client Profiles — The Arc of DFW Area</title>
+<title>Putts for Progress 2026 — Campaign Plan</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --navy:   #0D1B2A;
-    --gold:   #C9A84C;
-    --gold-lt:#E8D49A;
-    --ivory:  #F5F0E8;
-    --coral:  #C95B38;
-    --teal:   #2A7B6F;
-    --slate:  #4A6274;
-    --white:  #FFFFFF;
+    --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A;
+    --ivory: #F5F0E8; --coral: #C95B38; --green: #3A7D44;
+    --slate: #4A6274; --white: #FFFFFF;
   }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--navy);
-    color: var(--ivory);
-    font-size: 17px;
-    line-height: 1.75;
-  }
-  .topbar {
-    background: var(--gold);
-    color: var(--navy);
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  nav {
-    background: var(--navy);
-    border-bottom: 1px solid rgba(201,168,76,0.25);
-    padding: 16px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 17px; line-height: 1.75; }
+  .topbar { background: var(--green); color: var(--white); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
-  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; letter-spacing: 0.08em; }
+  .nav-back { font-size: 13px; color: var(--slate); text-decoration: none; }
   .nav-back:hover { color: var(--gold); }
-
-  /* HERO */
-  .hero {
-    padding: 60px 24px 48px;
-    text-align: center;
-    border-bottom: 3px solid var(--gold);
-    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
-  }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 4px 14px;
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 6vw, 48px);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
+  .hero { padding: 60px 24px 48px; text-align: center; border-bottom: 3px solid var(--green); background: radial-gradient(ellipse at 50% 0%, rgba(58,125,68,0.1) 0%, transparent 65%); }
+  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #5CBF6A; border: 1px solid #5CBF6A; padding: 4px 14px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 52px); font-weight: 700; line-height: 1.12; color: var(--white); margin-bottom: 16px; }
   .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub {
-    max-width: 580px;
-    margin: 0 auto;
-    color: rgba(245,240,232,0.75);
-    font-size: 17px;
-  }
-
-  /* ICP TABS */
-  .tab-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-bottom: 2px solid rgba(201,168,76,0.2);
-    background: rgba(0,0,0,0.2);
-  }
-  .tab-btn {
-    background: none;
-    border: none;
-    padding: 16px 24px;
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--slate);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    text-align: left;
-    transition: all 0.2s;
-  }
-  .tab-btn.active-gold { color: var(--gold); border-bottom-color: var(--gold); background: rgba(201,168,76,0.06); }
-  .tab-btn.active-coral { color: var(--coral); border-bottom-color: var(--coral); background: rgba(201,91,56,0.06); }
-  .tab-btn.active-teal { color: #4FBFB0; border-bottom-color: #4FBFB0; background: rgba(42,123,111,0.08); }
-  .tab-btn:hover { color: var(--ivory); }
-
-  /* ICP PANELS */
-  .icp-panel { display: none; }
-  .icp-panel.visible { display: block; }
-
-  /* SECTION WRAPPER */
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 50px 24px;
-  }
-
-  .eyebrow {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .eyebrow-gold { color: var(--gold); }
-  .eyebrow-coral { color: var(--coral); }
-  .eyebrow-teal { color: #4FBFB0; }
-
-  h2.icp-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 5vw, 40px);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .icp-tagline {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 19px;
-    margin-bottom: 28px;
-  }
-  .icp-tagline-gold { color: var(--gold-lt); }
-  .icp-tagline-coral { color: #E88A70; }
-  .icp-tagline-teal { color: #7DDDD4; }
-
+  .hero-sub { max-width: 600px; margin: 0 auto 32px; color: rgba(245,240,232,0.78); font-size: 17px; }
+  .goal-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 0 auto; max-width: 640px; }
+  .goal-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; padding: 18px 24px; text-align: center; flex: 1; min-width: 130px; }
+  .goal-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 5px; }
+  .goal-label { font-size: 12px; color: rgba(245,240,232,0.6); letter-spacing: 0.06em; line-height: 1.4; }
+  .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 24px; overflow-x: auto; white-space: nowrap; }
+  .section-nav a { display: inline-block; padding: 14px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 52px 24px; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4.5vw, 36px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  h2.sec-title em { color: var(--gold); font-style: italic; }
   .gold-rule { width: 44px; border: none; border-top: 2px solid var(--gold); margin: 0 0 28px; }
-  .coral-rule { width: 44px; border: none; border-top: 2px solid var(--coral); margin: 0 0 28px; }
-  .teal-rule { width: 44px; border: none; border-top: 2px solid #4FBFB0; margin: 0 0 28px; }
-
-  .profile-card {
-    border-radius: 10px;
-    padding: 26px 22px;
-    margin-bottom: 32px;
-  }
-  .profile-card-gold { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3); }
-  .profile-card-coral { background: rgba(201,91,56,0.08); border: 1px solid rgba(201,91,56,0.3); }
-  .profile-card-teal { background: rgba(42,123,111,0.1); border: 1px solid rgba(79,191,176,0.3); }
-
-  .profile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 20px;
-    margin-top: 4px;
-  }
-  .profile-item { }
-  .profile-key {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--slate);
-    margin-bottom: 2px;
-  }
-  .profile-val {
-    font-size: 15px;
-    color: rgba(245,240,232,0.88);
-    line-height: 1.5;
-  }
-
-  .icp-section { margin-bottom: 36px; }
-  .icp-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--white);
-    margin-bottom: 14px;
-  }
-  .icp-section p {
-    color: rgba(245,240,232,0.8);
-    font-size: 16px;
-    line-height: 1.75;
-    margin-bottom: 12px;
-  }
-
-  .list-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .list-items li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 16px;
-    color: rgba(245,240,232,0.82);
-    line-height: 1.6;
-  }
-  .li-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-  .dot-gold { background: var(--gold); }
-  .dot-coral { background: var(--coral); }
-  .dot-teal { background: #4FBFB0; }
-
-  /* COPY EXAMPLES */
-  .copy-block {
-    border-radius: 8px;
-    padding: 22px 20px;
-    margin-bottom: 16px;
-  }
-  .copy-block-gold { background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold); }
-  .copy-block-coral { background: rgba(201,91,56,0.07); border-left: 3px solid var(--coral); }
-  .copy-block-teal { background: rgba(42,123,111,0.1); border-left: 3px solid #4FBFB0; }
-
-  .copy-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .copy-label-gold { color: var(--gold); }
-  .copy-label-coral { color: var(--coral); }
-  .copy-label-teal { color: #4FBFB0; }
-
-  .copy-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: rgba(245,240,232,0.9);
-    line-height: 1.65;
-  }
-
+  .body-text { color: rgba(245,240,232,0.8); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
   .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
-
-  footer {
-    background: rgba(0,0,0,0.3);
-    border-top: 1px solid rgba(201,168,76,0.2);
-    padding: 32px 24px;
-    text-align: center;
-  }
+  .timeline { display: flex; flex-direction: column; gap: 0; margin: 28px 0; }
+  .phase { display: flex; gap: 0; position: relative; }
+  .phase-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .phase-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; z-index: 1; }
+  .phase-line { width: 2px; flex: 1; background: rgba(201,168,76,0.2); min-height: 20px; }
+  .phase-content { padding: 0 0 32px 16px; flex: 1; }
+  .phase-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .phase-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); font-weight: 600; }
+  .phase-timing { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; background: rgba(201,168,76,0.15); color: var(--gold); white-space: nowrap; }
+  .phase-tasks { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .phase-tasks li { display: flex; gap: 10px; font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.55; }
+  .task-check { color: var(--gold); font-size: 13px; margin-top: 2px; flex-shrink: 0; }
+  .revenue-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+  .revenue-table th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .revenue-table td { padding: 12px 14px; color: rgba(245,240,232,0.82); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+  .revenue-table .total-row td { color: var(--white); font-weight: 700; font-size: 16px; border-top: 2px solid rgba(201,168,76,0.3); padding-top: 16px; }
+  .revenue-amount { color: var(--gold); font-weight: 700; }
+  .stretch { color: #7DC87D; font-size: 13px; }
+  .script-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+  .script-header { padding: 18px 20px; cursor: pointer; background: rgba(201,168,76,0.05); border-bottom: 1px solid rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .script-header h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); }
+  .script-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; background: rgba(58,125,68,0.2); color: #7DC87D; white-space: nowrap; }
+  .script-body { display: none; padding: 22px 20px; }
+  .script-body.open { display: block; }
+  .script-meta { font-size: 13px; color: var(--slate); margin-bottom: 16px; line-height: 1.6; font-style: italic; }
+  .script-line { display: flex; gap: 14px; padding: 10px 14px; border-radius: 4px; margin-bottom: 8px; }
+  .script-line:nth-child(odd) { background: rgba(255,255,255,0.02); }
+  .script-line-timing { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; min-width: 70px; margin-top: 2px; font-family: monospace; }
+  .script-line-text { font-size: 15px; color: rgba(245,240,232,0.85); line-height: 1.65; }
+  .direction { font-style: italic; color: var(--slate); font-size: 13px; display: block; margin-bottom: 4px; }
+  .cal-week { margin-bottom: 28px; }
+  .cal-week-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .cal-week-num { width: 38px; height: 38px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+  .cal-week-title { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); }
+  .cal-week-timing { font-size: 12px; color: var(--slate); }
+  .cal-posts { display: flex; flex-direction: column; gap: 8px; padding-left: 50px; }
+  .cal-post { background: rgba(255,255,255,0.03); border-radius: 6px; padding: 12px 14px; border-left: 2px solid; font-size: 14px; line-height: 1.6; color: rgba(245,240,232,0.8); }
+  .cal-post .platform { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
+  .post-fb { border-color: #4A90D9; } .post-fb .platform { color: #4A90D9; }
+  .post-li { border-color: var(--gold); } .post-li .platform { color: var(--gold); }
+  .post-email { border-color: var(--coral); } .post-email .platform { color: var(--coral); }
+  .post-all { border-color: #7DC87D; } .post-all .platform { color: #7DC87D; }
+  .tactic-grid { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+  .tactic-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.18); border-radius: 8px; padding: 20px 20px; }
+  .tactic-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+  .tactic-icon { font-size: 22px; flex-shrink: 0; }
+  .tactic-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); }
+  .tactic-cost { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7DC87D; margin-top: 3px; }
+  .tactic-desc { font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.65; padding-left: 36px; }
+  footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(201,168,76,0.2); padding: 32px 24px; text-align: center; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
   .footer-note { font-size: 12px; color: var(--slate); }
-  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; letter-spacing: 0.08em; }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--slate); text-decoration: none; }
   .back-link:hover { color: var(--gold); }
-
-  @media (min-width: 600px) {
-    nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; }
-    .tab-bar { flex-direction: row; }
-    .tab-btn { flex: 1; text-align: center; border-bottom: 2px solid transparent; border-right: 1px solid rgba(201,168,76,0.12); }
-  }
+  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; } }
 </style>
 </head>
 <body>
-
-<div class="topbar">Ideal Client Profiles · The Arc of DFW Area · JRZ Consulting Solutions</div>
-
+<div class="topbar">Putts for Progress 2026 — Campaign Plan · JRZ Consulting Solutions</div>
 <nav>
   <div class="nav-brand">The Arc of DFW Area</div>
   <a class="nav-back" href="../index.html">← Back to Vault Home</a>
 </nav>
-
 <section class="hero">
-  <div class="hero-eyebrow">Marketing Vault — Document 01</div>
-  <h1>Ideal Client<br><em>Profiles</em></h1>
-  <p class="hero-sub">Three distinct audiences. Three distinct emotional worlds. Know who you're talking to before you say a single word.</p>
+  <div class="hero-eyebrow">Marketing Vault — Campaign Plan</div>
+  <h1>Putts for Progress<br><em>2026</em></h1>
+  <p class="hero-sub">Full campaign plan to exceed last year's $34,000. Built on a longer runway, a wider outreach net, and a sharper story.</p>
+  <div class="goal-bar">
+    <div class="goal-stat"><div class="goal-num">$34K</div><div class="goal-label">2 Yrs Total Raised</div></div>
+    <div class="goal-stat"><div class="goal-num">$42K+</div><div class="goal-label">2026 Target</div></div>
+    <div class="goal-stat"><div class="goal-num">8 Weeks</div><div class="goal-label">Campaign Runway</div></div>
+    <div class="goal-stat"><div class="goal-num">Sept</div><div class="goal-label">Event Month</div></div>
+  </div>
 </section>
-
-<!-- TAB BAR -->
-<div class="tab-bar" id="tabBar">
-  <button class="tab-btn active-gold" onclick="showTab('icp1', this, 'active-gold')">⬤ &nbsp;Corporate &amp; Major Donors</button>
-  <button class="tab-btn" onclick="showTab('icp2', this, 'active-coral')">⬤ &nbsp;Individual Donors</button>
-  <button class="tab-btn" onclick="showTab('icp3', this, 'active-teal')">⬤ &nbsp;IDD Individuals &amp; Families</button>
+<div class="section-nav">
+  <a href="#timeline">Timeline</a>
+  <a href="#revenue">Revenue Model</a>
+  <a href="#grassroots">Grassroots</a>
+  <a href="#videos">Video Scripts</a>
+  <a href="#calendar">Content Calendar</a>
+  <a href="#dayof">Day-Of</a>
 </div>
 
-<!-- ═══════════ ICP 1: CORPORATE DONORS ═══════════ -->
-<div class="icp-panel visible" id="icp1">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-gold">ICP — Audience 01</span>
-    <h2 class="icp-name">The Corporate Champion</h2>
-    <p class="icp-tagline icp-tagline-gold">"Our brand stands for something. This is how we prove it."</p>
-    <hr class="gold-rule">
-
-    <div class="profile-card profile-card-gold">
-      <div class="profile-grid">
-        <div class="profile-item">
-          <div class="profile-key">Title</div>
-          <div class="profile-val">Director of Community Affairs, VP of Marketing, HR Director, or Owner</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Company Size</div>
-          <div class="profile-val">Mid-to-large DFW businesses, law firms, financial institutions, healthcare groups</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Decision Authority</div>
-          <div class="profile-val">Controls or heavily influences charitable giving / CSR budget</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Geography</div>
-          <div class="profile-val">DFW Metroplex — Irving, Dallas, Fort Worth, Addison, Plano, Arlington</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Give Range</div>
-          <div class="profile-val">$2,500 – $25,000+ per engagement (event sponsorship, annual partnership)</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Trigger</div>
-          <div class="profile-val">ESG reporting cycles, employee giving season, Q4 budget flush, community visibility goals</div>
-        </div>
+<!-- TIMELINE -->
+<div class="wrap" id="timeline">
+  <span class="eyebrow">Section 01</span>
+  <h2 class="sec-title">Campaign <em>Timeline</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Last year built in 65 hours. This year we have a runway — and we are using every week of it.</p>
+  <div class="timeline">
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#C9A84C;"></div><div class="phase-line"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 1 — Foundation</div><div class="phase-timing">Now → 8 Weeks Out</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Confirm event date and Puttshack booking</li>
+          <li><span class="task-check">◆</span>Set official fundraising goal — share with board</li>
+          <li><span class="task-check">◆</span>Finalize sponsorship tier packages (see Sponsor Deck)</li>
+          <li><span class="task-check">◆</span>Build corporate prospect list — 20–30 targeted DFW companies</li>
+          <li><span class="task-check">◆</span>Build TX Special Needs outreach list — schools, parent groups, orgs</li>
+          <li><span class="task-check">◆</span>Identify 10–15 community ambassadors</li>
+          <li><span class="task-check">◆</span>Set up event registration with early bird pricing window</li>
+          <li><span class="task-check">◆</span>Recruit 3–4 story video volunteers</li>
+        </ul>
       </div>
     </div>
-
-    <div class="icp-section">
-      <h3>Who They Are</h3>
-      <p>The Corporate Champion is a business leader who genuinely believes in giving back — and also needs to be able to justify that giving to a board, a CEO, or a marketing team. They are not cynical; they are accountable. They want to sponsor something that makes their employees proud to show up on Monday, that earns a press mention or social post, and that reflects their company's stated values without requiring them to become an expert in disability advocacy.</p>
-      <p>They are attracted to organizations that look credible, run tight events, and have a clear story about impact. The Arc's 55+ year history and all-volunteer model signals fiscal responsibility — that message must be surfaced explicitly.</p>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Fear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-gold"></span>Association with an organization that looks disorganized or financially mismanaged</li>
-        <li><span class="li-dot dot-gold"></span>Spending CSR budget on something their employees don't connect with or care about</li>
-        <li><span class="li-dot dot-gold"></span>Getting "lost in the crowd" — logo on a banner, no real partnership value</li>
-        <li><span class="li-dot dot-gold"></span>Difficulty measuring or communicating the ROI of their giving</li>
-        <li><span class="li-dot dot-gold"></span>Being asked to commit before they understand what they're buying</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Need to Hear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-gold"></span>"Your team will be in the room. Your logo will be seen. Your story will be told."</li>
-        <li><span class="li-dot dot-gold"></span>"We've been doing this for 55 years. 100% volunteer-run. Every dollar goes to the work."</li>
-        <li><span class="li-dot dot-gold"></span>"Last year's event raised $X. Here's what it funded."</li>
-        <li><span class="li-dot dot-gold"></span>"This is what sponsoring at the [Tier] level looks like — in print, online, and on-site."</li>
-        <li><span class="li-dot dot-gold"></span>"Your team members can participate directly — not just write a check."</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>How to Reach Them</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-gold"></span>LinkedIn outreach and LinkedIn event promotion — they live here professionally</li>
-        <li><span class="li-dot dot-gold"></span>Personalized sponsorship proposals (not mass email) with tiered packages</li>
-        <li><span class="li-dot dot-gold"></span>Warm introductions through existing board members or community connections</li>
-        <li><span class="li-dot dot-gold"></span>Dallas Morning News, Dallas Innovates, local chamber of commerce circles</li>
-        <li><span class="li-dot dot-gold"></span>Attendance at Chamber of Commerce and DFW nonprofit networking events</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>Copy Examples — Corporate Voice</h3>
-      <div class="copy-block copy-block-gold">
-        <div class="copy-label copy-label-gold">Email Subject Line</div>
-        <div class="copy-text">"Partner With a Cause Your Team Will Actually Be Proud Of"</div>
-      </div>
-      <div class="copy-block copy-block-gold">
-        <div class="copy-label copy-label-gold">Event Sponsorship Hook</div>
-        <div class="copy-text">"Putts for Progress isn't just a fundraiser. It's a room full of DFW's most community-minded professionals — and your company belongs in it. Sponsorship packages available at $2,500, $5,000, and $10,000. Every tier comes with real visibility, real access, and a real story to tell."</div>
-      </div>
-      <div class="copy-block copy-block-gold">
-        <div class="copy-label copy-label-gold">LinkedIn Post (Corporate Partner)</div>
-        <div class="copy-text">"Proud to partner with The Arc of DFW Area — an all-volunteer organization that has advocated for individuals with intellectual and developmental disabilities for over 55 years. This September, our team will be at Putts for Progress. Because being in business in this community means investing in this community."</div>
-      </div>
-      <div class="copy-block copy-block-gold">
-        <div class="copy-label copy-label-gold">Proposal One-Liner</div>
-        <div class="copy-text">"The Arc of DFW Area gives your company something most sponsorships can't: a cause with 55 years of credibility, a community that notices, and an event your team will actually want to attend."</div>
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#C9A84C;"></div><div class="phase-line"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 2 — Activation</div><div class="phase-timing">8–6 Weeks Out</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Launch personalized corporate sponsor outreach</li>
+          <li><span class="task-check">◆</span>Send TX Outreach Kit — wave 1 (school districts, major orgs)</li>
+          <li><span class="task-check">◆</span>Post official Save the Date — Facebook and LinkedIn</li>
+          <li><span class="task-check">◆</span>Brief ambassadors with invite scripts and shareable assets</li>
+          <li><span class="task-check">◆</span>Save the Date email to full Arc list</li>
+          <li><span class="task-check">◆</span>Submit to local media calendars — DMN, WFAA, NBC5, CultureMap, Do214</li>
+          <li><span class="task-check">◆</span>Request co-branded social post from Puttshack Addison</li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</div>
-
-<!-- ═══════════ ICP 2: INDIVIDUAL DONORS ═══════════ -->
-<div class="icp-panel" id="icp2">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-coral">ICP — Audience 02</span>
-    <h2 class="icp-name">The Heart-Led Giver</h2>
-    <p class="icp-tagline icp-tagline-coral">"I want to give to something real. Show me the face behind the mission."</p>
-    <hr class="coral-rule">
-
-    <div class="profile-card profile-card-coral">
-      <div class="profile-grid">
-        <div class="profile-item">
-          <div class="profile-key">Who They Are</div>
-          <div class="profile-val">DFW residents, 30–65, community-minded professionals or retirees</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Connection to IDD</div>
-          <div class="profile-val">Family member, neighbor, educator, healthcare worker, or personal value alignment</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Give Range</div>
-          <div class="profile-val">$25 – $500 per transaction; recurring donors at $15–$50/month</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Event Ticket</div>
-          <div class="profile-val">Tickets coming soon — accessible price point for community members</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Primary Channel</div>
-          <div class="profile-val">Facebook, email, word of mouth, community groups, North Texas Giving Day</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Conversion Trigger</div>
-          <div class="profile-val">A story. A face. A specific, tangible impact statement.</div>
-        </div>
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#C9A84C;"></div><div class="phase-line"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 3 — Momentum</div><div class="phase-timing">6–4 Weeks Out</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Story Video 1 posts — The Parent (Week 6)</li>
+          <li><span class="task-check">◆</span>Tickets go live — early bird deadline push</li>
+          <li><span class="task-check">◆</span>"Tickets Are Live" email to full list</li>
+          <li><span class="task-check">◆</span>Corporate sponsor follow-up — phone calls to warm leads</li>
+          <li><span class="task-check">◆</span>TX Outreach wave 2 — parent Facebook groups, therapy centers</li>
+          <li><span class="task-check">◆</span>Story Video 2 posts — The Self-Advocate (Week 5)</li>
+          <li><span class="task-check">◆</span>Press release to local media</li>
+        </ul>
       </div>
     </div>
-
-    <div class="icp-section">
-      <h3>Who They Are</h3>
-      <p>The Heart-Led Giver is motivated by meaning, not metrics. They give when they feel something — when a story moves them, when they can imagine the specific person their donation helps. They are often connected to the IDD community through a family member, a student, a neighbor, or simply a lifetime of caring about the vulnerable in their city.</p>
-      <p>They are loyal when cultivated. A donor who gives to Putts for Progress and receives a genuine follow-up story about impact will give again next year — and bring friends. Their network is their greatest asset for The Arc.</p>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Fear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-coral"></span>Their donation disappearing into overhead with no visible impact</li>
-        <li><span class="li-dot dot-coral"></span>Feeling like a number — receiving generic thank-you emails and nothing more</li>
-        <li><span class="li-dot dot-coral"></span>Not knowing what The Arc actually does day-to-day</li>
-        <li><span class="li-dot dot-coral"></span>Being asked for more money before they feel connected to the mission</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Need to Hear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-coral"></span>A specific story about a real person whose life was changed</li>
-        <li><span class="li-dot dot-coral"></span>"Your $50 does X." — concrete, visible, human</li>
-        <li><span class="li-dot dot-coral"></span>That The Arc is 100% volunteer-run — not a bloated institution</li>
-        <li><span class="li-dot dot-coral"></span>An easy, low-pressure way to get involved before being asked to give</li>
-        <li><span class="li-dot dot-coral"></span>Recognition that feels personal, not automated</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>How to Reach Them</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-coral"></span>Facebook — still the dominant platform for community-minded 40–65 demographic in DFW</li>
-        <li><span class="li-dot dot-coral"></span>Email newsletter with real stories, not just event announcements</li>
-        <li><span class="li-dot dot-coral"></span>North Texas Giving Day (September) — their highest-intent giving moment of the year</li>
-        <li><span class="li-dot dot-coral"></span>Word of mouth through existing members and event attendees</li>
-        <li><span class="li-dot dot-coral"></span>Nextdoor and local community groups for hyper-local awareness</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>Copy Examples — Individual Donor Voice</h3>
-      <div class="copy-block copy-block-coral">
-        <div class="copy-label copy-label-coral">Facebook Post</div>
-        <div class="copy-text">"Last year, Maria didn't know there was a Medicaid waitlist her son needed to be on. She found out — too late — from another parent in a grocery store parking lot. That's the gap The Arc of DFW fills every single day. 55 years of making sure families don't navigate this alone. If that matters to you, join us this September at Putts for Progress. Tickets are $50."</div>
-      </div>
-      <div class="copy-block copy-block-coral">
-        <div class="copy-label copy-label-coral">Email Subject Line</div>
-        <div class="copy-text">"You Don't Have to Know Someone with a Disability to Change Their Life"</div>
-      </div>
-      <div class="copy-block copy-block-coral">
-        <div class="copy-label copy-label-coral">Donation Page Headline</div>
-        <div class="copy-text">"Every family navigating a disability diagnosis deserves a guide. Be the reason they find one."</div>
-      </div>
-      <div class="copy-block copy-block-coral">
-        <div class="copy-label copy-label-coral">Event Invite (Word of Mouth Script)</div>
-        <div class="copy-text">"It's mini golf at Puttshack in Addison — it's actually a blast. But the money goes to The Arc of DFW, which is one of those organizations you wish more people knew about. Tickets are up at putts4progress.com. Come with us."</div>
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#C9A84C;"></div><div class="phase-line"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 4 — Push</div><div class="phase-timing">4–2 Weeks Out</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Story Video 3 — The Urgency Video (Week 4)</li>
+          <li><span class="task-check">◆</span>Early bird ticket deadline — email + social</li>
+          <li><span class="task-check">◆</span>NTXGD alignment post — "Two ways to give this September"</li>
+          <li><span class="task-check">◆</span>Ambassador check-in — confirmed guest count</li>
+          <li><span class="task-check">◆</span>Announce confirmed corporate sponsors publicly — tag them</li>
+          <li><span class="task-check">◆</span>Inter-company tournament competition push on LinkedIn</li>
+          <li><span class="task-check">◆</span>Mid-campaign email — show progress toward goal</li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</div>
-
-<!-- ═══════════ ICP 3: IDD FAMILIES ═══════════ -->
-<div class="icp-panel" id="icp3">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-teal">ICP — Audience 03</span>
-    <h2 class="icp-name">The Navigating Family</h2>
-    <p class="icp-tagline icp-tagline-teal">"We're doing our best with a system that wasn't built for us."</p>
-    <hr class="teal-rule">
-
-    <div class="profile-card profile-card-teal">
-      <div class="profile-grid">
-        <div class="profile-item">
-          <div class="profile-key">Who They Are</div>
-          <div class="profile-val">Parents, grandparents, siblings, guardians — or the individuals with IDD themselves</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Stage</div>
-          <div class="profile-val">Early diagnosis to adult transition — navigating IEPs, Medicaid, housing, employment</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Primary Need</div>
-          <div class="profile-val">Information, community, and a trustworthy guide through complex systems</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Income Range</div>
-          <div class="profile-val">Broad — disability does not discriminate by income, though resource access does</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Primary Channel</div>
-          <div class="profile-val">Facebook groups, Navigate Life Texas, word of mouth from schools/therapists/hospitals</div>
-        </div>
-        <div class="profile-item">
-          <div class="profile-key">Relationship to Arc</div>
-          <div class="profile-val">Client of advocacy — not a donor, but the reason every donor gives</div>
-        </div>
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#C9A84C;"></div><div class="phase-line"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 5 — Final Sprint</div><div class="phase-timing">2 Weeks → Day Of</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Story Video 4 — The Final Call</li>
+          <li><span class="task-check">◆</span>Volunteer Social Takeover Week — 5 advocates, 5 days</li>
+          <li><span class="task-check">◆</span>"Last chance" ticket email — 72 hours out</li>
+          <li><span class="task-check">◆</span>Logistics email to all registrants — day before</li>
+          <li><span class="task-check">◆</span>Live social posts day-of</li>
+          <li><span class="task-check">◆</span>Real-time fundraising total reveal from stage</li>
+        </ul>
       </div>
     </div>
-
-    <div class="icp-section">
-      <h3>Who They Are</h3>
-      <p>The Navigating Family is often exhausted, often resilient, and almost always under-informed — not because they aren't trying, but because the systems surrounding disability in Texas are labyrinthine and constantly changing. A mother may discover too late that her son needed to be on the Medicaid waitlist years ago. A grandmother may drive two hours each way for medical care. A caregiver may be burning out because their direct support worker left for a higher-paying job.</p>
-      <p>The Arc does not provide direct services — but what they provide may be more valuable: knowledge, community, advocacy, and the assurance that someone is fighting at the policy level for their family's future.</p>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Fear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-teal"></span>Not knowing what they don't know — missing deadlines, waitlists, legal windows</li>
-        <li><span class="li-dot dot-teal"></span>Being talked down to by organizations that don't actually understand their day-to-day</li>
-        <li><span class="li-dot dot-teal"></span>What happens to their family member when they are no longer able to care for them</li>
-        <li><span class="li-dot dot-teal"></span>Navigating the transition to adulthood — school ending, services dropping off</li>
-        <li><span class="li-dot dot-teal"></span>Isolation — carrying the weight of advocacy alone</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>What They Need to Hear</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-teal"></span>"You are not alone in this. There is a community here."</li>
-        <li><span class="li-dot dot-teal"></span>"Here is information you can actually use — right now, for your situation."</li>
-        <li><span class="li-dot dot-teal"></span>"We advocate for your family at every level — local, state, and national."</li>
-        <li><span class="li-dot dot-teal"></span>"Your loved one has the right to a self-determined life. We believe that without condition."</li>
-        <li><span class="li-dot dot-teal"></span>"You don't have to understand the entire system. You just have to find us first."</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>Arc Programs Serving This Audience</h3>
-      <ul class="list-items">
-        <li><span class="li-dot dot-teal"></span><strong style="color:var(--white)">The Self-Determination Group</strong> — Run by and for individuals with disabilities (ages 14+). Peer-led, community-driven empowerment.</li>
-        <li><span class="li-dot dot-teal"></span><strong style="color:var(--white)">A Look Ahead Conference Series</strong> — Expert-led training on special education, transition to adulthood, legal rights, Medicaid, and more.</li>
-        <li><span class="li-dot dot-teal"></span><strong style="color:var(--white)">Advocacy Priorities</strong> — Fighting for housing, transportation, HCBS funding, civil rights, and health access at the policy level.</li>
-        <li><span class="li-dot dot-teal"></span><strong style="color:var(--white)">Story Bank</strong> — Amplifying community voices and lived experiences to drive systemic change.</li>
-        <li><span class="li-dot dot-teal"></span><strong style="color:var(--white)">Member Network</strong> — A community of families, advocates, professionals, and individuals who share resources and support.</li>
-      </ul>
-    </div>
-
-    <div class="icp-section">
-      <h3>Copy Examples — Family &amp; Client Voice</h3>
-      <div class="copy-block copy-block-teal">
-        <div class="copy-label copy-label-teal">Website Welcome Copy</div>
-        <div class="copy-text">"You're your child's best advocate. We want to make sure you have everything you need to do that well. The Arc of DFW doesn't navigate this system for you — we help you learn to navigate it yourself. And we fight, at every level, to make that system more fair."</div>
-      </div>
-      <div class="copy-block copy-block-teal">
-        <div class="copy-label copy-label-teal">Event Announcement (A Look Ahead)</div>
-        <div class="copy-text">"Everything your child's teacher never told you about transitioning to adulthood — and what to do about it. The Arc of DFW's A Look Ahead Conference is back. Expert speakers. Real answers. A room full of families who get it. Register free."</div>
-      </div>
-      <div class="copy-block copy-block-teal">
-        <div class="copy-label copy-label-teal">Self-Determination Group Invite</div>
-        <div class="copy-text">"This is your group. Run by people who have IDD — for people who have IDD. No experts, no gatekeepers. Just a community of individuals who believe in self-determined lives. Ages 14+. You belong here."</div>
-      </div>
-      <div class="copy-block copy-block-teal">
-        <div class="copy-label copy-label-teal">Social Media (Awareness)</div>
-        <div class="copy-text">"Did you know there's a Medicaid interest list in Texas — and the waitlist can be years long? We did. We're fighting to change that. In the meantime, we make sure families know what they don't know. That's what The Arc of DFW has done for 55 years."</div>
+    <div class="phase">
+      <div class="phase-left"><div class="phase-dot" style="background:#7DC87D;"></div></div>
+      <div class="phase-content">
+        <div class="phase-header"><div class="phase-title">Phase 6 — Retention</div><div class="phase-timing">48 Hours – 2 Weeks After</div></div>
+        <ul class="phase-tasks">
+          <li><span class="task-check">◆</span>Personalized thank-you email within 24 hours with final total</li>
+          <li><span class="task-check">◆</span>Event recap post with photos and impact numbers</li>
+          <li><span class="task-check">◆</span>Corporate sponsor recap — visibility documentation package</li>
+          <li><span class="task-check">◆</span>Soft membership and recurring giving ask</li>
+          <li><span class="task-check">◆</span>Add all attendees to Arc email list</li>
+          <li><span class="task-check">◆</span>Lock in 2027 Puttshack date while momentum is high</li>
+        </ul>
       </div>
     </div>
-
   </div>
 </div>
 
 <hr class="divider">
 
+<!-- REVENUE MODEL -->
+<div class="wrap" id="revenue">
+  <span class="eyebrow">Section 02</span>
+  <h2 class="sec-title">Revenue <em>Model</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Diversified revenue streams with three realistic scenarios. Hitting 80% of the realistic target still exceeds last year.</p>
+  <table class="revenue-table">
+    <thead><tr><th>Revenue Stream</th><th>Unit / Availability</th><th>Projected</th></tr></thead>
+    <tbody>
+      <tr><td>Title Sponsor — Method 360</td><td>1 of 1 · <strong style="color:#7DC87D;">CONFIRMED</strong></td><td class="revenue-amount">TBD</td></tr>
+      <tr><td>Club Sponsors ($2,000)</td><td>2 available</td><td class="revenue-amount">$4,000</td></tr>
+      <tr><td>Fairway Sponsors ($1,000)</td><td>2 available</td><td class="revenue-amount">$2,000</td></tr>
+      <tr><td>Hole Sponsors ($500)</td><td>18 available</td><td class="revenue-amount">$9,000 (full sell)</td></tr>
+      <tr><td>General Admission Tickets</td><td>Open attendance</td><td class="revenue-amount">TBD — ticket price pending</td></tr>
+      <tr><td>North Texas Giving Day (September)</td><td>Online donations</td><td class="revenue-amount">$4,000–$6,000</td></tr>
+      <tr><td>Direct Donations (NeonCRM form)</td><td>Year-round</td><td class="revenue-amount">Ongoing</td></tr>
+      <tr class="total-row"><td colspan="2">Sponsorship Floor (Hole sponsors only, partial sell)</td><td class="revenue-amount">~$5,000–$9,000</td></tr>
+      <tr class="total-row"><td colspan="2">Realistic (Club + Fairway + 10 Hole sponsors + tickets)</td><td class="revenue-amount">~$20,000–$28,000</td></tr>
+      <tr class="total-row"><td colspan="2">Stretch (Full sponsor sell + strong ticket sales + NTXGD)</td><td class="revenue-amount">~$35,000–$42,000+</td></tr>
+    </tbody>
+  </table>
+  <p class="body-text"><strong style="color:var(--white)">The key lever:</strong> Selling both Club Sponsorships ($4,000) and all 18 Hole Sponsorships ($9,000) together generate $15,000 in sponsorship revenue before a single ticket is sold. Prioritize filling Club spots first — only 2 available and highest visibility. Contact: Julia Chalker · julia@thearcofdfw.org · 214.543.1563</p>
+</div>
+
+<hr class="divider">
+
+<!-- GRASSROOTS -->
+<div class="wrap" id="grassroots">
+  <span class="eyebrow">Section 03</span>
+  <h2 class="sec-title">Grassroots &amp;<br><em>Low-Cost Tactics</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Eight high-impact tactics that cost almost nothing except time. Collectively these can add 40–80 attendees and $5,000–$10,000 in revenue the paid strategy cannot reach.</p>
+  <div class="tactic-grid">
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">🏫</div><div><div class="tactic-title">TX Special Needs Program Outreach</div><div class="tactic-cost">Cost: $0 · Impact: High reach</div></div></div>
+      <div class="tactic-desc">Build a master contact list of DFW special education parent groups, therapy centers, IEP advocacy networks, and disability orgs across Texas. Send the Outreach Kit to every contact — flyer + copy-paste social post + email template. One email to the right SPED director reaches hundreds of families. Priority targets: Down Syndrome Guild of Dallas, FEAT of North Texas, Autism Speaks DFW, Texas Parent to Parent, Navigate Life Texas, United Cerebral Palsy Texas, and all major DFW school district SPED departments.</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">🤝</div><div><div class="tactic-title">Ambassador Invite Program</div><div class="tactic-cost">Cost: $0 · Impact: 30–60 additional attendees</div></div></div>
+      <div class="tactic-desc">Identify 10–15 Arc members, board members, and advocates. Give each a personal invite script, shareable digital assets, and a commitment to invite 5 people. A personal invite converts 3–5x better than mass email. Brief them in a 30-minute meeting. Check in at the 4-week mark on confirmed guest count.</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">🏆</div><div><div class="tactic-title">Inter-Company Tournament Competition</div><div class="tactic-cost">Cost: $0 · Impact: Drives team attendance and corporate visibility</div></div></div>
+      <div class="tactic-desc">Reframe the tournament as a corporate bragging rights competition. Create a named trophy. Market it on LinkedIn: "Which DFW company brings the best team this year?" Companies who sponsor get reserved team slots. The competitive angle gives HR directors a reason to bring 8–12 employees instead of 4. Post the leaderboard live at the event and on social after.</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">📰</div><div><div class="tactic-title">Local Media Outreach</div><div class="tactic-cost">Cost: $0 · Impact: Audience multiplier</div></div></div>
+      <div class="tactic-desc">Send a press release 6 weeks out to: Dallas Morning News community section, CultureMap Dallas, Do214, Addison Magazine, WFAA Good Morning Texas, NBC5 Community Calendar, CBS11 local features. The hook: "55-year-old all-volunteer nonprofit hosts annual mini golf fundraiser that raised $51,500 over the first two years of Putts for Progress — and is aiming higher this year."</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">⛳</div><div><div class="tactic-title">Puttshack Co-Brand Ask</div><div class="tactic-cost">Cost: $0 · Impact: New audience</div></div></div>
+      <div class="tactic-desc">Puttshack Addison has an active social following and benefits from showcasing their venue for a cause. Ask their marketing team for one co-branded social post, inclusion in their event-booker email, and a venue newsletter mention. Frame it as mutual visibility — they look like a community partner, The Arc reaches new audiences.</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">📱</div><div><div class="tactic-title">Volunteer Social Takeover Week</div><div class="tactic-cost">Cost: $0 · Impact: Authentic FOMO content</div></div></div>
+      <div class="tactic-desc">The week before the event, 5 volunteers take over The Arc's Facebook story for one day each. Each shares why they're coming and what The Arc means to them. No production needed — raw authenticity converts better than polished content in this community. Brief: "60 seconds. Your face. Your reason. Tell people to come."</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">⏰</div><div><div class="tactic-title">Early Bird Prize Drawing</div><div class="tactic-cost">Cost: Donated prize · Impact: Front-loads revenue</div></div></div>
+      <div class="tactic-desc">Tickets purchased 6+ weeks out enter a prize drawing — dinner for two, a Puttshack round for four, or a donated business gift. This converts fence-sitters early, gives Arc real attendance numbers for sponsor pitches, and reduces last-minute scramble. Solicit the prize from a sponsor so net cost is zero.</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">📅</div><div><div class="tactic-title">North Texas Giving Day Alignment</div><div class="tactic-cost">Cost: $0 · Impact: $4,000–$6,000 additional</div></div></div>
+      <div class="tactic-desc">North Texas Giving Day falls in September — same month as P4P. Run a unified narrative: "This September, two ways to support the IDD community in DFW." P4P attendees become NTXGD donors. NTXGD donors become P4P ticket buyers. One campaign, one month, one community.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VIDEO SCRIPTS -->
+<div class="wrap" id="videos">
+  <span class="eyebrow">Section 04</span>
+  <h2 class="sec-title">Story Video<br><em>Scripts</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Four 60–90 second videos, shot on a phone, deployed weekly for 4 weeks before the event. No production budget needed. Each follows the same arc: identity → struggle → The Arc → invitation.</p>
+
+  <div class="script-card">
+    <div class="script-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Video 1 — The Parent</h3><span class="script-tag">Week 6 · Facebook · Awareness</span>
+    </div>
+    <div class="script-body">
+      <p class="script-meta">Shot on phone, speaker looks directly at camera. Natural home or outdoor setting. No script in hand — bullet points memorized or prompted off-screen.</p>
+      <div class="script-line"><div class="script-line-timing">0:00–0:15</div><div class="script-line-text"><span class="direction">[Natural self-introduction]</span>"My name is [Name]. My [son/daughter] [Name] has [diagnosis]. They are [age] years old and one of the most [genuine trait] people I know."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:15–0:45</div><div class="script-line-text"><span class="direction">[The struggle — be specific, not dramatic]</span>"When [he/she] was [age], we were trying to figure out [IEP / Medicaid / housing / transition]. I didn't know where to start. I didn't know who to call. I didn't even know the right questions to ask. We were doing this completely alone."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:45–1:10</div><div class="script-line-text"><span class="direction">[The Arc's role — specific]</span>"Then we found The Arc of DFW. What changed wasn't that someone fixed everything. What changed was that we weren't alone anymore. We had information. We had community. We had people who understood."</div></div>
+      <div class="script-line"><div class="script-line-timing">1:10–1:25</div><div class="script-line-text"><span class="direction">[Direct invitation — look into camera]</span>"This September, The Arc is hosting Putts for Progress at Puttshack in Addison. Tickets available at putts4progress.com. I'll be there. I hope you'll come."</div></div>
+      <div class="script-line"><div class="script-line-timing">End card</div><div class="script-line-text"><span class="direction">[Text overlay]</span>PUTTS FOR PROGRESS 2026 · September 27, 2026 · PUTTSHACK ADDISON · LINK IN BIO</div></div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Video 2 — The Self-Advocate</h3><span class="script-tag">Week 5 · Facebook · Community</span>
+    </div>
+    <div class="script-body">
+      <p class="script-meta">Individual with IDD speaks for themselves — most powerful video in the series. Keep it fully in their own voice. Let silences happen. Arc staff present for support but not directing. Authenticity is the entire asset.</p>
+      <div class="script-line"><div class="script-line-timing">0:00–0:20</div><div class="script-line-text">"My name is [Name]. I am [age] years old. I have [diagnosis/identity]. And I am a member of The Self-Determination Group at The Arc of DFW."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:20–0:50</div><div class="script-line-text"><span class="direction">[What The Arc means to them]</span>"Before I found this group, I [felt isolated / didn't have people who understood / didn't know I had rights]. Now I [specific change]. The Arc taught me that I get to decide what my life looks like. Nobody else gets to decide that for me."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:50–1:10</div><div class="script-line-text">"There is an event this September called Putts for Progress. It helps The Arc keep doing what it does. I'm going to be there. It would mean a lot if you came too. It's mini golf and it's actually really fun."</div></div>
+      <div class="script-line"><div class="script-line-timing">End card</div><div class="script-line-text"><span class="direction">[Text overlay]</span>PUTTS FOR PROGRESS 2026 · September 27, 2026 · LINK IN BIO</div></div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Video 3 — The Urgency Video</h3><span class="script-tag">Week 4 · Facebook + LinkedIn · Push</span>
+    </div>
+    <div class="script-body">
+      <p class="script-meta">Board member, volunteer, or Arc staff. More direct and campaign-focused. Can be shot at Puttshack during a preview visit for visual context. Tone: energized and warm, not salesy.</p>
+      <div class="script-line"><div class="script-line-timing">0:00–0:15</div><div class="script-line-text">"We are [X] weeks away from Putts for Progress 2026. And I want to tell you exactly what's at stake."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:15–0:40</div><div class="script-line-text">"Last year this event raised $51,500 over two years. In one evening. For families across DFW navigating one of the hardest things a family can face. This year we want to do more. And we're close. But we need you in the room."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:40–1:00</div><div class="script-line-text">"Tickets available at putts4progress.com. Tournament is $75. Bring your team for $225. Great night at Puttshack in Addison — every dollar goes to advocacy and programs for the IDD community right here in DFW. Link in bio. Let's go."</div></div>
+      <div class="script-line"><div class="script-line-timing">End card</div><div class="script-line-text"><span class="direction">[Ticket link prominently displayed]</span>TICKETS AVAILABLE NOW · LINK IN BIO</div></div>
+    </div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-header" onclick="this.nextElementSibling.classList.toggle('open')">
+      <h3>Video 4 — The Final Call</h3><span class="script-tag">Week 2 · All Channels · Last Push</span>
+    </div>
+    <div class="script-body">
+      <p class="script-meta">Short, punchy, visual. Rapid montage of previous video faces plus event visuals with voiceover or on-screen text. Under 60 seconds. Most direct of the four.</p>
+      <div class="script-line"><div class="script-line-timing">0:00–0:10</div><div class="script-line-text"><span class="direction">[Montage — 3-second clips from Videos 1–3]</span><span class="direction">On-screen text: "These are the people you're showing up for."</span></div></div>
+      <div class="script-line"><div class="script-line-timing">0:10–0:30</div><div class="script-line-text"><span class="direction">[Speaker or voiceover]</span>"Putts for Progress is [X] days away. We have [X] tournament spots left. General admission still available. Tickets at putts4progress.com. Puttshack Addison. September 27, 2026."</div></div>
+      <div class="script-line"><div class="script-line-timing">0:30–0:50</div><div class="script-line-text">"The Arc of DFW has been fighting for families like the ones you just saw for 55 years. This is one night a year where you get to stand in that room with them. We hope to see you there."</div></div>
+      <div class="script-line"><div class="script-line-timing">End card</div><div class="script-line-text"><span class="direction">[Bold overlays, 3 seconds each]</span>September 27, 2026 / PUTTSHACK ADDISON / TICKETS AT PUTTS4PROGRESS.COM</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTENT CALENDAR -->
+<div class="wrap" id="calendar">
+  <span class="eyebrow">Section 05</span>
+  <h2 class="sec-title">8-Week Content<br><em>Calendar</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Week-by-week posting schedule across Facebook, LinkedIn, and email. One campaign, coordinated across every channel.</p>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">8</div><div><div class="cal-week-title">Foundation Week</div><div class="cal-week-timing">Internal Launch</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-email"><div class="platform">Email — Board &amp; Volunteers</div>P4P 2026 officially launching. Goal, timeline, and what we need from each team member.</div>
+      <div class="cal-post post-li"><div class="platform">LinkedIn</div>Save the Date — event announcement, professional tone, sponsor partnership teaser.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">7</div><div><div class="cal-week-title">Save the Date</div><div class="cal-week-timing">Public Launch</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-fb"><div class="platform">Facebook</div>Official Save the Date — event photo, date, ticket link CTA (putts4progress.com), early bird drawing mention.</div>
+      <div class="cal-post post-email"><div class="platform">Email — Full List</div>Save the Date email — personal tone, event details, early bird incentive.</div>
+      <div class="cal-post post-all"><div class="platform">TX Outreach Wave 1</div>Outreach Kit sent to DFW school districts, Down Syndrome Guild, FEAT, Texas Parent to Parent.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">6</div><div><div class="cal-week-title">Story Video 1</div><div class="cal-week-timing">Emotional Foundation</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-fb"><div class="platform">Facebook — Video</div>Video 1: The Parent. Full story, emotional hook, event invite at the end.</div>
+      <div class="cal-post post-li"><div class="platform">LinkedIn</div>Corporate sponsor outreach begins. Personalized DMs to 20–30 target contacts.</div>
+      <div class="cal-post post-all"><div class="platform">TX Outreach Wave 2</div>Therapy centers, disability advocacy orgs, parent Facebook groups.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">5</div><div><div class="cal-week-title">Video 2 + Tickets Live</div><div class="cal-week-timing">Momentum Build</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-fb"><div class="platform">Facebook — Video</div>Video 2: The Self-Advocate. Most authentic post of the series.</div>
+      <div class="cal-post post-email"><div class="platform">Email — Full List</div>"Tickets Are Live" — early bird deadline highlighted. One clear CTA.</div>
+      <div class="cal-post post-fb"><div class="platform">Facebook</div>Awareness post — Arc mission, 55 years, all-volunteer distinction.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">4</div><div><div class="cal-week-title">Video 3 + Corporate Push</div><div class="cal-week-timing">Push Begins</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-fb"><div class="platform">Facebook + LinkedIn — Video</div>Video 3: The Urgency Video. $51,500 raised across first two years, 2026 goal, ticket CTA.</div>
+      <div class="cal-post post-li"><div class="platform">LinkedIn</div>Inter-company tournament competition — "Which DFW company brings the best team?"</div>
+      <div class="cal-post post-email"><div class="platform">Email — Corporate Prospects</div>Follow-up email to sponsor leads with confirmed sponsor social proof.</div>
+      <div class="cal-post post-all"><div class="platform">All Channels</div>Announce confirmed sponsors publicly — tag them, give them visibility.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">3</div><div><div class="cal-week-title">Early Bird Deadline + NTXGD</div><div class="cal-week-timing">3 Weeks Out</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-email"><div class="platform">Email — Full List</div>Early bird deadline reminder. Prize drawing reminder. Final push for early tickets.</div>
+      <div class="cal-post post-fb"><div class="platform">Facebook</div>NTXGD alignment post — "Two ways to give this September."</div>
+      <div class="cal-post post-all"><div class="platform">Ambassador Check-In</div>Personal outreach to all 10–15 ambassadors — confirmed guest count?</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">2</div><div><div class="cal-week-title">Final Sprint + Takeover</div><div class="cal-week-timing">2 Weeks Out</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-fb"><div class="platform">Facebook — Video</div>Video 4: The Final Call. Montage + urgency. Spots remaining.</div>
+      <div class="cal-post post-fb"><div class="platform">Facebook Stories — Mon–Fri</div>Volunteer Social Takeover Week. 5 advocates, 5 days, 5 personal reasons to come.</div>
+      <div class="cal-post post-email"><div class="platform">Email</div>"Last Chance" — 72 hours out. Final total preview if available.</div>
+    </div>
+  </div>
+
+  <div class="cal-week">
+    <div class="cal-week-header"><div class="cal-week-num">🎯</div><div><div class="cal-week-title">Event Week</div><div class="cal-week-timing">Day-Of + 48 Hours After</div></div></div>
+    <div class="cal-posts">
+      <div class="cal-post post-email"><div class="platform">Day Before — Email</div>Logistics to all registrants. Parking, check-in time, what to expect.</div>
+      <div class="cal-post post-fb"><div class="platform">Day-Of — Facebook Live/Stories</div>Check-in energy, tournament action, real-time atmosphere.</div>
+      <div class="cal-post post-email"><div class="platform">24 Hours After</div>Thank-you with final total, impact statement, soft membership ask.</div>
+      <div class="cal-post post-fb"><div class="platform">48 Hours After — All Channels</div>Event recap — photos, final total, sponsor recognition, 2027 teaser.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- DAY OF -->
+<div class="wrap" id="dayof">
+  <span class="eyebrow">Section 06</span>
+  <h2 class="sec-title">Day-Of<br><em>Messaging Guide</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">What gets said in the room — from the stage, at check-in, and in the 48 hours surrounding the event — determines whether a first-time attendee becomes a recurring donor.</p>
+  <div class="tactic-grid">
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">📋</div><div><div class="tactic-title">Check-In Table Script</div></div></div>
+      <div class="tactic-desc">"Welcome to Putts for Progress! You're checked in. Here's your wristband and scorecard if you're in the tournament. Bar is open, food is on the [left/right]. Tournament starts at [time]. If you want to know more about The Arc while you're here, grab a card from the table — and genuinely, thank you for being here tonight."</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">🎤</div><div><div class="tactic-title">Opening Remarks — 3 Minutes</div></div></div>
+      <div class="tactic-desc">"Good evening. My name is [Name], [role] at The Arc of DFW Area. We've advocated for individuals with intellectual and developmental disabilities in this community for 55 years. We are 100% volunteer-run. Every dollar raised tonight stays in DFW.<br><br>Last year, this room raised $51,500 over two years. Tonight, we want to do better — not because we set arbitrary goals, but because there are families in this city who needed The Arc last year, and there will be more next year, and the work doesn't stop.<br><br>So thank you for being here. Play well. Give generously. Enjoy the night."</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">📣</div><div><div class="tactic-title">Mid-Event Fundraising Update</div></div></div>
+      <div class="tactic-desc">"We're halfway through the evening. As of right now, between ticket sales, sponsorships, and giving tonight, we have raised $[X]. Our goal is $[Y]. If you haven't given yet — QR code on every table. Thirty seconds. It matters."</div>
+    </div>
+    <div class="tactic-card">
+      <div class="tactic-top"><div class="tactic-icon">🏁</div><div><div class="tactic-title">Closing Remarks + Total Reveal</div></div></div>
+      <div class="tactic-desc">"Before we announce tournament results — one number. Tonight, this room raised $[FINAL TOTAL] for the IDD community in DFW. [Pause. Let it land.] That number represents families who will get the phone call they needed. Training they couldn't afford. Advocacy that changes laws.<br><br>Tournament results: [announce winners]. Thank you to our sponsors: [list by name]. And thank you to every single person in this room. We'll see you next year."</div>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
-  <div class="footer-note">Document 01: Ideal Client Profiles · Built by JRZ Consulting Solutions · 2026</div>
+  <div class="footer-note">Putts for Progress 2026 Campaign Plan · Built by JRZ Consulting Solutions · 2026</div>
   <a class="back-link" href="../index.html">← Return to Vault Home</a>
 </footer>
-
-<script>
-  function showTab(panelId, btn, activeClass) {
-    document.querySelectorAll('.icp-panel').forEach(p => p.classList.remove('visible'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.className = 'tab-btn');
-    document.getElementById(panelId).classList.add('visible');
-    btn.classList.add(activeClass);
-  }
-</script>
 </body>
 </html>
