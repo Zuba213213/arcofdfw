@@ -11,35 +11,32 @@
     --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A;
     --ivory: #F5F0E8; --coral: #C95B38; --green: #3A7D44;
     --green-lt: #7DC87D; --slate: #4A6274; --white: #FFFFFF;
-    --teal: #2A7B6F; --teal-lt: #4FBFB0;
+    --teal: #2A7B6F; --teal-lt: #4FBFB0; --purple: #7B68B0;
+    --purple-lt: #B0A0E0;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 16px; line-height: 1.7; }
 
   .topbar { background: var(--green); color: var(--white); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-
   nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 100; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
   .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; list-style: none; }
   .nav-links a { color: var(--ivory); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* HERO */
   .hero { padding: 56px 24px 44px; text-align: center; border-bottom: 3px solid var(--green); background: radial-gradient(ellipse at 50% 0%, rgba(58,125,68,0.1) 0%, transparent 65%); }
   .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-lt); border: 1px solid var(--green-lt); padding: 4px 14px; margin-bottom: 22px; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5.5vw, 46px); font-weight: 700; line-height: 1.12; color: var(--white); margin-bottom: 14px; }
   .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub { max-width: 580px; margin: 0 auto 32px; color: rgba(245,240,232,0.75); font-size: 16px; }
+  .hero-sub { max-width: 600px; margin: 0 auto 32px; color: rgba(245,240,232,0.75); font-size: 16px; line-height: 1.7; }
 
-  /* NORTH STAR */
   .north-star { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 680px; margin: 0 auto; }
   .ns-block { flex: 1; min-width: 130px; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 18px 14px; text-align: center; border: 1px solid rgba(201,168,76,0.2); }
-  .ns-num { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 5px; }
+  .ns-num { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 5px; }
   .ns-label { font-size: 11px; color: rgba(245,240,232,0.55); letter-spacing: 0.06em; line-height: 1.4; text-transform: uppercase; }
-  .ns-block.target { border-color: var(--green-lt); }
-  .ns-block.target .ns-num { color: var(--green-lt); }
+  .ns-block.confirmed { border-color: var(--green-lt); }
+  .ns-block.confirmed .ns-num { color: var(--green-lt); }
 
-  /* SECTION NAV */
   .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 20px; overflow-x: auto; white-space: nowrap; }
   .section-nav a { display: inline-block; padding: 13px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
   .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
@@ -52,99 +49,94 @@
   .body-text { color: rgba(245,240,232,0.78); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
   .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
 
-  /* ROLES LEGEND */
-  .roles-grid { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
-  .role-pill { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 12px 16px; }
-  .role-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-  .role-info { flex: 1; }
-  .role-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
-  .role-desc { font-size: 13px; color: rgba(245,240,232,0.6); line-height: 1.5; }
+  /* OWNER KEY */
+  .owner-key { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 32px; }
+  .ok-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 10px 14px; flex: 1; min-width: 200px; }
+  .ok-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .ok-label { font-size: 13px; color: rgba(245,240,232,0.8); line-height: 1.4; }
+  .ok-label strong { color: var(--white); display: block; font-size: 14px; margin-bottom: 1px; }
+
+  .owner-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+  .o-jrz   { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .o-ask   { background: rgba(201,91,56,0.2); color: #E88A70; }
+  .o-julia { background: rgba(42,123,111,0.2); color: var(--teal-lt); }
+  .o-org   { background: rgba(123,104,176,0.2); color: var(--purple-lt); }
 
   /* PHASE BLOCKS */
-  .phase-block { margin-bottom: 32px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); }
+  .phase-block { margin-bottom: 24px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); }
   .phase-header { padding: 20px 22px; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; cursor: pointer; }
   .phase-header-left { display: flex; align-items: center; gap: 14px; }
   .phase-num { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; font-family: 'Playfair Display', serif; }
-  .phase-title-wrap { }
   .phase-name { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); font-weight: 600; }
-  .phase-window { font-size: 12px; color: rgba(245,240,232,0.55); margin-top: 2px; letter-spacing: 0.04em; }
-  .phase-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .phase-window { font-size: 12px; color: rgba(245,240,232,0.5); margin-top: 3px; }
   .phase-date-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
-  .phase-toggle { font-size: 18px; color: var(--gold); margin-left: 8px; }
-
+  .phase-toggle { font-size: 18px; color: var(--gold); margin-left: 8px; flex-shrink: 0; }
   .phase-body { display: none; border-top: 1px solid rgba(255,255,255,0.06); }
   .phase-body.open { display: block; }
 
-  /* TASK TABLE */
-  .task-table { width: 100%; border-collapse: collapse; }
-  .task-table thead tr { background: rgba(0,0,0,0.2); }
-  .task-table th { padding: 10px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .task-table td { padding: 13px 14px; font-size: 14px; color: rgba(245,240,232,0.82); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; line-height: 1.5; }
-  .task-table tr:last-child td { border-bottom: none; }
-  .task-table tr:hover td { background: rgba(255,255,255,0.02); }
+  /* TASK LIST */
+  .task-list { display: flex; flex-direction: column; gap: 0; }
+  .task-row { display: flex; align-items: flex-start; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .task-row:last-child { border-bottom: none; }
+  .task-owner-col { width: 90px; flex-shrink: 0; padding: 14px 12px 14px 20px; display: flex; align-items: flex-start; padding-top: 16px; }
+  .task-content { flex: 1; padding: 14px 20px 14px 0; }
+  .task-name { font-size: 15px; color: var(--white); line-height: 1.5; margin-bottom: 3px; }
+  .task-detail { font-size: 13px; color: rgba(245,240,232,0.55); line-height: 1.5; }
+  .task-row.jrz-row { background: rgba(201,168,76,0.03); }
+  .task-row.ask-row { background: rgba(201,91,56,0.04); }
+  .task-row.julia-row { background: rgba(42,123,111,0.04); }
+  .task-row.org-row { background: rgba(123,104,176,0.04); }
 
-  .task-name { color: var(--white); font-weight: 400; }
-  .task-deliverable { color: rgba(245,240,232,0.65); font-size: 13px; margin-top: 3px; }
+  /* SECTION LABEL inside phase */
+  .task-section-label { padding: 10px 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(0,0,0,0.15); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .tsl-jrz { color: var(--gold); }
+  .tsl-ask { color: #E88A70; }
+  .tsl-julia { color: var(--teal-lt); }
+  .tsl-org { color: var(--purple-lt); }
 
-  .owner-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
-  .o-ed        { background: rgba(201,168,76,0.18); color: var(--gold); }
-  .o-board     { background: rgba(201,91,56,0.18); color: #E88A70; }
-  .o-mktg      { background: rgba(42,123,111,0.2); color: var(--teal-lt); }
-  .o-vol       { background: rgba(74,98,116,0.3); color: #9BB5C8; }
-  .o-jrz       { background: rgba(100,80,160,0.2); color: #B0A0E0; }
-  .o-sponsor   { background: rgba(58,125,68,0.2); color: var(--green-lt); }
-
-  .status-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
-  .s-todo   { background: rgba(74,98,116,0.6); }
-  .s-active { background: var(--gold); }
-  .s-done   { background: var(--green-lt); }
-
-  .week-tag { font-size: 11px; color: var(--slate); white-space: nowrap; }
+  /* ASKS PANEL */
+  .asks-block { background: rgba(201,91,56,0.06); border: 1px solid rgba(201,91,56,0.25); border-radius: 10px; padding: 28px 24px; margin: 28px 0; }
+  .asks-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
+  .asks-block .sub { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 20px; line-height: 1.6; }
+  .ask-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(201,91,56,0.15); }
+  .ask-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ask-num { font-family: 'Playfair Display', serif; font-size: 20px; color: rgba(201,91,56,0.6); font-weight: 700; flex-shrink: 0; min-width: 28px; line-height: 1.3; }
+  .ask-body { flex: 1; }
+  .ask-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .ask-desc { font-size: 14px; color: rgba(245,240,232,0.7); line-height: 1.6; }
+  .ask-from { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E88A70; }
 
   /* SPONSOR TRACKER */
-  .tracker-note { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; font-size: 14px; color: rgba(245,240,232,0.75); line-height: 1.6; }
+  .tracker-note { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; font-size: 14px; color: rgba(245,240,232,0.75); line-height: 1.6; }
   .sponsor-table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .sponsor-table th { padding: 10px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-align: left; border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .sponsor-table td { padding: 13px 12px; color: rgba(245,240,232,0.78); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+  .sponsor-table td { padding: 12px 12px; color: rgba(245,240,232,0.78); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; font-size: 13px; }
   .sponsor-table tr:last-child td { border-bottom: none; }
   .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; }
-  .t-anchor { background: rgba(201,168,76,0.2); color: var(--gold); }
-  .t-champ  { background: rgba(201,91,56,0.15); color: #E88A70; }
-  .t-comm   { background: rgba(74,98,116,0.3); color: #9BB5C8; }
+  .t-title  { background: rgba(201,91,56,0.2); color: #E88A70; }
+  .t-club   { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .t-fair   { background: rgba(42,123,111,0.2); color: var(--teal-lt); }
+  .t-hole   { background: rgba(74,98,116,0.3); color: #9BB5C8; }
   .status-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; }
-  .st-target   { background: rgba(74,98,116,0.2); color: var(--slate); }
-  .st-contact  { background: rgba(201,168,76,0.15); color: var(--gold); }
-  .st-warm     { background: rgba(58,125,68,0.2); color: var(--green-lt); }
-  .st-confirmed{ background: rgba(58,125,68,0.35); color: #A8E8A8; }
-  .st-declined { background: rgba(139,46,46,0.2); color: #C98080; }
+  .st-confirmed { background: rgba(58,125,68,0.3); color: #A8E8A8; }
+  .st-target    { background: rgba(74,98,116,0.2); color: var(--slate); }
+  .st-contact   { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .st-warm      { background: rgba(58,125,68,0.2); color: var(--green-lt); }
+  .st-declined  { background: rgba(139,46,46,0.2); color: #C98080; }
+  .add-row { width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); border-radius: 4px; margin-top: 8px; font-size: 13px; color: var(--slate); text-align: center; font-style: italic; }
 
-  .add-row { width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); border-radius: 4px; margin-top: 8px; font-size: 13px; color: var(--slate); text-align: center; cursor: default; font-style: italic; }
-
-  /* THERMOMETER */
+  /* REVENUE TRACKER */
   .thermo-wrap { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 28px 24px; margin: 24px 0; }
   .thermo-label { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px; }
   .thermo-current { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--green-lt); font-weight: 700; }
   .thermo-goal { font-size: 14px; color: var(--slate); }
-  .thermo-bar-bg { background: rgba(255,255,255,0.06); border-radius: 6px; height: 16px; overflow: hidden; margin-bottom: 10px; }
-  .thermo-bar-fill { background: linear-gradient(90deg, var(--green), var(--green-lt)); height: 100%; border-radius: 6px; transition: width 0.5s; }
-  .thermo-sources { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+  .thermo-bar-bg { background: rgba(255,255,255,0.06); border-radius: 6px; height: 16px; overflow: hidden; margin-bottom: 18px; }
+  .thermo-bar-fill { background: linear-gradient(90deg, var(--green), var(--green-lt)); height: 100%; border-radius: 6px; }
+  .thermo-sources { display: flex; flex-direction: column; gap: 8px; }
   .thermo-source { display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding: 8px 12px; background: rgba(255,255,255,0.02); border-radius: 4px; }
   .ts-label { color: rgba(245,240,232,0.7); }
-  .ts-amount { color: var(--gold); font-weight: 700; }
+  .ts-amount { color: var(--gold); font-weight: 700; font-size: 13px; }
   .ts-amount.locked { color: var(--green-lt); }
-
-  /* ROLES KEY INLINE */
-  .roles-key { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
-  .rk-pill { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(245,240,232,0.65); }
-  .rk-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-  /* KICKOFF BLOCK */
-  .kickoff-block { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 28px 24px; margin: 24px 0; }
-  .kickoff-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 12px; }
-  .kickoff-block p { font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.7; margin-bottom: 14px; }
-  .kickoff-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .kickoff-items li { display: flex; gap: 10px; font-size: 14px; color: rgba(245,240,232,0.8); line-height: 1.55; }
-  .ki-icon { color: var(--gold); flex-shrink: 0; }
 
   footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(201,168,76,0.2); padding: 32px 24px; text-align: center; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 6px; }
@@ -154,334 +146,542 @@
 
   @media (min-width: 600px) {
     nav { flex-direction: row; justify-content: space-between; padding: 16px 36px; }
-    .phase-header { flex-wrap: nowrap; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">Campaign Execution Roadmap · Putts for Progress 2026 · Confidential</div>
+<div class="topbar">Campaign Execution Roadmap · Putts for Progress 2026 · JRZ Consulting Solutions</div>
 
 <nav>
   <div class="nav-brand">The Arc of DFW Area</div>
   <ul class="nav-links">
-    <li><a href="#kickoff">Kickoff</a></li>
-    <li><a href="#roles">Roles</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#sponsors">Sponsor Tracker</a></li>
-    <li><a href="#thermometer">Revenue</a></li>
-    <li><a href="../index.html">← Vault Home</a></li>
+    <li><a href="#reality">How This Works</a></li>
+    <li><a href="#asks">Org Asks</a></li>
+    <li><a href="#phases">Phase Plan</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
+    <li><a href="#revenue">Revenue</a></li>
+    <li><a href="../index.html">← Vault</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-eyebrow">Execution Roadmap · P4P 2026</div>
-  <h1>The Plan That<br><em>Actually Runs the Campaign</em></h1>
-  <p class="hero-sub">Phases, deadlines, owners, and a live revenue tracker. This is the document that turns the vault into a winning campaign.</p>
+  <h1>Who Does What<br><em>and When</em></h1>
+  <p class="hero-sub">A realistic plan built around one consultant, a volunteer org, and a September 27 deadline. Not what a full team would do — what Joey can actually execute, and what the org needs to provide to make it work.</p>
   <div class="north-star">
-    <div class="ns-block"><div class="ns-num">$51.5K</div><div class="ns-label">2 Yrs Total Raised</div></div>
-    <div class="ns-block target"><div class="ns-num">$42K</div><div class="ns-label">2026 North Star Goal</div></div>
-    <div class="ns-block"><div class="ns-num">Sept</div><div class="ns-label">Event Month</div></div>
-    <div class="ns-block"><div class="ns-num">8 Wks</div><div class="ns-label">Campaign Runway</div></div>
-    <div class="ns-block"><div class="ns-num">Sept 27</div><div class="ns-label">Event Date · Puttshack Addison</div></div>
+    <div class="ns-block confirmed"><div class="ns-num">Sept 27</div><div class="ns-label">Event Date · Confirmed</div></div>
+    <div class="ns-block confirmed"><div class="ns-num">Method 360</div><div class="ns-label">Title Sponsor · Confirmed</div></div>
+    <div class="ns-block"><div class="ns-num">$51.5K</div><div class="ns-label">Raised First Two Years</div></div>
+    <div class="ns-block"><div class="ns-num">$42K+</div><div class="ns-label">2026 Goal</div></div>
   </div>
 </section>
 
 <div class="section-nav">
-  <a href="#kickoff">Kickoff Meeting</a>
-  <a href="#roles">Roles &amp; Owners</a>
-  <a href="#roadmap">Phase Roadmap</a>
+  <a href="#reality">Reality Check</a>
+  <a href="#asks">4 Org Asks</a>
+  <a href="#phases">Phase Roadmap</a>
   <a href="#sponsors">Sponsor Tracker</a>
-  <a href="#thermometer">Revenue Tracker</a>
+  <a href="#revenue">Revenue Tracker</a>
 </div>
 
-<!-- FIRST THING FIRST -->
-<div class="wrap" id="kickoff">
-  <span class="eyebrow">Before Anything Else</span>
-  <h2 class="sec-title">The Kickoff <em>Meeting</em></h2>
+<!-- REALITY CHECK -->
+<div class="wrap" id="reality">
+  <span class="eyebrow">How This Actually Works</span>
+  <h2 class="sec-title">One Consultant.<br><em>Four Buckets.</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Nothing in this roadmap moves until one meeting happens. 60 minutes. The right people in the room. Every phase gets a date and a name on it. This is the meeting that converts the vault from a document into a campaign.</p>
+  <p class="body-text">This is not a campaign with a full marketing team. It's one consultant — JRZ — doing the heavy lifting, with four specific asks of the organization. Everything else lives with Joey. That's the realistic operating model and this roadmap is built around it.</p>
 
-  <div class="kickoff-block">
-    <h3>Kickoff Meeting Agenda — 60 Minutes</h3>
-    <p>Schedule within the next 7 days. Can be Zoom or in-person. Required attendees: Executive Director or Board Chair, Event Lead, Marketing or Communications Lead, and JRZ (if involved in execution).</p>
-    <ul class="kickoff-items">
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Confirm event date. Everything else dates backward from this. Nothing else matters until this is locked.</li>
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Adopt the $42K north star goal officially. Align on the realistic scenario ($38–42K) as the working target.</li>
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">15 min —</strong>Assign a name to every phase and every major task in this roadmap. Ownerless tasks do not get done.</li>
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Identify the first 5–10 corporate sponsor prospects by name. Assign who makes each call personally.</li>
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">10 min —</strong>Identify 3–4 family/advocate story video volunteers by name. Set a date to film each one.</li>
-      <li><span class="ki-icon">◆</span><strong style="color:var(--white); margin-right:6px;">5 min —</strong>Set next check-in date — weekly or biweekly, same time, same people.</li>
-    </ul>
+  <div class="owner-key">
+    <div class="ok-pill">
+      <div class="ok-dot" style="background:var(--gold);"></div>
+      <div class="ok-label"><strong>JRZ — Joey</strong>Strategy, copy, content, social posts, email drafts, video scripts, outreach kit distribution, all marketing deliverables</div>
+    </div>
+    <div class="ok-pill">
+      <div class="ok-dot" style="background:#E88A70;"></div>
+      <div class="ok-label"><strong>Org Ask — James / Board</strong>The 4 specific things Joey needs from the organization to execute. These are asks, not assigned tasks.</div>
+    </div>
+    <div class="ok-pill">
+      <div class="ok-dot" style="background:var(--teal-lt);"></div>
+      <div class="ok-label"><strong>Julia Chalker</strong>Sponsorship commitments, payment processing, and sponsor relationship management — already her lane</div>
+    </div>
+    <div class="ok-pill">
+      <div class="ok-dot" style="background:var(--purple-lt);"></div>
+      <div class="ok-label"><strong>Org Approvals</strong>Content review and sign-off before publishing — one designated person, fast turnaround needed</div>
+    </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ROLES -->
-<div class="wrap" id="roles">
-  <span class="eyebrow">Who Does What</span>
-  <h2 class="sec-title">Roles &amp; <em>Owners</em></h2>
+<!-- THE 4 ASKS -->
+<div class="wrap" id="asks">
+  <span class="eyebrow">What Joey Needs From The Org</span>
+  <h2 class="sec-title">The 4 <em>Asks</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Every task in this roadmap is tagged with a role. Fill in the actual names at the kickoff meeting. The roles below reflect the functions needed — one person may hold more than one role in a small volunteer org.</p>
+  <p class="body-text">Joey can build everything — but he can't manufacture these four things. These are the only items that require action from James, the board, or someone inside the organization. Everything else is handled.</p>
 
-  <div class="roles-grid">
-    <div class="role-pill">
-      <div class="role-dot" style="background:#C9A84C;"></div>
-      <div class="role-info">
-        <div class="role-title">ED / Board Chair <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
-        <div class="role-desc">Final decision authority. Approves budget, signs off on sponsor commitments, delivers remarks at event. Makes anchor sponsor calls personally — no one else closes at $10K.</div>
-      </div>
-      <span class="owner-tag o-ed">ED</span>
-    </div>
-    <div class="role-pill">
-      <div class="role-dot" style="background:#E88A70;"></div>
-      <div class="role-info">
-        <div class="role-title">Board Lead / Event Chair <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
-        <div class="role-desc">Day-to-day campaign ownership. Runs weekly check-ins, manages ambassador program, owns the sponsor outreach tracker, coordinates Puttshack logistics.</div>
-      </div>
-      <span class="owner-tag o-board">Board</span>
-    </div>
-    <div class="role-pill">
-      <div class="role-dot" style="background:#4FBFB0;"></div>
-      <div class="role-info">
-        <div class="role-title">Marketing / Communications Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
-        <div class="role-desc">Executes the content calendar. Posts social content, sends emails, coordinates video filming schedule, manages the TX outreach kit distribution.</div>
-      </div>
-      <span class="owner-tag o-mktg">Mktg</span>
-    </div>
-    <div class="role-pill">
-      <div class="role-dot" style="background:#9BB5C8;"></div>
-      <div class="role-info">
-        <div class="role-title">Volunteer Coordinator / Ambassador Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
-        <div class="role-desc">Recruits and briefs the 10–15 community ambassadors. Manages the volunteer social takeover week. Coordinates story video volunteers and filming logistics.</div>
-      </div>
-      <span class="owner-tag o-vol">Vol</span>
-    </div>
-    <div class="role-pill">
-      <div class="role-dot" style="background:#B0A0E0;"></div>
-      <div class="role-info">
-        <div class="role-title">JRZ Consulting Solutions <span style="color:var(--slate);font-weight:400;font-size:13px;">— Joey Zubillaga</span></div>
-        <div class="role-desc">Marketing infrastructure, vault maintenance, copy support, campaign strategy oversight, and any additional collateral builds during the campaign runway.</div>
-      </div>
-      <span class="owner-tag o-jrz">JRZ</span>
-    </div>
-    <div class="role-pill">
-      <div class="role-dot" style="background:#7DC87D;"></div>
-      <div class="role-info">
-        <div class="role-title">Sponsor Relations Lead <span style="color:var(--slate);font-weight:400;font-size:13px;">— Name: _______________</span></div>
-        <div class="role-desc">Manages the corporate sponsor outreach list, tracks all contact activity, handles proposal delivery, and coordinates post-event sponsor impact reports.</div>
-      </div>
-      <span class="owner-tag o-sponsor">Sponsor</span>
-    </div>
-  </div>
+  <div class="asks-block">
+    <h3>4 Things the Org Needs to Provide</h3>
+    <p class="sub">These are not ongoing responsibilities. They are one-time asks that unlock the campaign. The sooner these are confirmed, the sooner the full 8-week runway is in play.</p>
 
-  <div class="roles-key" style="margin-top:24px;">
-    <div class="rk-pill"><div class="rk-dot" style="background:#C9A84C;"></div>ED = Executive Director / Board Chair</div>
-    <div class="rk-pill"><div class="rk-dot" style="background:#E88A70;"></div>Board = Board Lead / Event Chair</div>
-    <div class="rk-pill"><div class="rk-dot" style="background:#4FBFB0;"></div>Mktg = Marketing Lead</div>
-    <div class="rk-pill"><div class="rk-dot" style="background:#9BB5C8;"></div>Vol = Volunteer Coordinator</div>
-    <div class="rk-pill"><div class="rk-dot" style="background:#B0A0E0;"></div>JRZ = JRZ Consulting</div>
-    <div class="rk-pill"><div class="rk-dot" style="background:#7DC87D;"></div>Sponsor = Sponsor Relations</div>
+    <div class="ask-item">
+      <div class="ask-num">1</div>
+      <div class="ask-body">
+        <div class="ask-title">A Single Point of Contact for Approvals</div>
+        <div class="ask-desc">Joey will draft all content — social posts, emails, video scripts, outreach copy. Before anything goes out under The Arc's name, one person needs to review and approve it. This person needs to be reachable and able to turn approvals around within 48 hours. Without this, the content calendar stalls.</div>
+        <span class="ask-from">Ask: James or board designee · One-time setup</span>
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <div class="ask-num">2</div>
+      <div class="ask-body">
+        <div class="ask-title">3–4 Story Video Volunteers</div>
+        <div class="ask-desc">Joey will write the scripts, direct the shoots, and handle the edit brief. The org needs to identify 3–4 willing participants — a parent, a self-advocate, a board member or staff person, and optionally a program participant. Names and contact info is all Joey needs. Filming can be done on a phone.</div>
+        <span class="ask-from">Ask: James or Volunteer Coordinator · One-time ask</span>
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <div class="ask-num">3</div>
+      <div class="ask-body">
+        <div class="ask-title">Corporate Sponsor Relationship Access</div>
+        <div class="ask-desc">Joey can write every sponsor email and build every proposal — but a $2,000 Club Sponsor commitment closes faster when it comes from James or a board member personally, not a consultant. Joey needs to know: who on the board has existing relationships with DFW businesses? Which companies have given before? Those names and warm connections are the difference between a cold email and a closed sponsorship.</div>
+        <span class="ask-from">Ask: James / Board · Provide existing relationships and prior sponsor list</span>
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <div class="ask-num">4</div>
+      <div class="ask-body">
+        <div class="ask-title">Access to Arc's Social Accounts and Email Platform</div>
+        <div class="ask-desc">Joey will write and schedule all social content and email campaigns. To do that, he needs either posting access to The Arc's Facebook, LinkedIn, and Instagram accounts, or a reliable person inside the org who can publish content within 24 hours of receiving it. Same for the email platform — whether that's Mailchimp, Constant Contact, or whatever the org uses.</div>
+        <span class="ask-from">Ask: James or Comms designee · Admin access or dedicated publisher</span>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <hr class="divider">
 
 <!-- PHASE ROADMAP -->
-<div class="wrap" id="roadmap">
-  <span class="eyebrow">Campaign Phases</span>
-  <h2 class="sec-title">Phase by Phase <em>Roadmap</em></h2>
+<div class="wrap" id="phases">
+  <span class="eyebrow">Week by Week</span>
+  <h2 class="sec-title">The Phase <em>Plan</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Six phases from now through post-event. Click any phase to expand its full task list with owners and deliverables. All dates are relative to the event — fill in actuals at the kickoff meeting.</p>
+  <p class="body-text">Event is September 27, 2026. Eight weeks of runway. Each phase shows what Joey executes independently and what requires an org response. Click any phase to expand.</p>
 
-  <!-- PHASE 0 -->
-  <div class="phase-block" style="border-color:rgba(201,168,76,0.4);">
-    <div class="phase-header" style="background:rgba(201,168,76,0.08);" onclick="togglePhase(this)">
+  <!-- PHASE 0 — RIGHT NOW -->
+  <div class="phase-block" style="border-color:rgba(201,168,76,0.45);">
+    <div class="phase-header" style="background:rgba(201,168,76,0.08);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:var(--gold);color:var(--navy);">0</div>
-        <div class="phase-title-wrap">
-          <div class="phase-name">Foundation — Lock Everything</div>
-          <div class="phase-window">Now → Complete before Week 8</div>
+        <div>
+          <div class="phase-name">Right Now — Before the Clock Starts</div>
+          <div class="phase-window">Complete before Week 8 begins</div>
         </div>
       </div>
-      <div class="phase-meta">
+      <div style="display:flex;align-items:center;gap:10px;">
         <span class="phase-date-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Do This First</span>
-        <span class="phase-toggle">▾</span>
+        <span class="phase-toggle">▴</span>
       </div>
     </div>
     <div class="phase-body open">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Confirm event date with Puttshack Addison</div><div class="task-deliverable">Deliverable: Signed venue agreement or email confirmation</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">This week</td></tr>
-          <tr><td><div class="task-name">Adopt $42K as official fundraising goal</div><div class="task-deliverable">Deliverable: Board alignment — confirmed in writing or meeting notes</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">This week</td></tr>
-          <tr><td><div class="task-name">Assign names to all roles in this document</div><div class="task-deliverable">Deliverable: Filled-in role sheet — who owns what</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">Kickoff meeting</td></tr>
-          <tr><td><div class="task-name">Set up event registration page (ticket sales live)</div><div class="task-deliverable">Deliverable: Live registration link ready to share</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Build corporate prospect list — 20–30 named DFW companies</div><div class="task-deliverable">Deliverable: Spreadsheet with company, contact name, email, and assigned caller</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Identify 3–4 story video volunteers (families or self-advocates)</div><div class="task-deliverable">Deliverable: Names confirmed, filming dates scheduled</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Identify 10–15 community ambassadors</div><div class="task-deliverable">Deliverable: List of ambassadors, each committed to inviting 5 people</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Finalize sponsorship tier packages and confirm pricing</div><div class="task-deliverable">Deliverable: Approved sponsor deck (see vault) ready to send</div></td><td><span class="owner-tag o-ed">ED</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Set recurring weekly check-in — same time, same people</div><div class="task-deliverable">Deliverable: Calendar invite sent to all role holders</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">Kickoff meeting</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Deliver Marketing Vault to James</div>
+            <div class="task-detail">All six documents live on GitHub Pages. Send delivery email with vault link and request kickoff meeting.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Build TX Outreach contact list</div>
+            <div class="task-detail">Compile emails for DFW SPED directors, parent orgs, therapy centers, and disability advocacy groups. Target: 50+ contacts ready to send.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Draft corporate sponsor outreach emails</div>
+            <div class="task-detail">Personalized email templates for Club and Fairway tier prospects — ready to send once org provides the relationship list.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-list">
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Designate a single approval contact</div>
+            <div class="task-detail">One person. 48-hour turnaround. All content routes through them before publishing.</div>
+          </div>
+        </div>
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Provide prior sponsor list and warm corporate relationships</div>
+            <div class="task-detail">Who gave before? Who does the board know? Which local businesses have a relationship with The Arc? This list is the foundation of the sponsor outreach.</div>
+          </div>
+        </div>
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Confirm social media and email platform access</div>
+            <div class="task-detail">Admin access to Facebook, LinkedIn, Instagram. Login or publisher access to email platform (Mailchimp, Constant Contact, etc.).</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- PHASE 1 -->
   <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">1</div>
-        <div class="phase-title-wrap">
-          <div class="phase-name">Activation — Go Public</div>
-          <div class="phase-window">8–7 Weeks Before Event</div>
+        <div>
+          <div class="phase-name">Go Public — Save the Date</div>
+          <div class="phase-window">8–7 Weeks Out · ~Late July</div>
         </div>
       </div>
-      <div class="phase-meta">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Late July</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Send personalized corporate sponsor outreach — wave 1</div><div class="task-deliverable">Deliverable: 10+ personal emails sent, calls scheduled for anchor prospects</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 8</td></tr>
-          <tr><td><div class="task-name">Post Save the Date — Facebook and LinkedIn</div><div class="task-deliverable">Deliverable: Posts live on both platforms, copy from Brand Guide</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
-          <tr><td><div class="task-name">Send Save the Date email to full Arc list</div><div class="task-deliverable">Deliverable: Email sent, open rate tracked</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
-          <tr><td><div class="task-name">Brief all ambassadors — provide invite scripts and assets</div><div class="task-deliverable">Deliverable: Ambassador briefing meeting held, assets distributed</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 7</td></tr>
-          <tr><td><div class="task-name">Send TX Outreach Kit — wave 1 (school districts, major orgs)</div><div class="task-deliverable">Deliverable: 20+ outreach emails sent using kit templates</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 7</td></tr>
-          <tr><td><div class="task-name">Submit event to local media calendars</div><div class="task-deliverable">Deliverable: Submitted to DMN, WFAA, NBC5, CultureMap, Do214, Addison Magazine</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 7</td></tr>
-          <tr><td><div class="task-name">Request co-branded social post from Puttshack Addison</div><div class="task-deliverable">Deliverable: Email sent to Puttshack marketing contact, follow-up scheduled</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">Week 7</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write and schedule Save the Date posts — Facebook and LinkedIn</div>
+            <div class="task-detail">Copy from Brand Guide. Posts drafted and delivered to approval contact for sign-off before scheduling.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write Save the Date email to full Arc list</div>
+            <div class="task-detail">Draft delivered to approval contact. Ready to send once approved. Uses Brand Guide email template.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Send TX Outreach Kit — wave 1</div>
+            <div class="task-detail">Emails to DFW school districts, Down Syndrome Guild, FEAT of North Texas, Texas Parent to Parent. Uses outreach kit templates verbatim.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Submit event to local media calendars</div>
+            <div class="task-detail">Dallas Morning News, WFAA, NBC5, CultureMap, Do214, Addison Magazine. All submissions drafted and sent by Joey.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Email Puttshack Addison marketing team — co-brand ask</div>
+            <div class="task-detail">Request one co-branded social post from their account. Draft written by Joey, sent under Arc or JRZ name.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-list">
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Identify 3–4 story video volunteers by name</div>
+            <div class="task-detail">A parent, a self-advocate, and one more. Joey handles everything else — scripts, filming guidance, edit brief. Just need names and contact info.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-julia">Julia Chalker</div>
+      <div class="task-list">
+        <div class="task-row julia-row">
+          <div class="task-owner-col"><span class="owner-tag o-julia">Julia</span></div>
+          <div class="task-content">
+            <div class="task-name">Begin outreach to Club and Fairway sponsor prospects</div>
+            <div class="task-detail">Joey provides the personalized email drafts. Julia sends from her account or forwards. She owns the relationship and closes the commitment.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- PHASE 2 -->
   <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">2</div>
-        <div class="phase-title-wrap">
+        <div>
           <div class="phase-name">Momentum — Stories &amp; Tickets</div>
-          <div class="phase-window">6–5 Weeks Before Event</div>
+          <div class="phase-window">6–5 Weeks Out · ~Early August</div>
         </div>
       </div>
-      <div class="phase-meta">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Early August</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Film and post Story Video 1 — The Parent</div><div class="task-deliverable">Deliverable: Video live on Facebook, script from P4P Campaign Plan</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
-          <tr><td><div class="task-name">Open ticket sales — push early bird deadline</div><div class="task-deliverable">Deliverable: Registration link active, early bird window communicated</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
-          <tr><td><div class="task-name">Send "Tickets Are Live" email</div><div class="task-deliverable">Deliverable: Email sent to full list, one clear CTA</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 6</td></tr>
-          <tr><td><div class="task-name">TX Outreach Kit — wave 2 (parent Facebook groups, therapy centers)</div><div class="task-deliverable">Deliverable: 20+ additional outreach messages sent</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 6</td></tr>
-          <tr><td><div class="task-name">Corporate sponsor follow-up calls — warm leads</div><div class="task-deliverable">Deliverable: Every wave-1 email followed up with a phone call</div></td><td><span class="owner-tag o-sponsor">Sponsor</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Week 6</td></tr>
-          <tr><td><div class="task-name">Film and post Story Video 2 — The Self-Advocate</div><div class="task-deliverable">Deliverable: Video live on Facebook — most authentic of the series, minimal direction</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
-          <tr><td><div class="task-name">Send press release to local media</div><div class="task-deliverable">Deliverable: Press release sent to all outlets on the media list</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
-          <tr><td><div class="task-name">Post awareness content — Arc mission, 55 years, all-volunteer</div><div class="task-deliverable">Deliverable: Facebook post live, copy from Brand Guide</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 5</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Coordinate and brief Video 1 volunteer — The Parent</div>
+            <div class="task-detail">Send script, filming instructions, and a 10-minute prep call. Volunteer films on their phone. Joey provides edit brief or simple on-screen captions.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Post Story Video 1 — The Parent</div>
+            <div class="task-detail">Draft caption, schedule post on Facebook. Submit to approval contact first.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write "Tickets Are Live" email and post</div>
+            <div class="task-detail">Once ticket sales open on putts4progress.com. Email to full list + Facebook post. Submit for approval.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">TX Outreach wave 2 — therapy centers and parent Facebook groups</div>
+            <div class="task-detail">Second batch of outreach kit emails. Joey sends directly or routes through org contact depending on access.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Send press release to local media</div>
+            <div class="task-detail">Written by Joey. Sent to all media outlets on the list — no org action needed.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Post Story Video 2 — The Self-Advocate</div>
+            <div class="task-detail">Week 5. Coordinate with volunteer, brief, post. Submit for approval.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-julia">Julia Chalker</div>
+      <div class="task-list">
+        <div class="task-row julia-row">
+          <div class="task-owner-col"><span class="owner-tag o-julia">Julia</span></div>
+          <div class="task-content">
+            <div class="task-name">Follow up on Club and Fairway sponsor prospects — calls</div>
+            <div class="task-detail">Joey wrote the intro emails. Julia follows up by phone. Goal: close both Club spots by end of Phase 2.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- PHASE 3 -->
   <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">3</div>
-        <div class="phase-title-wrap">
+        <div>
           <div class="phase-name">Push — Corporate &amp; Urgency</div>
-          <div class="phase-window">4–3 Weeks Before Event</div>
+          <div class="phase-window">4–3 Weeks Out · ~Late August</div>
         </div>
       </div>
-      <div class="phase-meta">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Late August</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Film and post Story Video 3 — The Urgency Video</div><div class="task-deliverable">Deliverable: Video live on Facebook AND LinkedIn</div></td><td><span class="owner-tag o-vol">Vol</span> <span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
-          <tr><td><div class="task-name">Launch inter-company tournament competition on LinkedIn</div><div class="task-deliverable">Deliverable: Post framing the corporate team competition, trophy named</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
-          <tr><td><div class="task-name">Announce confirmed corporate sponsors publicly — tag them</div><div class="task-deliverable">Deliverable: Posts on Facebook + LinkedIn naming and tagging each sponsor</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">Week 4</td></tr>
-          <tr><td><div class="task-name">Send mid-campaign email to full list — show progress toward goal</div><div class="task-deliverable">Deliverable: Email with current ticket count and fundraising momentum</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 4</td></tr>
-          <tr><td><div class="task-name">Early bird ticket deadline</div><div class="task-deliverable">Deliverable: Email reminder + social post — prize drawing entrants announced</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 3</td></tr>
-          <tr><td><div class="task-name">NTXGD alignment post — tie P4P to North Texas Giving Day</div><div class="task-deliverable">Deliverable: Facebook post connecting September P4P and NTXGD narratives</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 3</td></tr>
-          <tr><td><div class="task-name">Ambassador check-in — confirm guest counts</div><div class="task-deliverable">Deliverable: Personal outreach to all 10–15 ambassadors, updated headcount</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 3</td></tr>
-          <tr><td><div class="task-name">Send corporate follow-up — second wave outreach to new prospects</div><div class="task-deliverable">Deliverable: 10 additional companies contacted</div></td><td><span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">Week 3</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Post Story Video 3 — The Urgency Video</div>
+            <div class="task-detail">Facebook and LinkedIn. References $51,500 raised in first two years, pushes toward this year's goal.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Announce confirmed sponsors publicly</div>
+            <div class="task-detail">Posts tagging all confirmed sponsors on Facebook and LinkedIn. Gives them visibility and signals momentum to prospects.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Send mid-campaign email — show progress toward goal</div>
+            <div class="task-detail">Ticket count, sponsor names, fundraising momentum. Creates social proof and urgency.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write and push Hole Sponsor outreach — second wave</div>
+            <div class="task-detail">18 Hole Sponsor slots at $500. Joey writes personalized outreach. Routes through Julia for commitment and payment.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">North Texas Giving Day alignment post</div>
+            <div class="task-detail">"Two ways to give this September" — ties P4P and NTXGD into one unified September narrative.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-org">Org Approval Needed</div>
+      <div class="task-list">
+        <div class="task-row org-row">
+          <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
+          <div class="task-content">
+            <div class="task-name">Review and approve all sponsor announcement posts before publishing</div>
+            <div class="task-detail">Sponsor names need to be accurate. Approval contact confirms wording and tags before anything goes live.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- PHASE 4 -->
   <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="togglePhase(this)">
+    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">4</div>
-        <div class="phase-title-wrap">
-          <div class="phase-name">Final Sprint — FOMO &amp; Sell Out</div>
-          <div class="phase-window">2 Weeks Before → Day Of</div>
+        <div>
+          <div class="phase-name">Final Sprint — FOMO &amp; Fill the Room</div>
+          <div class="phase-window">2 Weeks Out → Day Of · ~Sept 13–27</div>
         </div>
       </div>
-      <div class="phase-meta">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Target Date: ___________</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Sept 13–27</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Film and post Story Video 4 — The Final Call</div><div class="task-deliverable">Deliverable: Montage video live on all channels</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Week 2</td></tr>
-          <tr><td><div class="task-name">Volunteer Social Takeover Week</div><div class="task-deliverable">Deliverable: 5 advocates briefed and posting daily to Arc Facebook stories Mon–Fri</div></td><td><span class="owner-tag o-vol">Vol</span></td><td class="week-tag">Week 2</td></tr>
-          <tr><td><div class="task-name">Send "Last Chance" email — 72 hours out</div><div class="task-deliverable">Deliverable: Email with final ticket count remaining and event preview</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">72 hrs out</td></tr>
-          <tr><td><div class="task-name">Send day-before logistics email to all registrants</div><div class="task-deliverable">Deliverable: Email with parking, check-in time, what to bring, tournament assignments</div></td><td><span class="owner-tag o-mktg">Mktg</span> <span class="owner-tag o-board">Board</span></td><td class="week-tag">Day before</td></tr>
-          <tr><td><div class="task-name">Prepare stage remarks — opening, mid-event update, closing reveal</div><div class="task-deliverable">Deliverable: Speaker notes for all three moments, scripts in Day-Of Guide</div></td><td><span class="owner-tag o-ed">ED</span></td><td class="week-tag">Day before</td></tr>
-          <tr><td><div class="task-name">Day-of live social coverage</div><div class="task-deliverable">Deliverable: Check-in posts, tournament action, real-time fundraising updates</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">Day of</td></tr>
-          <tr><td><div class="task-name">Real-time fundraising total tracked and revealed from stage</div><div class="task-deliverable">Deliverable: Running total visible at event, final reveal at closing remarks</div></td><td><span class="owner-tag o-board">Board</span> <span class="owner-tag o-ed">ED</span></td><td class="week-tag">Day of</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Post Story Video 4 — The Final Call</div>
+            <div class="task-detail">Montage of all video faces. Urgency CTA. All channels. Spots remaining in tournament if applicable.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Coordinate Volunteer Social Takeover Week</div>
+            <div class="task-detail">Brief 5 volunteers — one per day Mon–Fri of the final week. Joey writes the brief for each person. They post to their own accounts and the Arc's stories.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Send "Last Chance" email — 72 hours out</div>
+            <div class="task-detail">Final ticket push. Includes confirmed sponsor names, current momentum, and direct registration link.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write day-before logistics email to all registrants</div>
+            <div class="task-detail">Parking, check-in, what to expect. Sent by org or Joey depending on platform access.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write all stage remarks — opening, mid-event update, closing reveal</div>
+            <div class="task-detail">Scripts delivered to James or designated speaker. Joey writes, org delivers.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-list">
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Someone at the event posting live to social in real time</div>
+            <div class="task-detail">Joey may not be on-site. The org needs one person with their phone ready to capture check-in energy, tournament action, and the fundraising reveal from the stage.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- PHASE 5 -->
   <div class="phase-block" style="border-color:rgba(125,200,125,0.3);">
-    <div class="phase-header" style="background:rgba(58,125,68,0.06);" onclick="togglePhase(this)">
+    <div class="phase-header" style="background:rgba(58,125,68,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:rgba(58,125,68,0.2);color:var(--green-lt);border:1px solid rgba(125,200,125,0.3);">5</div>
-        <div class="phase-title-wrap">
-          <div class="phase-name">Retention — Turn Attendees into Donors</div>
-          <div class="phase-window">48 Hours – 2 Weeks After Event</div>
+        <div>
+          <div class="phase-name">After the Event — Retain &amp; Repeat</div>
+          <div class="phase-window">48 Hours – 2 Weeks After · Sept 29 – Oct 11</div>
         </div>
       </div>
-      <div class="phase-meta">
+      <div style="display:flex;align-items:center;gap:10px;">
         <span class="phase-date-tag" style="background:rgba(58,125,68,0.15);color:var(--green-lt);">Post-Event</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <table class="task-table">
-        <thead><tr><th>Task</th><th>Owner</th><th>Timing</th></tr></thead>
-        <tbody>
-          <tr><td><div class="task-name">Send personalized thank-you email — include final total</div><div class="task-deliverable">Deliverable: Email within 24 hours, template from Brand Guide, impact statement included</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">24 hrs after</td></tr>
-          <tr><td><div class="task-name">Post event recap on all channels</div><div class="task-deliverable">Deliverable: Photos, final total, sponsor recognition, one-sentence impact statement</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">48 hrs after</td></tr>
-          <tr><td><div class="task-name">Deliver sponsor impact recap packages</div><div class="task-deliverable">Deliverable: Email to each sponsor with their visibility documentation and impact numbers</div></td><td><span class="owner-tag o-sponsor">Sponsor</span></td><td class="week-tag">1 week after</td></tr>
-          <tr><td><div class="task-name">Soft ask for recurring membership or year-round giving</div><div class="task-deliverable">Deliverable: Follow-up email to all attendees with membership link and low-pressure ask</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">1 week after</td></tr>
-          <tr><td><div class="task-name">Add all new attendees to Arc email list</div><div class="task-deliverable">Deliverable: All opt-in contacts added to main list, segmented as P4P 2026 attendees</div></td><td><span class="owner-tag o-mktg">Mktg</span></td><td class="week-tag">1 week after</td></tr>
-          <tr><td><div class="task-name">Lock in Puttshack date for 2027</div><div class="task-deliverable">Deliverable: Preliminary 2027 date confirmed while relationship and momentum are fresh</div></td><td><span class="owner-tag o-board">Board</span></td><td class="week-tag">2 weeks after</td></tr>
-          <tr><td><div class="task-name">Campaign debrief — what worked, what didn't, what to do first next year</div><div class="task-deliverable">Deliverable: One-page debrief document saved for 2027 campaign planning</div></td><td><span class="owner-tag o-ed">ED</span> <span class="owner-tag o-board">Board</span> <span class="owner-tag o-jrz">JRZ</span></td><td class="week-tag">2 weeks after</td></tr>
-        </tbody>
-      </table>
+      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write thank-you email — send within 24 hours</div>
+            <div class="task-detail">Final total, impact statement, sponsor recognition, soft membership ask. Personalized tone. Delivered to approval contact for same-day send.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write event recap post — all channels</div>
+            <div class="task-detail">Photos from the org, final total, sponsor tags, one-line impact statement. Joey writes, org publishes or Joey schedules if access is available.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write sponsor impact recap — delivered to Julia</div>
+            <div class="task-detail">One-page summary per sponsor showing their visibility, what was raised, and impact numbers. Julia delivers to each sponsor. Sets up the 2027 renewal conversation.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Campaign debrief document</div>
+            <div class="task-detail">What worked, what didn't, what to do first next year. Delivered to James. Becomes the starting point for P4P 2027.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-list">
+        <div class="task-row ask-row">
+          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+          <div class="task-content">
+            <div class="task-name">Event photos and final fundraising total — within 24 hours</div>
+            <div class="task-detail">Joey can't write the recap without the numbers and the photos. This is the one post-event deliverable the org must provide quickly.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -493,91 +693,75 @@
   <span class="eyebrow">Corporate Sponsor Pipeline</span>
   <h2 class="sec-title">Sponsor <em>Tracker</em></h2>
   <hr class="gold-rule">
-
-  <div class="tracker-note">This tracker is the single source of truth for all corporate sponsor activity. Every contact gets a row. Update status after every interaction. Real tiers: Club ($2,000 · 2 spots), Fairway ($1,000 · 2 spots), Hole ($500 · 18 spots). Title is sold to Method 360. Sponsorship contact: Julia Chalker · julia@thearcofdfw.org · 214.543.1563</div>
+  <div class="tracker-note">Joey writes all outreach. Julia Chalker closes all commitments (julia@thearcofdfw.org · 214.543.1563). Org provides warm relationship connections. Real tiers: Club $2,000 (2 spots), Fairway $1,000 (2 spots), Hole $500 (18 spots).</div>
 
   <table class="sponsor-table">
     <thead>
-      <tr>
-        <th>Company</th>
-        <th>Contact / Title</th>
-        <th>Tier Target</th>
-        <th>Status</th>
-        <th>Owner</th>
-        <th>Next Action</th>
-      </tr>
+      <tr><th>Company</th><th>Contact</th><th>Tier</th><th>Status</th><th>Next Action</th></tr>
     </thead>
     <tbody>
       <tr>
-        <td>Method 360</td>
+        <td><strong style="color:var(--white);">Method 360</strong></td>
         <td>Title Sponsor</td>
-        <td><span class="tier-badge t-anchor">Title</span></td>
+        <td><span class="tier-badge t-title">Title</span></td>
         <td><span class="status-badge st-confirmed">Confirmed</span></td>
-        <td><span class="owner-tag o-ed">ED</span></td>
-        <td style="font-size:13px;">Deliver logo assets, confirm signage specs</td>
+        <td>Deliver logo assets to Julia</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-anchor">Club $2K</span></td>
+        <td><span class="tier-badge t-club">Club $2K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-ed">ED</span></td>
-        <td style="font-size:13px;">Personal outreach — only 2 available</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-anchor">Club $2K</span></td>
+        <td><span class="tier-badge t-club">Club $2K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
-        <td style="font-size:13px;">Personal outreach — only 2 available</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-champ">Fairway $1K</span></td>
+        <td><span class="tier-badge t-fair">Fairway $1K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
-        <td style="font-size:13px;">Send deck + intro email</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-champ">Fairway $1K</span></td>
+        <td><span class="tier-badge t-fair">Fairway $1K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-sponsor">Sponsor</span></td>
-        <td style="font-size:13px;">Send deck + intro email</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-comm">Hole $500</span></td>
+        <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-board">Board</span></td>
-        <td style="font-size:13px;">Initial outreach</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-comm">Hole $500</span></td>
+        <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-board">Board</span></td>
-        <td style="font-size:13px;">Initial outreach</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
-        <td><span class="tier-badge t-comm">Hole $500</span></td>
+        <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td><span class="owner-tag o-board">Board</span></td>
-        <td style="font-size:13px;">Initial outreach</td>
+        <td>Joey drafts email → Julia sends</td>
       </tr>
     </tbody>
   </table>
-  <div class="add-row">+ Add rows as needed — 18 Hole Sponsor slots available · 2 Club · 2 Fairway</div>
+  <div class="add-row">+ Add rows as prospect list grows · 2 Club · 2 Fairway · 18 Hole spots available</div>
 
-  <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;">
-    <span style="font-size:11px;font-weight:700;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;">Status key:</span>
+  <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+    <span style="font-size:11px;font-weight:700;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;">Status:</span>
     <span class="status-badge st-target">Target</span>
     <span class="status-badge st-contact">Contacted</span>
     <span class="status-badge st-warm">Warm</span>
@@ -588,12 +772,12 @@
 
 <hr class="divider">
 
-<!-- REVENUE THERMOMETER -->
-<div class="wrap" id="thermometer">
-  <span class="eyebrow">Live Revenue Tracker</span>
-  <h2 class="sec-title">Running Toward <em>$42,000</em></h2>
+<!-- REVENUE TRACKER -->
+<div class="wrap" id="revenue">
+  <span class="eyebrow">Running Total</span>
+  <h2 class="sec-title">Revenue <em>Tracker</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Update this tracker at each weekly check-in. Fill in actuals as revenue is confirmed. The goal is to know where you stand against the $42K target at every phase of the campaign — not just on event night.</p>
+  <p class="body-text">Update at each weekly check-in between Joey and the org. Knowing the number while there's still runway is the only way to course-correct in time.</p>
 
   <div class="thermo-wrap">
     <div class="thermo-label">
@@ -603,15 +787,12 @@
       </div>
       <div class="thermo-goal">Goal: $42,000</div>
     </div>
-    <div class="thermo-bar-bg">
-      <div class="thermo-bar-fill" style="width: 0%;"></div>
-    </div>
-    <div style="font-size:12px;color:var(--slate);margin-bottom:4px;">Fill in and update manually — or track in a shared Google Sheet</div>
+    <div class="thermo-bar-bg"><div class="thermo-bar-fill" style="width:0%;"></div></div>
 
     <div class="thermo-sources">
       <div class="thermo-source">
-        <span class="ts-label">✅ Title Sponsor — Method 360 · CONFIRMED</span>
-        <span class="ts-amount locked">TBD</span>
+        <span class="ts-label">✅ Method 360 — Title Sponsor · Confirmed</span>
+        <span class="ts-amount locked">TBD — confirm value with Julia</span>
       </div>
       <div class="thermo-source">
         <span class="ts-label">🏌 Club Sponsors ($2,000 × 2 available)</span>
@@ -626,51 +807,34 @@
         <span class="ts-amount">$_______ / $9,000 max</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">🎟 Ticket Sales</span>
+        <span class="ts-label">🎟 Ticket Sales (putts4progress.com)</span>
         <span class="ts-amount">$_______ raised</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">📅 North Texas Giving Day · Target $4,000–6,000</span>
+        <span class="ts-label">📅 North Texas Giving Day (September)</span>
         <span class="ts-amount">$_______ raised</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">💻 Direct Donations (NeonCRM)</span>
+        <span class="ts-label">💻 Direct Donations — NeonCRM</span>
         <span class="ts-amount">$_______ raised</span>
       </div>
-      <div class="thermo-source" style="border-top:1px solid rgba(201,168,76,0.2);margin-top:8px;padding-top:16px;">
+      <div class="thermo-source" style="border-top:1px solid rgba(201,168,76,0.2);margin-top:8px;padding-top:14px;">
         <span class="ts-label" style="color:var(--white);font-weight:700;">TOTAL</span>
         <span class="ts-amount locked">$_______ of $42,000</span>
       </div>
     </div>
   </div>
 
-  <div style="background:rgba(58,125,68,0.08);border:1px solid rgba(125,200,125,0.2);border-radius:8px;padding:20px 20px;margin-top:8px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:10px;">The Rule: Know Your Number Every Week</div>
-    <div style="font-size:14px;color:rgba(245,240,232,0.75);line-height:1.65;">Update this tracker at every weekly check-in. If you're behind on ticket sales by Week 5, you have time to activate ambassadors harder. If sponsor revenue is behind by Week 4, you have time for a second outreach push. The only way to course-correct is to know the number while there's still runway to use.</div>
+  <div style="background:rgba(58,125,68,0.08);border:1px solid rgba(125,200,125,0.2);border-radius:8px;padding:18px 20px;margin-top:4px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:8px;">The Weekly Check-In Rule</div>
+    <div style="font-size:14px;color:rgba(245,240,232,0.75);line-height:1.65;">Joey and James (or the org designee) review this tracker once a week. If ticket sales are behind at Week 5, Joey activates the ambassador push. If Club sponsors aren't closed by Week 4, Joey and Julia escalate together. The number only matters if someone's looking at it.</div>
   </div>
 </div>
 
 <footer>
   <div class="footer-brand">The Arc of DFW Area — Campaign Execution Roadmap</div>
-  <div class="footer-note">Putts for Progress 2026 · Built by JRZ Consulting Solutions · 2026 · Confidential</div>
+  <div class="footer-note">Putts for Progress 2026 · September 27, 2026 · Built by JRZ Consulting Solutions · 2026 · Confidential</div>
   <a class="back-link" href="../index.html">← Return to Vault Home</a>
 </footer>
-
-<script>
-  function togglePhase(header) {
-    const body = header.nextElementSibling;
-    const toggle = header.querySelector('.phase-toggle');
-    body.classList.toggle('open');
-    toggle.textContent = body.classList.contains('open') ? '▴' : '▾';
-  }
-  // Phase 0 open by default
-  document.addEventListener('DOMContentLoaded', () => {
-    const firstBody = document.querySelector('.phase-body.open');
-    if (firstBody) {
-      const toggle = firstBody.previousElementSibling.querySelector('.phase-toggle');
-      if (toggle) toggle.textContent = '▴';
-    }
-  });
-</script>
 </body>
 </html>
