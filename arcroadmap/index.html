@@ -49,7 +49,6 @@
   .body-text { color: rgba(245,240,232,0.78); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
   .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
 
-  /* OWNER KEY */
   .owner-key { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 32px; }
   .ok-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 10px 14px; flex: 1; min-width: 200px; }
   .ok-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
@@ -61,8 +60,8 @@
   .o-ask   { background: rgba(201,91,56,0.2); color: #E88A70; }
   .o-julia { background: rgba(42,123,111,0.2); color: var(--teal-lt); }
   .o-org   { background: rgba(123,104,176,0.2); color: var(--purple-lt); }
+  .o-arc   { background: rgba(42,123,111,0.15); color: var(--teal-lt); }
 
-  /* PHASE BLOCKS */
   .phase-block { margin-bottom: 24px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); }
   .phase-header { padding: 20px 22px; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; cursor: pointer; }
   .phase-header-left { display: flex; align-items: center; gap: 14px; }
@@ -74,7 +73,6 @@
   .phase-body { display: none; border-top: 1px solid rgba(255,255,255,0.06); }
   .phase-body.open { display: block; }
 
-  /* TASK LIST */
   .task-list { display: flex; flex-direction: column; gap: 0; }
   .task-row { display: flex; align-items: flex-start; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .task-row:last-child { border-bottom: none; }
@@ -86,15 +84,27 @@
   .task-row.ask-row { background: rgba(201,91,56,0.04); }
   .task-row.julia-row { background: rgba(42,123,111,0.04); }
   .task-row.org-row { background: rgba(123,104,176,0.04); }
+  .task-row.arc-row { background: rgba(42,123,111,0.03); }
 
-  /* SECTION LABEL inside phase */
   .task-section-label { padding: 10px 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: rgba(0,0,0,0.15); border-bottom: 1px solid rgba(255,255,255,0.04); }
   .tsl-jrz { color: var(--gold); }
   .tsl-ask { color: #E88A70; }
   .tsl-julia { color: var(--teal-lt); }
   .tsl-org { color: var(--purple-lt); }
+  .tsl-arc { color: var(--teal-lt); }
 
-  /* ASKS PANEL */
+  /* GATE BLOCK */
+  .gate-block { margin: 0; padding: 14px 20px; background: rgba(123,104,176,0.08); border-top: 1px solid rgba(123,104,176,0.2); border-bottom: 1px solid rgba(123,104,176,0.2); display: flex; align-items: flex-start; gap: 12px; }
+  .gate-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .gate-text { font-size: 13px; color: var(--purple-lt); line-height: 1.6; }
+  .gate-text strong { color: var(--white); }
+
+  /* MILESTONE BLOCK */
+  .milestone-block { margin: 0; padding: 14px 20px; background: rgba(201,91,56,0.07); border-top: 1px solid rgba(201,91,56,0.2); display: flex; align-items: flex-start; gap: 12px; }
+  .milestone-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .milestone-text { font-size: 13px; color: #E88A70; line-height: 1.6; }
+  .milestone-text strong { color: var(--white); }
+
   .asks-block { background: rgba(201,91,56,0.06); border: 1px solid rgba(201,91,56,0.25); border-radius: 10px; padding: 28px 24px; margin: 28px 0; }
   .asks-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
   .asks-block .sub { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 20px; line-height: 1.6; }
@@ -106,7 +116,6 @@
   .ask-desc { font-size: 14px; color: rgba(245,240,232,0.7); line-height: 1.6; }
   .ask-from { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E88A70; }
 
-  /* SPONSOR TRACKER */
   .tracker-note { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; font-size: 14px; color: rgba(245,240,232,0.75); line-height: 1.6; }
   .sponsor-table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .sponsor-table th { padding: 10px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-align: left; border-bottom: 1px solid rgba(201,168,76,0.2); }
@@ -125,7 +134,6 @@
   .st-declined  { background: rgba(139,46,46,0.2); color: #C98080; }
   .add-row { width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); border-radius: 4px; margin-top: 8px; font-size: 13px; color: var(--slate); text-align: center; font-style: italic; }
 
-  /* REVENUE TRACKER */
   .thermo-wrap { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 28px 24px; margin: 24px 0; }
   .thermo-label { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px; }
   .thermo-current { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--green-lt); font-weight: 700; }
@@ -168,18 +176,18 @@
 <section class="hero">
   <div class="hero-eyebrow">Execution Roadmap · P4P 2026</div>
   <h1>Who Does What<br><em>and When</em></h1>
-  <p class="hero-sub">A realistic plan built around one consultant, a volunteer org, and a September 27 deadline. Not what a full team would do — what Joey can actually execute, and what the org needs to provide to make it work.</p>
+  <p class="hero-sub">A realistic plan built around one consultant, a volunteer org, and a September 27 deadline. Hard dates locked. Roles are clear. Everything else is handled.</p>
   <div class="north-star">
+    <div class="ns-block confirmed"><div class="ns-num">Aug 3</div><div class="ns-label">Campaign Live · Locked</div></div>
     <div class="ns-block confirmed"><div class="ns-num">Sept 27</div><div class="ns-label">Event Date · Confirmed</div></div>
     <div class="ns-block confirmed"><div class="ns-num">Method 360</div><div class="ns-label">Title Sponsor · Confirmed</div></div>
-    <div class="ns-block"><div class="ns-num">$51.5K</div><div class="ns-label">Raised First Two Years</div></div>
-    <div class="ns-block"><div class="ns-num">$42K+</div><div class="ns-label">2026 Goal</div></div>
+    <div class="ns-block"><div class="ns-num">$36K</div><div class="ns-label">2026 Goal · Less Overhead</div></div>
   </div>
 </section>
 
 <div class="section-nav">
   <a href="#reality">Reality Check</a>
-  <a href="#asks">4 Org Asks</a>
+  <a href="#asks">Org Asks</a>
   <a href="#phases">Phase Roadmap</a>
   <a href="#sponsors">Sponsor Tracker</a>
   <a href="#revenue">Revenue Tracker</a>
@@ -190,31 +198,31 @@
   <span class="eyebrow">How This Actually Works</span>
   <h2 class="sec-title">One Consultant.<br><em>Four Buckets.</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">This is not a campaign with a full marketing team. It's one consultant — JRZ — doing the heavy lifting, with four specific asks of the organization. Everything else lives with Joey. That's the realistic operating model and this roadmap is built around it.</p>
+  <p class="body-text">JRZ builds all marketing infrastructure and content. Arc's internal team executes outreach using the tools JRZ provides. Julia closes sponsorship commitments. One designated Arc contact approves everything before it publishes. That's the operating model — and this roadmap is built around it.</p>
 
   <div class="owner-key">
     <div class="ok-pill">
       <div class="ok-dot" style="background:var(--gold);"></div>
-      <div class="ok-label"><strong>JRZ — Joey</strong>Strategy, copy, content, social posts, email drafts, video scripts, outreach kit distribution, all marketing deliverables</div>
-    </div>
-    <div class="ok-pill">
-      <div class="ok-dot" style="background:#E88A70;"></div>
-      <div class="ok-label"><strong>Org Ask — James / Board</strong>The 4 specific things Joey needs from the organization to execute. These are asks, not assigned tasks.</div>
+      <div class="ok-label"><strong>JRZ — Joey</strong>Strategy, copy, content, social posts, email campaigns, video scripts, video editing, sales enablement playbooks, audience segmentation strategy — all marketing infrastructure and deliverables</div>
     </div>
     <div class="ok-pill">
       <div class="ok-dot" style="background:var(--teal-lt);"></div>
+      <div class="ok-label"><strong>Arc Internal (Outreach)</strong>Corporate sponsor prospecting, contact list building, executing the corp outreach cadence from the JRZ playbook — relationship management and outreach execution</div>
+    </div>
+    <div class="ok-pill">
+      <div class="ok-dot" style="background:#E88A70;"></div>
       <div class="ok-label"><strong>Julia Chalker</strong>Sponsorship commitments, payment processing, and sponsor relationship management — already her lane</div>
     </div>
     <div class="ok-pill">
       <div class="ok-dot" style="background:var(--purple-lt);"></div>
-      <div class="ok-label"><strong>Org Approvals</strong>Content review and sign-off before publishing — one designated person, fast turnaround needed</div>
+      <div class="ok-label"><strong>Arc Approvals</strong>Content review and sign-off before publishing — one designated person, 48-hour turnaround required</div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- THE 4 ASKS -->
+<!-- THE ASKS -->
 <div class="wrap" id="asks">
   <span class="eyebrow">What Joey Needs From The Org</span>
   <h2 class="sec-title">The 4 <em>Asks</em></h2>
@@ -223,41 +231,41 @@
 
   <div class="asks-block">
     <h3>4 Things the Org Needs to Provide</h3>
-    <p class="sub">These are not ongoing responsibilities. They are one-time asks that unlock the campaign. The sooner these are confirmed, the sooner the full 8-week runway is in play.</p>
+    <p class="sub">These are not ongoing responsibilities. They are one-time asks that unlock the campaign. The sooner these are confirmed, the sooner every deadline below holds.</p>
 
     <div class="ask-item">
       <div class="ask-num">1</div>
       <div class="ask-body">
         <div class="ask-title">A Single Point of Contact for Approvals</div>
-        <div class="ask-desc">Joey will draft all content — social posts, emails, video scripts, outreach copy. Before anything goes out under The Arc's name, one person needs to review and approve it. This person needs to be reachable and able to turn approvals around within 48 hours. Without this, the content calendar stalls.</div>
-        <span class="ask-from">Ask: James or board designee · One-time setup</span>
+        <div class="ask-desc">Joey drafts all content — social posts, emails, video scripts. Before anything goes out under The Arc's name, one person reviews and approves it. 48-hour turnaround required. Without this, the content calendar stalls and every deadline below moves.</div>
+        <span class="ask-from">Ask: James or board designee · One-time setup · Needed before July 3</span>
       </div>
     </div>
 
     <div class="ask-item">
       <div class="ask-num">2</div>
       <div class="ask-body">
-        <div class="ask-title">3–4 Story Video Volunteers</div>
-        <div class="ask-desc">Joey will write the scripts, direct the shoots, and handle the edit brief. The org needs to identify 3–4 willing participants — a parent, a self-advocate, a board member or staff person, and optionally a program participant. Names and contact info is all Joey needs. Filming can be done on a phone.</div>
-        <span class="ask-from">Ask: James or Volunteer Coordinator · One-time ask</span>
+        <div class="ask-title">3–4 Story Video Volunteers — Confirmed and Ready to Film</div>
+        <div class="ask-desc">Joey writes the scripts and delivers filming briefs by July 3. The org needs to confirm 3–4 willing participants — a parent, a self-advocate, a board member or staff person, and optionally a program participant. All volunteers must have footage delivered to Joey no later than July 18. Filming can be done on a phone.</div>
+        <span class="ask-from">Ask: James or Volunteer Coordinator · Hard deadline: footage to JRZ by July 18</span>
       </div>
     </div>
 
     <div class="ask-item">
       <div class="ask-num">3</div>
       <div class="ask-body">
-        <div class="ask-title">Corporate Sponsor Relationship Access</div>
-        <div class="ask-desc">Joey can write every sponsor email and build every proposal — but a $2,000 Club Sponsor commitment closes faster when it comes from James or a board member personally, not a consultant. Joey needs to know: who on the board has existing relationships with DFW businesses? Which companies have given before? Those names and warm connections are the difference between a cold email and a closed sponsorship.</div>
-        <span class="ask-from">Ask: James / Board · Provide existing relationships and prior sponsor list</span>
+        <div class="ask-title">Assign the Internal Corporate Outreach Lead</div>
+        <div class="ask-desc">Joey has built the full Corporate Outreach Cadence Playbook — 3-stage email sequence, LinkedIn stakeholder search terms, objection handling, and timing guide. The org needs to name one person who will execute this cadence. That person receives the playbook June 26 and begins prospecting immediately. Joey does not send outreach — the internal lead does, using JRZ's tools.</div>
+        <span class="ask-from">Ask: James · Name the internal outreach lead · Needed by June 26</span>
       </div>
     </div>
 
     <div class="ask-item">
       <div class="ask-num">4</div>
       <div class="ask-body">
-        <div class="ask-title">Access to Arc's Social Accounts and Email Platform</div>
-        <div class="ask-desc">Joey will write and schedule all social content and email campaigns. To do that, he needs either posting access to The Arc's Facebook, LinkedIn, and Instagram accounts, or a reliable person inside the org who can publish content within 24 hours of receiving it. Same for the email platform — whether that's Mailchimp, Constant Contact, or whatever the org uses.</div>
-        <span class="ask-from">Ask: James or Comms designee · Admin access or dedicated publisher</span>
+        <div class="ask-title">Access to Arc's Social Accounts and NeonOne</div>
+        <div class="ask-desc">Joey writes and schedules all social content and email campaigns. He needs admin access to The Arc's Facebook and LinkedIn accounts, or a reliable person inside the org who can publish content within 24 hours of receiving it. All email campaigns will be loaded into NeonOne — access or a designated sender is required before July 3.</div>
+        <span class="ask-from">Ask: James or Comms designee · Admin access or dedicated publisher · Needed before July 3</span>
       </div>
     </div>
 
@@ -268,371 +276,437 @@
 
 <!-- PHASE ROADMAP -->
 <div class="wrap" id="phases">
-  <span class="eyebrow">Week by Week</span>
+  <span class="eyebrow">Hard Dates · Locked</span>
   <h2 class="sec-title">The Phase <em>Plan</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Event is September 27, 2026. Eight weeks of runway. Each phase shows what Joey executes independently and what requires an org response. Click any phase to expand.</p>
+  <p class="body-text">Every date below is locked. Campaign goes live August 3. Event is September 27. Two revision periods are built in. Click any phase to expand.</p>
 
-  <!-- PHASE 0 — RIGHT NOW -->
+  <!-- PHASE 0 — JUNE 26 -->
   <div class="phase-block" style="border-color:rgba(201,168,76,0.45);">
     <div class="phase-header" style="background:rgba(201,168,76,0.08);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
         <div class="phase-num" style="background:var(--gold);color:var(--navy);">0</div>
         <div>
-          <div class="phase-name">Right Now — Before the Clock Starts</div>
-          <div class="phase-window">Complete before Week 8 begins</div>
+          <div class="phase-name">Pre-Launch Delivery — Tonight</div>
+          <div class="phase-window">June 26 · Meeting Deliverables</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
-        <span class="phase-date-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Do This First</span>
+        <span class="phase-date-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">June 26</span>
         <span class="phase-toggle">▴</span>
       </div>
     </div>
     <div class="phase-body open">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-section-label tsl-jrz">JRZ Delivers Tonight</div>
       <div class="task-list">
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Deliver Marketing Vault to James</div>
-            <div class="task-detail">All six documents live on GitHub Pages. Send delivery email with vault link and request kickoff meeting.</div>
+            <div class="task-name">Updated Marketing Vault — Revised Scope</div>
+            <div class="task-detail">All documents updated to reflect clarified consulting lane. TX Outreach Kit marked for future use. Sponsorship tiers corrected to live data. Roadmap reflects actual operating model.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Build TX Outreach contact list</div>
-            <div class="task-detail">Compile emails for DFW SPED directors, parent orgs, therapy centers, and disability advocacy groups. Target: 50+ contacts ready to send.</div>
+            <div class="task-name">Audience Segmentation Proposal</div>
+            <div class="task-detail">Nine options for gathering demographic data from the current list — without being pushy or invasive. Includes JRZ's recommended 3-step starting stack. Arc selects which approaches to deploy.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Draft corporate sponsor outreach emails</div>
-            <div class="task-detail">Personalized email templates for Club and Fairway tier prospects — ready to send once org provides the relationship list.</div>
+            <div class="task-name">Corporate Outreach Cadence Playbook</div>
+            <div class="task-detail">Full 3-stage email playbook for Arc's internal outreach lead — warm story, relationship ask, personalized close. LinkedIn stakeholder search terms, objection handling for 6 pushbacks, hard cadence timing guide. Ready to hand to internal lead tonight.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Campaign Delivery Schedule</div>
+            <div class="task-detail">This roadmap — all hard dates locked, roles assigned, revision periods built in. August 3 campaign live. September 27 event.</div>
           </div>
         </div>
       </div>
-      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-section-label tsl-ask">Arc Responds Tonight</div>
       <div class="task-list">
         <div class="task-row ask-row">
           <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
           <div class="task-content">
-            <div class="task-name">Designate a single approval contact</div>
-            <div class="task-detail">One person. 48-hour turnaround. All content routes through them before publishing.</div>
+            <div class="task-name">Name the internal corporate outreach lead</div>
+            <div class="task-detail">One person who receives the cadence playbook and begins prospecting. This is not Julia — this is whoever is building the prospect list and executing Stage 1 emails.</div>
           </div>
         </div>
         <div class="task-row ask-row">
           <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
           <div class="task-content">
-            <div class="task-name">Provide prior sponsor list and warm corporate relationships</div>
-            <div class="task-detail">Who gave before? Who does the board know? Which local businesses have a relationship with The Arc? This list is the foundation of the sponsor outreach.</div>
+            <div class="task-name">Select segmentation approach from the proposal menu</div>
+            <div class="task-detail">Joey presented 9 options. Arc decides which to deploy. Recommendation: Option 04 + 02 (vulnerability email + reply tagging) as the immediate move, Option 09 (event check-in intake) before tickets go live.</div>
           </div>
         </div>
         <div class="task-row ask-row">
           <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
           <div class="task-content">
-            <div class="task-name">Confirm social media and email platform access</div>
-            <div class="task-detail">Admin access to Facebook, LinkedIn, Instagram. Login or publisher access to email platform (Mailchimp, Constant Contact, etc.).</div>
+            <div class="task-name">Designate approval contact — 48-hour turnaround</div>
+            <div class="task-detail">One named person. All content routes through them before it publishes. This must be confirmed before July 3 or the content pipeline stalls.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 1 -->
-  <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
+  <!-- PHASE 1 — JULY 3 -->
+  <div class="phase-block" style="border-color:rgba(201,91,56,0.35);">
+    <div class="phase-header" style="background:rgba(201,91,56,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
-        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">1</div>
+        <div class="phase-num" style="background:rgba(201,91,56,0.2);color:#E88A70;border:1px solid rgba(201,91,56,0.35);">1</div>
         <div>
-          <div class="phase-name">Go Public — Save the Date</div>
-          <div class="phase-window">8–7 Weeks Out · ~Late July</div>
+          <div class="phase-name">Full Content Delivery</div>
+          <div class="phase-window">July 3 · Hard Deadline · Approval Gate 1 Opens</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Late July</span>
+        <span class="phase-date-tag" style="background:rgba(201,91,56,0.15);color:#E88A70;">July 3</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-section-label tsl-jrz">JRZ Delivers by July 3</div>
       <div class="task-list">
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Write and schedule Save the Date posts — Facebook and LinkedIn</div>
-            <div class="task-detail">Copy from Brand Guide. Posts drafted and delivered to approval contact for sign-off before scheduling.</div>
+            <div class="task-name">All 4 Video Scripts — Refined and Ready</div>
+            <div class="task-detail">Story / Personal Impact · Community Impact / Numbers · Sponsor Spotlight / Why We Give · Event Hype / Final Call. Each script includes filming instructions for the volunteer. Delivered with individual video briefs.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Write Save the Date email to full Arc list</div>
-            <div class="task-detail">Draft delivered to approval contact. Ready to send once approved. Uses Brand Guide email template.</div>
+            <div class="task-name">Full Social Media Copy — Facebook and LinkedIn</div>
+            <div class="task-detail">Complete campaign social content for all phases — August 3 launch through September 27. All posts written, formatted, and ready for approval contact review.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Send TX Outreach Kit — wave 1</div>
-            <div class="task-detail">Emails to DFW school districts, Down Syndrome Guild, FEAT of North Texas, Texas Parent to Parent. Uses outreach kit templates verbatim.</div>
+            <div class="task-name">Full Email Campaign Sequence — Loaded into NeonOne</div>
+            <div class="task-detail">Save the Date · Tickets Are Live · Mid-Campaign Push · Last Chance (72 hours out) · Post-Event Thank-You. All emails written and loaded into NeonOne pending approval.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Submit event to local media calendars</div>
-            <div class="task-detail">Dallas Morning News, WFAA, NBC5, CultureMap, Do214, Addison Magazine. All submissions drafted and sent by Joey.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Email Puttshack Addison marketing team — co-brand ask</div>
-            <div class="task-detail">Request one co-branded social post from their account. Draft written by Joey, sent under Arc or JRZ name.</div>
+            <div class="task-name">Any revisions from June 26 meeting</div>
+            <div class="task-detail">Feedback from tonight's meeting addressed and incorporated into all deliverables before July 3 submission.</div>
           </div>
         </div>
       </div>
-      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="gate-block">
+        <div class="gate-icon">🔒</div>
+        <div class="gate-text"><strong>Approval Gate 1 Opens July 3.</strong> Arc approval contact begins reviewing all scripts, social copy, and email campaigns. 48-hour turnaround on each item required to hold the revision schedule.</div>
+      </div>
+      <div class="task-section-label tsl-arc">Arc Internal — Begins July 3</div>
       <div class="task-list">
-        <div class="task-row ask-row">
-          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">Identify 3–4 story video volunteers by name</div>
-            <div class="task-detail">A parent, a self-advocate, and one more. Joey handles everything else — scripts, filming guidance, edit brief. Just need names and contact info.</div>
+            <div class="task-name">Internal outreach lead begins sponsor prospecting</div>
+            <div class="task-detail">Using the JRZ Corporate Outreach Cadence Playbook. LinkedIn search terms provided. Stage 1 warm story emails begin going out to named stakeholders — not shared inboxes.</div>
           </div>
         </div>
-      </div>
-      <div class="task-section-label tsl-julia">Julia Chalker</div>
-      <div class="task-list">
-        <div class="task-row julia-row">
-          <div class="task-owner-col"><span class="owner-tag o-julia">Julia</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">Begin outreach to Club and Fairway sponsor prospects</div>
-            <div class="task-detail">Joey provides the personalized email drafts. Julia sends from her account or forwards. She owns the relationship and closes the commitment.</div>
+            <div class="task-name">Video volunteers confirmed and briefed</div>
+            <div class="task-detail">All 3–4 volunteers receive their individual script and filming brief from JRZ. They understand the July 18 hard deadline for footage delivery.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 2 -->
-  <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
+  <!-- PHASE 2 — JULY 18 FOOTAGE DEADLINE -->
+  <div class="phase-block" style="border-color:rgba(42,123,111,0.35);">
+    <div class="phase-header" style="background:rgba(42,123,111,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
-        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">2</div>
+        <div class="phase-num" style="background:rgba(42,123,111,0.2);color:var(--teal-lt);border:1px solid rgba(42,123,111,0.35);">2</div>
         <div>
-          <div class="phase-name">Momentum — Stories &amp; Tickets</div>
-          <div class="phase-window">6–5 Weeks Out · ~Early August</div>
+          <div class="phase-name">Footage Hard Deadline</div>
+          <div class="phase-window">July 18 · All volunteer videos delivered to JRZ for editing</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Early August</span>
+        <span class="phase-date-tag" style="background:rgba(42,123,111,0.15);color:var(--teal-lt);">July 18</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="milestone-block">
+        <div class="milestone-icon">⚠️</div>
+        <div class="milestone-text"><strong>Hard deadline — no exceptions.</strong> All volunteer video footage must be in JRZ's hands by July 18. If footage is late, videos cannot be edited, approved, and scheduled before the August 3 campaign launch. This deadline is the single biggest risk to the timeline.</div>
+      </div>
+      <div class="task-section-label tsl-arc">Arc Must Deliver by July 18</div>
       <div class="task-list">
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">Coordinate and brief Video 1 volunteer — The Parent</div>
-            <div class="task-detail">Send script, filming instructions, and a 10-minute prep call. Volunteer films on their phone. Joey provides edit brief or simple on-screen captions.</div>
+            <div class="task-name">Video 1 footage — The Personal Story</div>
+            <div class="task-detail">Parent or family member. Filmed per JRZ brief. Sent via Google Drive, Dropbox, or WeTransfer. Phone video accepted.</div>
           </div>
         </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">Post Story Video 1 — The Parent</div>
-            <div class="task-detail">Draft caption, schedule post on Facebook. Submit to approval contact first.</div>
+            <div class="task-name">Video 2 footage — The Self-Advocate</div>
+            <div class="task-detail">Individual with IDD speaking to self-determination and community impact. Filmed per JRZ brief.</div>
           </div>
         </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">Write "Tickets Are Live" email and post</div>
-            <div class="task-detail">Once ticket sales open on putts4progress.com. Email to full list + Facebook post. Submit for approval.</div>
+            <div class="task-name">Video 3 footage — The Sponsor / Community Voice</div>
+            <div class="task-detail">Board member, staff, or confirmed sponsor speaking to why they give. Filmed per JRZ brief.</div>
           </div>
         </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
           <div class="task-content">
-            <div class="task-name">TX Outreach wave 2 — therapy centers and parent Facebook groups</div>
-            <div class="task-detail">Second batch of outreach kit emails. Joey sends directly or routes through org contact depending on access.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Send press release to local media</div>
-            <div class="task-detail">Written by Joey. Sent to all media outlets on the list — no org action needed.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Post Story Video 2 — The Self-Advocate</div>
-            <div class="task-detail">Week 5. Coordinate with volunteer, brief, post. Submit for approval.</div>
+            <div class="task-name">Video 4 footage — The Event Hype / Final Call</div>
+            <div class="task-detail">High-energy CTA for the event. Can be compiled from the other volunteers or a standalone piece. Filmed per JRZ brief.</div>
           </div>
         </div>
       </div>
-      <div class="task-section-label tsl-julia">Julia Chalker</div>
+      <div class="task-section-label tsl-jrz">JRZ — Editing Window (July 18 → July 21)</div>
       <div class="task-list">
-        <div class="task-row julia-row">
-          <div class="task-owner-col"><span class="owner-tag o-julia">Julia</span></div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Follow up on Club and Fairway sponsor prospects — calls</div>
-            <div class="task-detail">Joey wrote the intro emails. Julia follows up by phone. Goal: close both Club spots by end of Phase 2.</div>
+            <div class="task-name">Edit all 4 videos — captions, branding, cuts</div>
+            <div class="task-detail">Joey edits all footage received by July 18. All 4 videos complete and submitted for Arc approval by July 21.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 3 -->
-  <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
+  <!-- PHASE 3 — REVISION PERIOD 1 — JULY 21 -->
+  <div class="phase-block" style="border-color:rgba(123,104,176,0.35);">
+    <div class="phase-header" style="background:rgba(123,104,176,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
-        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">3</div>
+        <div class="phase-num" style="background:rgba(123,104,176,0.2);color:var(--purple-lt);border:1px solid rgba(123,104,176,0.35);">3</div>
         <div>
-          <div class="phase-name">Push — Corporate &amp; Urgency</div>
-          <div class="phase-window">4–3 Weeks Out · ~Late August</div>
+          <div class="phase-name">Revision Period 1</div>
+          <div class="phase-window">July 21 · Arc reviews all content — videos, copy, emails</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">~Late August</span>
+        <span class="phase-date-tag" style="background:rgba(123,104,176,0.15);color:var(--purple-lt);">July 21</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
-      <div class="task-list">
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Post Story Video 3 — The Urgency Video</div>
-            <div class="task-detail">Facebook and LinkedIn. References $51,500 raised in first two years, pushes toward this year's goal.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Announce confirmed sponsors publicly</div>
-            <div class="task-detail">Posts tagging all confirmed sponsors on Facebook and LinkedIn. Gives them visibility and signals momentum to prospects.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Send mid-campaign email — show progress toward goal</div>
-            <div class="task-detail">Ticket count, sponsor names, fundraising momentum. Creates social proof and urgency.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Write and push Hole Sponsor outreach — second wave</div>
-            <div class="task-detail">18 Hole Sponsor slots at $500. Joey writes personalized outreach. Routes through Julia for commitment and payment.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">North Texas Giving Day alignment post</div>
-            <div class="task-detail">"Two ways to give this September" — ties P4P and NTXGD into one unified September narrative.</div>
-          </div>
-        </div>
+      <div class="gate-block">
+        <div class="gate-icon">🔁</div>
+        <div class="gate-text"><strong>Revision Period 1 — Arc reviews everything.</strong> All 4 edited videos, full social copy, all email campaigns. Approval contact provides consolidated feedback to JRZ. 48-hour turnaround on all feedback required to hold Revision Period 2 on July 28.</div>
       </div>
-      <div class="task-section-label tsl-org">Org Approval Needed</div>
+      <div class="task-section-label tsl-org">Arc Approval Contact — Due July 21</div>
       <div class="task-list">
         <div class="task-row org-row">
           <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
           <div class="task-content">
-            <div class="task-name">Review and approve all sponsor announcement posts before publishing</div>
-            <div class="task-detail">Sponsor names need to be accurate. Approval contact confirms wording and tags before anything goes live.</div>
+            <div class="task-name">Review all 4 edited videos</div>
+            <div class="task-detail">Confirm accuracy of names, titles, messaging. Flag any required changes. Consolidated feedback to JRZ by July 23.</div>
+          </div>
+        </div>
+        <div class="task-row org-row">
+          <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
+          <div class="task-content">
+            <div class="task-name">Review full social media copy — Facebook and LinkedIn</div>
+            <div class="task-detail">All campaign posts for August 3 through September 27. Confirm voice, accuracy, sponsor name accuracy, and any required changes.</div>
+          </div>
+        </div>
+        <div class="task-row org-row">
+          <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
+          <div class="task-content">
+            <div class="task-name">Review all email campaigns in NeonOne</div>
+            <div class="task-detail">All 5 emails reviewed in the NeonOne draft queue. Confirm send list, subject lines, content, and timing.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-jrz">JRZ — Incorporates Feedback</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Apply all Round 1 revisions — videos, copy, emails</div>
+            <div class="task-detail">All feedback incorporated and resubmitted to Arc approval contact by July 26 for Revision Period 2 review.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 4 -->
-  <div class="phase-block">
-    <div class="phase-header" style="background:rgba(255,255,255,0.02);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
+  <!-- PHASE 4 — REVISION PERIOD 2 — JULY 28 -->
+  <div class="phase-block" style="border-color:rgba(123,104,176,0.35);">
+    <div class="phase-header" style="background:rgba(123,104,176,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
-        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">4</div>
+        <div class="phase-num" style="background:rgba(123,104,176,0.2);color:var(--purple-lt);border:1px solid rgba(123,104,176,0.35);">4</div>
         <div>
-          <div class="phase-name">Final Sprint — FOMO &amp; Fill the Room</div>
-          <div class="phase-window">2 Weeks Out → Day Of · ~Sept 13–27</div>
+          <div class="phase-name">Revision Period 2 — Final Approval</div>
+          <div class="phase-window">July 28 · Final sign-off on all content before scheduling</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
-        <span class="phase-date-tag" style="background:rgba(255,255,255,0.05);color:var(--slate);">Sept 13–27</span>
+        <span class="phase-date-tag" style="background:rgba(123,104,176,0.15);color:var(--purple-lt);">July 28</span>
         <span class="phase-toggle">▾</span>
       </div>
     </div>
     <div class="phase-body">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="gate-block">
+        <div class="gate-icon">✅</div>
+        <div class="gate-text"><strong>Revision Period 2 — Final approval on everything.</strong> This is the last gate before scheduling. After July 28 approval, JRZ loads all content into the scheduling queue. No further content changes after this point without extending the August 3 launch date.</div>
+      </div>
+      <div class="task-section-label tsl-org">Arc Approval Contact — Due July 28</div>
       <div class="task-list">
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row org-row">
+          <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
           <div class="task-content">
-            <div class="task-name">Post Story Video 4 — The Final Call</div>
-            <div class="task-detail">Montage of all video faces. Urgency CTA. All channels. Spots remaining in tournament if applicable.</div>
+            <div class="task-name">Final approval — all 4 videos</div>
+            <div class="task-detail">Round 2 edits reviewed and approved. Written sign-off to JRZ confirms videos are cleared for scheduling.</div>
           </div>
         </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+        <div class="task-row org-row">
+          <div class="task-owner-col"><span class="owner-tag o-org">Approval</span></div>
           <div class="task-content">
-            <div class="task-name">Coordinate Volunteer Social Takeover Week</div>
-            <div class="task-detail">Brief 5 volunteers — one per day Mon–Fri of the final week. Joey writes the brief for each person. They post to their own accounts and the Arc's stories.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Send "Last Chance" email — 72 hours out</div>
-            <div class="task-detail">Final ticket push. Includes confirmed sponsor names, current momentum, and direct registration link.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Write day-before logistics email to all registrants</div>
-            <div class="task-detail">Parking, check-in, what to expect. Sent by org or Joey depending on platform access.</div>
-          </div>
-        </div>
-        <div class="task-row jrz-row">
-          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
-          <div class="task-content">
-            <div class="task-name">Write all stage remarks — opening, mid-event update, closing reveal</div>
-            <div class="task-detail">Scripts delivered to James or designated speaker. Joey writes, org delivers.</div>
+            <div class="task-name">Final approval — all social copy and emails</div>
+            <div class="task-detail">All posts and email campaigns approved for scheduling. Any remaining changes communicated to JRZ by July 28 COB.</div>
           </div>
         </div>
       </div>
-      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-section-label tsl-jrz">JRZ — August 1–2 Final Sprint</div>
       <div class="task-list">
-        <div class="task-row ask-row">
-          <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
-            <div class="task-name">Someone at the event posting live to social in real time</div>
-            <div class="task-detail">Joey may not be on-site. The org needs one person with their phone ready to capture check-in energy, tournament action, and the fundraising reveal from the stage.</div>
+            <div class="task-name">Apply any final revisions from Period 2</div>
+            <div class="task-detail">August 1–2. Last round of edits incorporated. All content finalized.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Schedule all social content through September 27</div>
+            <div class="task-detail">August 1–2. Every post queued and scheduled across Facebook and LinkedIn for the full campaign window.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Confirm all NeonOne email campaigns are queued</div>
+            <div class="task-detail">August 1–2. All emails confirmed in the send queue with correct dates, lists, and subject lines. Save the Date sends August 3.</div>
+          </div>
+        </div>
+      </div>
+      <div class="gate-block">
+        <div class="gate-icon">🚀</div>
+        <div class="gate-text"><strong>August 3 — Campaign Goes Live.</strong> Save the Date email sends. First social posts publish. Corp outreach cadence is already 4+ weeks in. Tickets are live at putts4progress.com. The campaign is running.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 5 — LIVE CAMPAIGN -->
+  <div class="phase-block" style="border-color:rgba(201,168,76,0.3);">
+    <div class="phase-header" style="background:rgba(201,168,76,0.05);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
+      <div class="phase-header-left">
+        <div class="phase-num" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">5</div>
+        <div>
+          <div class="phase-name">Campaign Live — Push to Event</div>
+          <div class="phase-window">August 3 → September 27 · 55 days</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="phase-date-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Aug 3 → Sept 27</span>
+        <span class="phase-toggle">▾</span>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="task-section-label tsl-jrz">JRZ — Content Running on Schedule</div>
+      <div class="task-list">
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Videos 1–4 publish on campaign schedule</div>
+            <div class="task-detail">All 4 story videos post across Facebook and LinkedIn per the pre-approved content calendar. Captions and copy already approved.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Email sequence sends on schedule</div>
+            <div class="task-detail">Save the Date (Aug 3) · Tickets Are Live · Mid-Campaign Push · Last Chance (72 hrs out) — all pre-loaded in NeonOne.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Sponsor announcement posts — as sponsors confirm</div>
+            <div class="task-detail">Written and approved in advance. Arc approval contact confirms each sponsor name before the post publishes.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">North Texas Giving Day alignment post — September</div>
+            <div class="task-detail">"Two ways to give this September" — ties P4P and NTXGD into one unified narrative.</div>
+          </div>
+        </div>
+        <div class="task-row jrz-row">
+          <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
+          <div class="task-content">
+            <div class="task-name">Write all event day stage remarks</div>
+            <div class="task-detail">Opening, mid-event update, closing fundraising reveal. Scripts delivered to James or designated speaker before September 27.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-arc">Arc Internal — Outreach Cadence Running</div>
+      <div class="task-list">
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
+          <div class="task-content">
+            <div class="task-name">Corporate outreach cadence — Stages 2 and 3</div>
+            <div class="task-detail">Internal lead follows up on all Stage 1 contacts per the playbook timing. Stage 2 (relationship ask) and Stage 3 (personalized close) execute on schedule. Hard cutoff for new Stage 1 outreach: August 25.</div>
+          </div>
+        </div>
+        <div class="task-row arc-row">
+          <div class="task-owner-col"><span class="owner-tag o-arc">Arc</span></div>
+          <div class="task-content">
+            <div class="task-name">Someone at the event posting live to social</div>
+            <div class="task-detail">One person with their phone ready to capture check-in energy, tournament action, and the fundraising reveal from the stage in real time.</div>
+          </div>
+        </div>
+      </div>
+      <div class="task-section-label tsl-julia">Julia Chalker — Sponsor Pipeline</div>
+      <div class="task-list">
+        <div class="task-row julia-row">
+          <div class="task-owner-col"><span class="owner-tag o-julia">Julia</span></div>
+          <div class="task-content">
+            <div class="task-name">Close all sponsor commitments and process payments</div>
+            <div class="task-detail">All warm leads from the internal outreach cadence route to Julia for commitment and payment. Goal: Club spots closed by late August. Hole sponsors through September.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 5 -->
+  <!-- PHASE 6 — POST EVENT -->
   <div class="phase-block" style="border-color:rgba(125,200,125,0.3);">
     <div class="phase-header" style="background:rgba(58,125,68,0.06);" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.phase-toggle').textContent = this.nextElementSibling.classList.contains('open') ? '▴' : '▾'">
       <div class="phase-header-left">
-        <div class="phase-num" style="background:rgba(58,125,68,0.2);color:var(--green-lt);border:1px solid rgba(125,200,125,0.3);">5</div>
+        <div class="phase-num" style="background:rgba(58,125,68,0.2);color:var(--green-lt);border:1px solid rgba(125,200,125,0.3);">6</div>
         <div>
           <div class="phase-name">After the Event — Retain &amp; Repeat</div>
-          <div class="phase-window">48 Hours – 2 Weeks After · Sept 29 – Oct 11</div>
+          <div class="phase-window">September 28 – October 11</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
@@ -641,27 +715,27 @@
       </div>
     </div>
     <div class="phase-body">
-      <div class="task-section-label tsl-jrz">Joey Executes</div>
+      <div class="task-section-label tsl-jrz">JRZ Executes</div>
       <div class="task-list">
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
             <div class="task-name">Write thank-you email — send within 24 hours</div>
-            <div class="task-detail">Final total, impact statement, sponsor recognition, soft membership ask. Personalized tone. Delivered to approval contact for same-day send.</div>
+            <div class="task-detail">Final total, impact statement, sponsor recognition, soft membership ask. Delivered to approval contact for same-day send.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
             <div class="task-name">Write event recap post — all channels</div>
-            <div class="task-detail">Photos from the org, final total, sponsor tags, one-line impact statement. Joey writes, org publishes or Joey schedules if access is available.</div>
+            <div class="task-detail">Photos from the org, final total, sponsor tags, one-line impact statement. Joey writes, org publishes.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
           <div class="task-owner-col"><span class="owner-tag o-jrz">JRZ</span></div>
           <div class="task-content">
             <div class="task-name">Write sponsor impact recap — delivered to Julia</div>
-            <div class="task-detail">One-page summary per sponsor showing their visibility, what was raised, and impact numbers. Julia delivers to each sponsor. Sets up the 2027 renewal conversation.</div>
+            <div class="task-detail">One-page summary per sponsor — visibility delivered, amount raised, impact numbers. Julia delivers to each sponsor. Sets up 2027 renewal conversation.</div>
           </div>
         </div>
         <div class="task-row jrz-row">
@@ -672,18 +746,19 @@
           </div>
         </div>
       </div>
-      <div class="task-section-label tsl-ask">Joey Needs From Org</div>
+      <div class="task-section-label tsl-ask">Arc Must Provide Within 24 Hours of Event</div>
       <div class="task-list">
         <div class="task-row ask-row">
           <div class="task-owner-col"><span class="owner-tag o-ask">Ask</span></div>
           <div class="task-content">
-            <div class="task-name">Event photos and final fundraising total — within 24 hours</div>
-            <div class="task-detail">Joey can't write the recap without the numbers and the photos. This is the one post-event deliverable the org must provide quickly.</div>
+            <div class="task-name">Event photos and final fundraising total</div>
+            <div class="task-detail">Joey cannot write the recap without the numbers and the photos. This is the one post-event deliverable the org must provide quickly — within 24 hours of the event ending.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 
 <hr class="divider">
@@ -693,7 +768,7 @@
   <span class="eyebrow">Corporate Sponsor Pipeline</span>
   <h2 class="sec-title">Sponsor <em>Tracker</em></h2>
   <hr class="gold-rule">
-  <div class="tracker-note">Joey writes all outreach. Julia Chalker closes all commitments (julia@thearcofdfw.org · 214.543.1563). Org provides warm relationship connections. Real tiers: Club $2,000 (2 spots), Fairway $1,000 (2 spots), Hole $500 (18 spots).</div>
+  <div class="tracker-note">Arc's internal outreach lead executes the cadence. Julia Chalker closes all commitments (julia@thearcofdfw.org · 214.543.1563). JRZ built the playbook — Arc runs it. Tiers: Club $2,000 · Fairway $1,000 · Hole $500.</div>
 
   <table class="sponsor-table">
     <thead>
@@ -712,53 +787,53 @@
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-club">Club $2K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-club">Club $2K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-fair">Fairway $1K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-fair">Fairway $1K</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
       <tr>
         <td>[Company Name]</td>
         <td>[Name · Title]</td>
         <td><span class="tier-badge t-hole">Hole $500</span></td>
         <td><span class="status-badge st-target">Target</span></td>
-        <td>Joey drafts email → Julia sends</td>
+        <td>Internal lead sends Stage 1 → Julia closes</td>
       </tr>
     </tbody>
   </table>
-  <div class="add-row">+ Add rows as prospect list grows · 2 Club · 2 Fairway · 18 Hole spots available</div>
+  <div class="add-row">+ Add rows as prospect list grows · 2 Club · 2 Fairway · 18 Hole spots</div>
 
   <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
     <span style="font-size:11px;font-weight:700;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-right:4px;">Status:</span>
@@ -777,7 +852,7 @@
   <span class="eyebrow">Running Total</span>
   <h2 class="sec-title">Revenue <em>Tracker</em></h2>
   <hr class="gold-rule">
-  <p class="body-text">Update at each weekly check-in between Joey and the org. Knowing the number while there's still runway is the only way to course-correct in time.</p>
+  <p class="body-text">Update at each check-in between JRZ and the org. Knowing the number while there's still runway is the only way to course-correct in time. Goal this year: $36,000 with significantly less overhead than prior years.</p>
 
   <div class="thermo-wrap">
     <div class="thermo-label">
@@ -785,7 +860,7 @@
         <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);margin-bottom:4px;">Total Confirmed Revenue</div>
         <div class="thermo-current">$_______ raised</div>
       </div>
-      <div class="thermo-goal">Goal: $42,000</div>
+      <div class="thermo-goal">Goal: $36,000</div>
     </div>
     <div class="thermo-bar-bg"><div class="thermo-bar-fill" style="width:0%;"></div></div>
 
@@ -795,15 +870,15 @@
         <span class="ts-amount locked">TBD — confirm value with Julia</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">🏌 Club Sponsors ($2,000 × 2 available)</span>
+        <span class="ts-label">🏌 Club Sponsors ($2,000 × 2)</span>
         <span class="ts-amount">$_______ / $4,000 max</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">⛳ Fairway Sponsors ($1,000 × 2 available)</span>
+        <span class="ts-label">⛳ Fairway Sponsors ($1,000 × 2)</span>
         <span class="ts-amount">$_______ / $2,000 max</span>
       </div>
       <div class="thermo-source">
-        <span class="ts-label">🕳 Hole Sponsors ($500 × 18 available)</span>
+        <span class="ts-label">🕳 Hole Sponsors ($500 × 18)</span>
         <span class="ts-amount">$_______ / $9,000 max</span>
       </div>
       <div class="thermo-source">
@@ -820,14 +895,14 @@
       </div>
       <div class="thermo-source" style="border-top:1px solid rgba(201,168,76,0.2);margin-top:8px;padding-top:14px;">
         <span class="ts-label" style="color:var(--white);font-weight:700;">TOTAL</span>
-        <span class="ts-amount locked">$_______ of $42,000</span>
+        <span class="ts-amount locked">$_______ of $36,000</span>
       </div>
     </div>
   </div>
 
   <div style="background:rgba(58,125,68,0.08);border:1px solid rgba(125,200,125,0.2);border-radius:8px;padding:18px 20px;margin-top:4px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:8px;">The Weekly Check-In Rule</div>
-    <div style="font-size:14px;color:rgba(245,240,232,0.75);line-height:1.65;">Joey and James (or the org designee) review this tracker once a week. If ticket sales are behind at Week 5, Joey activates the ambassador push. If Club sponsors aren't closed by Week 4, Joey and Julia escalate together. The number only matters if someone's looking at it.</div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:8px;">The Check-In Rule</div>
+    <div style="font-size:14px;color:rgba(245,240,232,0.75);line-height:1.65;">JRZ and James (or the org designee) review this tracker at each meeting. If ticket sales are behind at Week 3 of the live campaign, activate the ambassador push. If Club sponsors aren't closed by August 28, Joey and Julia escalate together. The number only matters if someone's looking at it.</div>
   </div>
 </div>
 
