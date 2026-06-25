@@ -68,16 +68,25 @@
   .audience-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 10px; }
   .audience-card p { color: rgba(245,240,232,0.82); font-size: 16px; line-height: 1.7; }
 
+  .seg-callout { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 22px 24px; margin-top: 20px; }
+  .seg-callout-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .seg-callout h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); margin-bottom: 8px; }
+  .seg-callout p { font-size: 15px; color: rgba(245,240,232,0.75); line-height: 1.65; }
+  .seg-callout a { color: var(--gold); font-weight: 700; text-decoration: none; }
+  .seg-callout a:hover { text-decoration: underline; }
+
   /* VAULT GRID */
   .vault-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 30px; }
   .vault-card { display: block; text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 24px 22px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
   .vault-card:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); transform: translateX(4px); }
+  .vault-card.disabled { opacity: 0.45; pointer-events: none; }
   .vault-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
   .vault-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
   .icon-gold { background: rgba(201,168,76,0.18); }
   .icon-coral { background: rgba(201,91,56,0.18); }
   .icon-teal { background: rgba(42,123,111,0.25); }
   .icon-green { background: rgba(58,125,68,0.2); }
+  .icon-slate { background: rgba(74,98,116,0.25); }
   .vault-card-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); font-weight: 600; flex: 1; }
   .vault-card-desc { color: rgba(245,240,232,0.65); font-size: 15px; line-height: 1.6; padding-left: 54px; }
   .vault-card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; flex-shrink: 0; }
@@ -86,6 +95,9 @@
   .tag-both { background: rgba(74,98,116,0.3); color: #9BB5C8; }
   .tag-event { background: rgba(58,125,68,0.2); color: #7DC87D; }
   .tag-teal { background: rgba(42,123,111,0.25); color: var(--teal-lt); }
+  .tag-new { background: rgba(201,168,76,0.25); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
+  .tag-future { background: rgba(74,98,116,0.2); color: #9BB5C8; }
+  .tag-soon { background: rgba(255,255,255,0.06); color: rgba(245,240,232,0.4); }
 
   .about-bg { background: rgba(245,240,232,0.03); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
 
@@ -111,6 +123,7 @@
     <li><a href="./brand/index.html">Brand Guide</a></li>
     <li><a href="./arcp4p/index.html">P4P Campaign</a></li>
     <li><a href="./arcsponsorship/index.html">Sponsor Deck</a></li>
+    <li><a href="./arcsegmentation/index.html">Segmentation</a></li>
     <li><a href="./arcsoutreach/index.html">Outreach Kit</a></li>
     <li><a href="./arcroadmap/index.html">Roadmap</a></li>
   </ul>
@@ -124,7 +137,7 @@
     <div class="dual-bar-half donor">⬤ &nbsp;Donor &amp; Corporate Strategy</div>
     <div class="dual-bar-half client">⬤ &nbsp;Client &amp; Mission Advocacy</div>
   </div>
-  <p class="hero-meta">September 27, 2026 · Puttshack Addison Prepared by JRZ Consulting Solutions &nbsp;·&nbsp; Irving, TXnbsp;·Prepared by JRZ Consulting Solutions &nbsp;·&nbsp; Irving, TXnbsp; Prepared by JRZ Consulting Solutions</p>
+  <p class="hero-meta">September 27, 2026 · Puttshack Addison &nbsp;·&nbsp; Prepared by JRZ Consulting Solutions · Irving, TX</p>
 </section>
 
 <!-- ABOUT -->
@@ -177,6 +190,13 @@
       <p>Families with IDD members are often overwhelmed, undertrained, and underresourced. They need a navigator — someone who speaks their language, knows the Medicaid waitlists, the IEP process, the housing gaps. The Arc's communication to this audience must be warm, clear, and empowering — never clinical, never condescending.</p>
     </div>
   </div>
+
+  <!-- SEGMENTATION CALLOUT — new addition -->
+  <div class="seg-callout">
+    <span class="seg-callout-label">Active Challenge → Strategy In Progress</span>
+    <h4>The list doesn't know which audience is which — yet.</h4>
+    <p>The Arc's current CRM has no tagging to distinguish donors, families, and corporate prospects. Everyone receives the same message. The Audience Segmentation Proposal outlines nine approaches to solve this — without being pushy or invasive. <a href="./arcsegmentation/index.html">View the proposal →</a></p>
+  </div>
 </div>
 
 <hr class="section-divider">
@@ -186,7 +206,7 @@
   <span class="eyebrow">Marketing Vault</span>
   <h2 class="section-title">Your Complete<br><em>Marketing Infrastructure</em></h2>
   <hr class="gold-rule">
-  <p class="section-body">Six strategic documents. One unified system. Navigate each section below — built for staff, board members, volunteers, and anyone creating content or outreach on behalf of The Arc of DFW Area.</p>
+  <p class="section-body">Eight strategic documents. One unified system. Navigate each section below — built for staff, board members, volunteers, and anyone creating content or outreach on behalf of The Arc of DFW Area.</p>
 
   <div class="vault-grid">
 
@@ -214,7 +234,7 @@
         <div class="vault-card-title">Putts for Progress 2026 — Campaign Plan</div>
         <span class="vault-card-tag tag-event">Event Marketing</span>
       </div>
-      <p class="vault-card-desc">Full 6-phase campaign plan to exceed last year's $34K raise. Includes 8-week content calendar, revenue model with three scenarios, video script frameworks for all 4 story videos, grassroots tactics, and day-of messaging guide.</p>
+      <p class="vault-card-desc">Full phased campaign plan — August 3 launch through September 27 event day. Goal: $36,000. Includes content calendar, email sequence, video series framework, social content, and day-of messaging guide.</p>
     </a>
 
     <a class="vault-card" href="./arcsponsorship/index.html">
@@ -223,16 +243,25 @@
         <div class="vault-card-title">Corporate Sponsorship Deck</div>
         <span class="vault-card-tag tag-gold">Corporate</span>
       </div>
-      <p class="vault-card-desc">Three tiered sponsorship packages ($2,500 / $5,000 / $10,000) with full benefit breakdowns, a side-by-side comparison table, objection handling for the four most common corporate pushbacks, and a direct CTA to close the conversation.</p>
+      <p class="vault-card-desc">Tiered sponsorship packages — Club $2,000 · Fairway $1,000 · Hole $500. Title Sponsor: Method 360 (confirmed). Full benefit breakdowns, objection handling, and direct CTA to Julia Chalker for all commitments.</p>
+    </a>
+
+    <a class="vault-card" href="./arcsegmentation/index.html">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-gold">◎</div>
+        <div class="vault-card-title">Audience Segmentation Proposal</div>
+        <span class="vault-card-tag tag-new">New</span>
+      </div>
+      <p class="vault-card-desc">Nine approaches to learning who's on your list — without asking too much. Self-selection quiz, reply-based tagging, event check-in intake, referral pathway tracking, and more. Each rated by effort, friction, and data quality. Includes a recommended 3-step starting stack.</p>
     </a>
 
     <a class="vault-card" href="./arcsoutreach/index.html">
       <div class="vault-card-top">
         <div class="vault-icon icon-teal">📣</div>
         <div class="vault-card-title">TX Special Needs Outreach Kit</div>
-        <span class="vault-card-tag tag-teal">Grassroots</span>
+        <span class="vault-card-tag tag-future">For Future Use</span>
       </div>
-      <p class="vault-card-desc">Complete community outreach toolkit targeting Texas IDD organizations, school SPED departments, parent groups, and therapy centers. Includes a priority org list, shareable event flyer, 3 email templates, copy-paste social posts, and a phone script.</p>
+      <p class="vault-card-desc">Community outreach toolkit targeting Texas IDD organizations, school SPED departments, parent groups, and therapy centers. Not part of 2026 campaign execution — retained for future activation when CRM infrastructure supports segmented outreach.</p>
     </a>
 
     <a class="vault-card" href="./arcroadmap/index.html">
@@ -241,8 +270,17 @@
         <div class="vault-card-title">Campaign Execution Roadmap</div>
         <span class="vault-card-tag tag-event">Command Doc</span>
       </div>
-      <p class="vault-card-desc">The document that actually runs the campaign. Six phases with named owners, dated deliverables, a corporate sponsor pipeline tracker, and a live revenue thermometer. Start here after the kickoff meeting.</p>
+      <p class="vault-card-desc">The document that actually runs the campaign. Phased timeline with named owners, dated deliverables, approval gates, and a live revenue tracker. Start here after the kickoff meeting.</p>
     </a>
+
+    <div class="vault-card disabled">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-slate">📋</div>
+        <div class="vault-card-title">Corporate Outreach Cadence Playbook</div>
+        <span class="vault-card-tag tag-soon">Coming Soon</span>
+      </div>
+      <p class="vault-card-desc">Full 3-stage email playbook for Arc's internal outreach lead — warm storytelling, low-pressure relationship ask, personalized close — plus objection handling and cadence timing guide.</p>
+    </div>
 
   </div>
 </div>
