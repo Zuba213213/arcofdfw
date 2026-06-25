@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Outreach Cadence Playbook — The Arc of DFW Area</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A;
+    --ivory: #F5F0E8; --coral: #C95B38; --teal: #2A7B6F;
+    --teal-lt: #4FBFB0; --slate: #4A6274; --white: #FFFFFF; --green: #3A7D44;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 18px; line-height: 1.7; }
+
+  .topbar { background: var(--gold); color: var(--navy); text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); letter-spacing: 0.04em; }
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; list-style: none; }
+  .nav-links a { color: var(--ivory); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .hero { background: var(--navy); padding: 72px 24px 60px; text-align: center; border-bottom: 3px solid var(--gold); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 16px; margin-bottom: 28px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 7vw, 52px); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 20px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { max-width: 620px; margin: 0 auto 36px; color: rgba(245,240,232,0.8); font-size: 18px; line-height: 1.7; }
+  .dual-bar { display: flex; width: 100%; max-width: 560px; margin: 0 auto 44px; border-radius: 4px; overflow: hidden; }
+  .dual-bar-third { flex: 1; padding: 14px 8px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .bar-gold { background: var(--gold); color: var(--navy); }
+  .bar-coral { background: var(--coral); color: var(--white); }
+  .bar-teal { background: var(--teal); color: var(--white); }
+  .hero-meta { font-size: 13px; color: var(--slate); letter-spacing: 0.06em; }
+
+  .section { padding: 60px 24px; max-width: 780px; margin: 0 auto; }
+  .section-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 0; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 38px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  h2.section-title em { color: var(--gold); font-style: italic; }
+  .section-body { color: rgba(245,240,232,0.82); font-size: 17px; line-height: 1.75; margin-bottom: 30px; }
+  .gold-rule { width: 48px; border: none; border-top: 2px solid var(--gold); margin: 20px 0 28px; }
+
+  .about-bg { background: rgba(245,240,232,0.03); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+  /* ICP SNAPSHOT */
+  .icp-snapshot { display: flex; flex-direction: column; gap: 12px; margin: 0 0 36px; }
+  .icp-row { display: flex; gap: 1px; background: rgba(201,168,76,0.12); border-radius: 6px; overflow: hidden; }
+  .icp-cell { background: rgba(13,27,42,0.85); padding: 12px 16px; flex: 1; }
+  .icp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 4px; }
+  .icp-value { font-size: 14px; color: var(--ivory); line-height: 1.5; }
+
+  .fear-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0 30px; }
+  .fear-item { display: flex; align-items: flex-start; gap: 14px; background: rgba(201,91,56,0.07); border: 1px solid rgba(201,91,56,0.2); border-radius: 6px; padding: 14px 18px; }
+  .fear-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); flex-shrink: 0; margin-top: 8px; }
+  .fear-text { font-size: 15px; color: rgba(245,240,232,0.8); line-height: 1.6; }
+
+  .need-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0 30px; }
+  .need-item { display: flex; align-items: flex-start; gap: 14px; background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 6px; padding: 14px 18px; }
+  .need-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px; }
+  .need-text { font-size: 15px; color: rgba(245,240,232,0.8); line-height: 1.6; }
+
+  /* STAKEHOLDER SECTION */
+  .stakeholder-grid { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 30px; }
+  .stakeholder-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 20px 22px; }
+  .stakeholder-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+  .stakeholder-role { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .stakeholder-desc { font-size: 15px; color: rgba(245,240,232,0.72); line-height: 1.65; margin-bottom: 12px; }
+  .stakeholder-search { background: rgba(13,27,42,0.8); border: 1px solid rgba(201,168,76,0.18); border-radius: 4px; padding: 10px 14px; }
+  .search-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 4px; }
+  .search-term { font-size: 13px; color: var(--gold-lt); font-family: 'Lato', monospace; line-height: 1.6; }
+
+  /* JOURNEY TIMELINE */
+  .journey { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .journey-stage { position: relative; padding-left: 52px; padding-bottom: 40px; }
+  .journey-stage:last-child { padding-bottom: 0; }
+  .journey-stage::before { content: ''; position: absolute; left: 18px; top: 36px; bottom: 0; width: 2px; background: rgba(201,168,76,0.2); }
+  .journey-stage:last-child::before { display: none; }
+  .stage-marker { position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--navy); background: var(--gold); flex-shrink: 0; }
+  .stage-timing { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .stage-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+  .stage-subtitle { font-size: 14px; color: rgba(245,240,232,0.5); font-style: italic; margin-bottom: 16px; }
+  .stage-goal { background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold); padding: 12px 18px; border-radius: 0 6px 6px 0; margin-bottom: 16px; font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.6; }
+  .stage-goal strong { color: var(--gold-lt); }
+
+  /* EMAIL TEMPLATES */
+  .email-block { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; overflow: hidden; margin: 16px 0; }
+  .email-header { background: rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 16px 22px; }
+  .email-field { display: flex; gap: 12px; margin-bottom: 6px; }
+  .email-field:last-child { margin-bottom: 0; }
+  .email-field-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.4); min-width: 60px; padding-top: 2px; flex-shrink: 0; }
+  .email-field-value { font-size: 14px; color: var(--ivory); line-height: 1.5; }
+  .email-field-value em { color: var(--gold-lt); font-style: normal; }
+  .email-body { padding: 22px; }
+  .email-body p { font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.8; margin-bottom: 16px; }
+  .email-body p:last-child { margin-bottom: 0; }
+  .email-body p em { color: var(--gold-lt); font-style: italic; }
+  .email-sig { border-top: 1px solid rgba(201,168,76,0.15); margin-top: 20px; padding-top: 16px; font-size: 14px; color: rgba(245,240,232,0.55); line-height: 1.6; }
+
+  .guidance-block { margin-top: 16px; }
+  .guidance-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 10px; }
+  .guidance-items { display: flex; flex-direction: column; gap: 8px; }
+  .guidance-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: rgba(245,240,232,0.72); line-height: 1.6; }
+  .guidance-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); flex-shrink: 0; margin-top: 8px; }
+
+  /* WAIT BLOCK */
+  .wait-block { background: rgba(42,123,111,0.1); border: 1px solid rgba(42,123,111,0.3); border-radius: 6px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: center; gap: 16px; }
+  .wait-icon { font-size: 22px; flex-shrink: 0; }
+  .wait-text { font-size: 14px; color: rgba(245,240,232,0.8); line-height: 1.6; }
+  .wait-text strong { color: var(--teal-lt); }
+
+  /* OBJECTION HANDLING */
+  .objection-list { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
+  .objection-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; overflow: hidden; }
+  .objection-q { background: rgba(201,91,56,0.1); border-bottom: 1px solid rgba(201,91,56,0.2); padding: 14px 20px; }
+  .objection-q-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; }
+  .objection-q-text { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); font-style: italic; }
+  .objection-a { padding: 16px 20px; }
+  .objection-a-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .objection-a-text { font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.7; }
+
+  /* TIER CARDS */
+  .tier-cards { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+  .tier-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 22px; }
+  .tier-card.tier-club { border-color: rgba(201,168,76,0.45); }
+  .tier-card.tier-fairway { border-color: rgba(42,123,111,0.45); }
+  .tier-card.tier-hole { border-color: rgba(74,98,116,0.45); }
+  .tier-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 12px; }
+  .tier-name { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); font-weight: 600; }
+  .tier-price { font-size: 22px; font-weight: 700; color: var(--gold); font-family: 'Playfair Display', serif; }
+  .tier-card.tier-fairway .tier-price { color: var(--teal-lt); }
+  .tier-card.tier-hole .tier-price { color: #9BB5C8; }
+  .tier-sub { font-size: 13px; color: rgba(245,240,232,0.45); font-style: italic; margin-bottom: 14px; }
+  .tier-benefits { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+  .tier-benefit { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(245,240,232,0.75); line-height: 1.5; }
+  .tier-benefit-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+  .tier-card.tier-fairway .tier-benefit-dot { background: var(--teal-lt); }
+  .tier-card.tier-hole .tier-benefit-dot { background: #9BB5C8; }
+  .tier-close-angle { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 10px 14px; font-size: 14px; color: rgba(245,240,232,0.72); line-height: 1.6; font-style: italic; }
+
+  /* PILLARS */
+  .pillars { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+  .pillar { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.12); border-radius: 6px; padding: 16px 18px; }
+  .pillar-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+  .pillar-text { font-size: 15px; color: rgba(245,240,232,0.8); line-height: 1.6; }
+  .pillar-text strong { color: var(--white); display: block; margin-bottom: 2px; font-size: 15px; }
+
+  /* MISSION BLOCK */
+  .mission-block { background: rgba(201,168,76,0.07); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 28px; margin: 36px 0; }
+  .mission-block p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--gold-lt); line-height: 1.6; }
+
+  footer { background: rgba(0,0,0,0.35); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 24px; text-align: center; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); margin-bottom: 6px; }
+  .footer-sub { font-size: 13px; color: var(--slate); letter-spacing: 0.06em; }
+  .footer-divider { width: 60px; border: none; border-top: 1px solid rgba(201,168,76,0.3); margin: 20px auto; }
+  .footer-note { font-size: 12px; color: rgba(74,98,116,0.7); }
+  .footer-back { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+  .footer-back:hover { text-decoration: underline; }
+
+  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 18px 36px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">Marketing Vault — Confidential · Built by JRZ Consulting Solutions</div>
+
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <ul class="nav-links">
+    <li><a href="./index.html">← Vault Home</a></li>
+    <li><a href="./icp/index.html">ICP</a></li>
+    <li><a href="./arcsponsorship/index.html">Sponsor Deck</a></li>
+    <li><a href="./arcsegmentation/index.html">Segmentation</a></li>
+    <li><a href="./arcroadmap/index.html">Roadmap</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Vault · Sales Enablement</div>
+  <h1>Corporate Outreach<br><em>Cadence Playbook</em></h1>
+  <p class="hero-sub">A curated three-stage journey for Arc's internal outreach lead — built to introduce, build trust, and close partnerships that feel earned, not sold.</p>
+  <div class="dual-bar">
+    <div class="dual-bar-third bar-gold">Stage 1 · The Story</div>
+    <div class="dual-bar-third bar-teal">Stage 2 · The Ask</div>
+    <div class="dual-bar-third bar-coral">Stage 3 · The Close</div>
+  </div>
+  <p class="hero-meta">For internal use by Arc of DFW outreach lead · Not for external distribution</p>
+</section>
+
+<!-- WHO YOU ARE TALKING TO -->
+<div class="about-bg">
+  <div class="section">
+    <span class="eyebrow">Know Your Prospect</span>
+    <h2 class="section-title">The Corporate Champion<br><em>Who They Are &amp; What They Need</em></h2>
+    <hr class="gold-rule">
+    <p class="section-body">Before you send a single email, understand the person on the other end. The Corporate Champion is not cynical — they are accountable. They want to give. They need a reason to justify it, a story to tell their team, and a partner who looks credible enough to stand behind.</p>
+
+    <div class="icp-snapshot">
+      <div class="icp-row">
+        <div class="icp-cell"><div class="icp-label">Who They Are</div><div class="icp-value">Director of Community Affairs, VP of Marketing, HR Director, or Business Owner</div></div>
+        <div class="icp-cell"><div class="icp-label">Company Size</div><div class="icp-value">Mid-to-large DFW businesses — law firms, financial institutions, healthcare groups</div></div>
+      </div>
+      <div class="icp-row">
+        <div class="icp-cell"><div class="icp-label">Decision Authority</div><div class="icp-value">Controls or heavily influences charitable giving / CSR budget</div></div>
+        <div class="icp-cell"><div class="icp-label">Trigger Moments</div><div class="icp-value">ESG reporting cycles, employee giving season, Q4 budget flush, community visibility goals</div></div>
+      </div>
+      <div class="icp-row">
+        <div class="icp-cell"><div class="icp-label">Geography</div><div class="icp-value">DFW Metroplex — Irving, Dallas, Fort Worth, Addison, Plano, Arlington</div></div>
+        <div class="icp-cell"><div class="icp-label">Give Range</div><div class="icp-value">$500 – $2,000 per event sponsorship · Open to annual partnerships</div></div>
+      </div>
+    </div>
+
+    <span class="eyebrow">What They Fear</span>
+    <div class="fear-list">
+      <div class="fear-item"><div class="fear-dot"></div><div class="fear-text">Association with an organization that looks disorganized or financially mismanaged</div></div>
+      <div class="fear-item"><div class="fear-dot"></div><div class="fear-text">Spending CSR budget on something their employees won't connect with or care about</div></div>
+      <div class="fear-item"><div class="fear-dot"></div><div class="fear-text">Getting "lost in the crowd" — logo on a banner with no real partnership value</div></div>
+      <div class="fear-item"><div class="fear-dot"></div><div class="fear-text">Being asked to commit before they understand what they're buying</div></div>
+      <div class="fear-item"><div class="fear-dot"></div><div class="fear-text">Difficulty measuring or communicating the ROI of their giving internally</div></div>
+    </div>
+
+    <span class="eyebrow">What They Need to Hear</span>
+    <div class="need-list">
+      <div class="need-item"><div class="need-dot"></div><div class="need-text">"Your team will be in the room. Your logo will be seen. Your story will be told."</div></div>
+      <div class="need-item"><div class="need-dot"></div><div class="need-text">"We've been doing this for 55 years. 100% volunteer-run. Every dollar goes to the work."</div></div>
+      <div class="need-item"><div class="need-dot"></div><div class="need-text">"Last year's event raised $51,500 over two years. Here's exactly what it funded."</div></div>
+      <div class="need-item"><div class="need-dot"></div><div class="need-text">"This is what sponsoring at your tier looks like — in print, online, and on-site."</div></div>
+      <div class="need-item"><div class="need-dot"></div><div class="need-text">"Your team members can participate directly — not just write a check."</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- STAKEHOLDER IDENTIFICATION -->
+<div class="section">
+  <span class="eyebrow">Before You Reach Out</span>
+  <h2 class="section-title">Find the Right Person<br><em>Not the Right Inbox</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">Generic info@ and sponsorship@ emails go nowhere. The goal is to find a named stakeholder at each target company — someone with budget authority or community influence — and reach them directly. Use LinkedIn to identify the right contact before sending anything.</p>
+
+  <div class="stakeholder-grid">
+    <div class="stakeholder-card">
+      <div class="stakeholder-title">Primary Contact — The Decision Maker</div>
+      <div class="stakeholder-role">Who to find first</div>
+      <div class="stakeholder-desc">The person who controls or influences the CSR / charitable giving budget. They need to feel like the partnership is personally meaningful, not just a line item. Finding their name makes every email land differently.</div>
+      <div class="stakeholder-search">
+        <div class="search-label">LinkedIn Search Terms</div>
+        <div class="search-term">"Director of Community Affairs" [Company]<br>"VP Marketing" [Company] DFW<br>"HR Director" [Company] Irving OR Dallas<br>"Community Relations" [Company]<br>"Corporate Social Responsibility" [Company]</div>
+      </div>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-title">Secondary Contact — The Internal Champion</div>
+      <div class="stakeholder-role">Who to CC or loop in</div>
+      <div class="stakeholder-desc">Someone inside the company who is personally connected to disability, advocacy, or community causes — a parent, a caregiver, a long-term volunteer. When this person receives your email, they become an advocate inside the organization before you ever get a reply.</div>
+      <div class="stakeholder-search">
+        <div class="search-label">LinkedIn Search Terms</div>
+        <div class="search-term">"Disability" OR "Inclusion" [Company]<br>"Employee Resource Group" [Company]<br>"DEI" OR "Diversity" [Company] DFW<br>"Volunteer" [Company] nonprofit<br>"Special Needs" OR "IDD" [Company]</div>
+      </div>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-title">Tertiary Contact — The Owner / Principal</div>
+      <div class="stakeholder-role">For small-to-mid businesses only</div>
+      <div class="stakeholder-desc">At smaller DFW businesses — law firms, medical practices, local financial advisors — the owner is often the decision maker and the community face simultaneously. A personal story lands harder here than any formal sponsorship deck.</div>
+      <div class="stakeholder-search">
+        <div class="search-label">LinkedIn Search Terms</div>
+        <div class="search-term">"Owner" OR "Principal" [Company] DFW<br>"Founder" [Company] Irving OR Addison<br>"Managing Partner" [Company] Dallas<br>"President" [small company name]</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- THE JOURNEY -->
+<div class="about-bg">
+  <div class="section">
+    <span class="eyebrow">The Cadence</span>
+    <h2 class="section-title">Three Touchpoints.<br><em>One Curated Journey.</em></h2>
+    <hr class="gold-rule">
+    <p class="section-body">This is not a blast campaign. Each email reveals a little more of the story, builds a little more context, and earns a little more trust. By the time you make the ask, they already know who The Arc is — and why it matters to their community.</p>
+
+    <div class="journey">
+
+      <!-- STAGE 1 -->
+      <div class="journey-stage">
+        <div class="stage-marker">1</div>
+        <div class="stage-timing">Day 1 · First Contact</div>
+        <div class="stage-name">The Warm Story</div>
+        <div class="stage-subtitle">Introduce the mission. Make them feel something. Ask for nothing.</div>
+        <div class="stage-goal"><strong>Goal:</strong> Open the door. This email is not about sponsorship — it's about the people The Arc serves. You are not selling a package. You are inviting them into a story.</div>
+
+        <div class="email-block">
+          <div class="email-header">
+            <div class="email-field"><div class="email-field-label">To</div><div class="email-field-value"><em>[First Name] [Last Name]</em> — named stakeholder, not a shared inbox</div></div>
+            <div class="email-field"><div class="email-field-label">CC</div><div class="email-field-value"><em>[Internal Champion]</em> if identified via LinkedIn</div></div>
+            <div class="email-field"><div class="email-field-label">Subject</div><div class="email-field-value">Something is happening in North Texas this September</div></div>
+          </div>
+          <div class="email-body">
+            <p>Dear [First Name],</p>
+            <p>Somewhere in North Texas right now, there is a young man learning to speak up for himself for the first time. A woman navigating a system that has never been designed with her in mind. A family wondering if the life they want for their child is actually possible.</p>
+            <p>The Arc of DFW Area exists for them.</p>
+            <p>For over 55 years — entirely volunteer-run — The Arc has been the organization that shows up when the system doesn't. Fighting for policy change, connecting families to resources they didn't know existed, and building a community where individuals with intellectual and developmental disabilities can live life as they define it.</p>
+            <p>On September 27th, we're bringing together community leaders, advocates, and businesses at Puttshack in Addison for Putts for Progress — our third annual fundraiser. Every dollar raised goes directly to expanding education, self-advocacy programs, and access to resources for individuals with IDD across 9 DFW counties.</p>
+            <p><em>"Putts for Progress isn't just a fundraiser. It's a signal — that businesses in this community believe every person deserves a voice in their own life."</em></p>
+            <p>I'd love to share more about what this event means to the families we serve — and what it could mean for [Company Name].</p>
+            <div class="email-sig">
+              James Lunday<br>
+              President · The Arc of DFW Area<br>
+              817.372.3914 · thearcofdfw.org
+            </div>
+          </div>
+        </div>
+
+        <div class="guidance-block">
+          <div class="guidance-label">Guidance Notes for This Email</div>
+          <div class="guidance-items">
+            <div class="guidance-item"><div class="guidance-dot"></div>Personalize the opening with the contact's first name — never "To Whom It May Concern"</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>If you found an internal champion on LinkedIn, CC them — it signals social proof before the first reply</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Do not attach the sponsorship deck in Stage 1 — that comes in Stage 3</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Do not include pricing or tier information — this is a story, not a proposal</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Send Tuesday through Thursday, 8–10am or 1–3pm — avoid Monday mornings and Friday afternoons</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAIT -->
+      <div class="wait-block" style="margin-left:52px; margin-bottom:24px;">
+        <div class="wait-icon">⏳</div>
+        <div class="wait-text"><strong>Wait 5–7 business days.</strong> If they reply — move the conversation forward naturally, skip Stage 2 as a formal send, and go straight to the sponsorship conversation. If no reply — send Stage 2.</div>
+      </div>
+
+      <!-- STAGE 2 -->
+      <div class="journey-stage">
+        <div class="stage-marker">2</div>
+        <div class="stage-timing">Day 8–10 · Follow-Up</div>
+        <div class="stage-name">The Relationship Ask</div>
+        <div class="stage-subtitle">Low pressure. Give them more context. Invite a conversation.</div>
+        <div class="stage-goal"><strong>Goal:</strong> Surface the opportunity without pressure. You're not asking for a commitment — you're asking for 20 minutes. Make it easy to say yes to a conversation.</div>
+
+        <div class="email-block">
+          <div class="email-header">
+            <div class="email-field"><div class="email-field-label">To</div><div class="email-field-value"><em>[First Name]</em> — same thread or new email</div></div>
+            <div class="email-field"><div class="email-field-label">Subject</div><div class="email-field-value">Following up — a partnership worth 20 minutes</div></div>
+          </div>
+          <div class="email-body">
+            <p>[First Name],</p>
+            <p>I wanted to follow up on my note from last week about Putts for Progress and The Arc of DFW Area.</p>
+            <p>I know your inbox is full — so I'll be brief. We have a small number of sponsorship opportunities available for our September 27th event at Puttshack in Addison. Based on what [Company Name] stands for in this community, I think there's a meaningful fit here.</p>
+            <p>Our sponsors don't just write a check. They show up. Their logo is in the room, their name is in every communication we send, and their team gets to be part of an afternoon that matters to hundreds of families across North Texas.</p>
+            <p>Last year's event raised over $51,500 across our first two years. This year, we're aiming higher — and we want the right partners in the room.</p>
+            <p>Would any time this week or next work for a 20-minute call? I'd love to walk you through what a partnership could look like for [Company Name] — no pressure, just a conversation.</p>
+            <div class="email-sig">
+              James Lunday<br>
+              President · The Arc of DFW Area<br>
+              817.372.3914 · thearcofdfw.org
+            </div>
+          </div>
+        </div>
+
+        <div class="guidance-block">
+          <div class="guidance-label">Guidance Notes for This Email</div>
+          <div class="guidance-items">
+            <div class="guidance-item"><div class="guidance-dot"></div>Keep it short — they didn't reply to Stage 1, so respect their time; get in and get out</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Reference [Company Name] specifically — this is not a template blast, it's a personal follow-up</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>The ask is a conversation, not a commitment — "20 minutes" is the lowest-friction yes possible</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Still no pricing or deck — that comes only after they express interest</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>If you have a mutual connection, mention it here: "I believe you know [Name] from [Org] — they're a longtime supporter of The Arc."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAIT -->
+      <div class="wait-block" style="margin-left:52px; margin-bottom:24px;">
+        <div class="wait-icon">⏳</div>
+        <div class="wait-text"><strong>Wait 5–7 business days.</strong> If they reply and want to talk — schedule the call, send the sponsorship deck ahead of it. If no reply after Stage 2 — send Stage 3, the final touch. If no reply after Stage 3 — mark as inactive and revisit next cycle.</div>
+      </div>
+
+      <!-- STAGE 3 -->
+      <div class="journey-stage">
+        <div class="stage-marker">3</div>
+        <div class="stage-timing">Day 15–18 · Final Touch</div>
+        <div class="stage-name">The Personalized Close</div>
+        <div class="stage-subtitle">Make the package feel like it was built for them. Give them a clear next step.</div>
+        <div class="stage-goal"><strong>Goal:</strong> Close the conversation or get a clear no. Present a specific sponsorship tier that aligns with the impact they'd most care about. Make it easy to say yes — and graceful to say not yet.</div>
+
+        <div class="email-block">
+          <div class="email-header">
+            <div class="email-field"><div class="email-field-label">To</div><div class="email-field-value"><em>[First Name]</em></div></div>
+            <div class="email-field"><div class="email-field-label">Subject</div><div class="email-field-value">One last note — and a specific idea for [Company Name]</div></div>
+          </div>
+          <div class="email-body">
+            <p>[First Name],</p>
+            <p>I don't want to crowd your inbox — so this will be my last note before the event.</p>
+            <p>I've been thinking about what a partnership between [Company Name] and The Arc of DFW Area could actually look like. Based on [what I know about your company / your focus on community / your team's values], I think the <em>[Recommended Tier]</em> sponsorship is the right fit.</p>
+            <p>Here's what that means for [Company Name]:</p>
+            <p><em>[Insert tier-specific benefits from the close angle below — 3–4 bullet points max, written conversationally, not copy-pasted from the deck]</em></p>
+            <p>The full details and commitment form are available at putts4progress.com/sponsorships — or I'm happy to walk you through it directly.</p>
+            <p>If the timing isn't right this year, I completely understand. I'd still love to stay in touch — the work The Arc does is ongoing, and there will be other opportunities to get involved.</p>
+            <p>Either way, thank you for your time. The families we serve don't take it for granted — and neither do I.</p>
+            <div class="email-sig">
+              James Lunday<br>
+              President · The Arc of DFW Area<br>
+              817.372.3914 · thearcofdfw.org
+            </div>
+          </div>
+        </div>
+
+        <div class="guidance-block">
+          <div class="guidance-label">Guidance Notes for This Email</div>
+          <div class="guidance-items">
+            <div class="guidance-item"><div class="guidance-dot"></div>Recommend one specific tier — don't present all three options; decisiveness signals confidence</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Write the benefits conversationally — pull from the tier close angles below, not the sponsorship deck verbatim</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>The "not right this year" paragraph is intentional — it keeps the door open and builds goodwill for 2027</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>Include the commitment form link: putts4progress.com/sponsorships — make it one click to yes</div>
+            <div class="guidance-item"><div class="guidance-dot"></div>After this email, no more follow-up in this cycle — mark the contact for re-engagement in January 2027</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- TIER CLOSE ANGLES -->
+<div class="section">
+  <span class="eyebrow">Stage 3 Reference</span>
+  <h2 class="section-title">Tier Close Angles<br><em>What to Say for Each Package</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">When you name a specific tier in Stage 3, use these close angles to write the bullet points conversationally. Do not copy-paste from the sponsorship deck — rewrite in your own voice.</p>
+
+  <div class="tier-cards">
+
+    <div class="tier-card tier-club">
+      <div class="tier-top">
+        <div class="tier-name">Club Sponsor</div>
+        <div class="tier-price">$2,000</div>
+      </div>
+      <div class="tier-sub">Bar &amp; reception area · Maximum visibility · 2 complimentary tickets</div>
+      <div class="tier-benefits">
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Your brand is the first thing people see when they walk in — prominent signage in the Club House bar and reception area</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Named recognition during the event in front of 100+ community leaders and business professionals</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Large logo featured on the putts4progress.com website for the full campaign window</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>2 complimentary tickets — bring your team into the room, not just your logo</div>
+      </div>
+      <div class="tier-close-angle">"For a company that wants maximum visibility and a genuine presence in the room — not just a name on a list — this is the right level. Your team will be there. Your brand will be seen. And the families in that room will know your company stood with them."</div>
+    </div>
+
+    <div class="tier-card tier-fairway">
+      <div class="tier-top">
+        <div class="tier-name">Fairway Sponsor</div>
+        <div class="tier-price">$1,000</div>
+      </div>
+      <div class="tier-sub">Course area signage · Mid-event visibility · 2 complimentary tickets</div>
+      <div class="tier-benefits">
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Signage in the open fairway space between both 9-hole courses — seen by every player throughout the event</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Named recognition during the event</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Logo featured on the putts4progress.com website</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>2 complimentary tickets included</div>
+      </div>
+      <div class="tier-close-angle">"For a company that wants meaningful visibility at a community-first price point — your brand will be in front of every player on the course, and your team will be in the room. It's the right balance of presence and investment."</div>
+    </div>
+
+    <div class="tier-card tier-hole">
+      <div class="tier-top">
+        <div class="tier-name">Hole Sponsor</div>
+        <div class="tier-price">$500</div>
+      </div>
+      <div class="tier-sub">Individual hole branding · 1 complimentary ticket</div>
+      <div class="tier-benefits">
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Your brand featured at one of the 18 holes across both courses — every player stops here</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Recognition at the event</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>Name listed on the putts4progress.com website</div>
+        <div class="tier-benefit"><div class="tier-benefit-dot"></div>1 complimentary ticket included</div>
+      </div>
+      <div class="tier-close-angle">"For a company that wants to be part of this community effort at an accessible entry point — every player at the event will pass your hole. It's a low-commitment way to stand with a cause that matters, with room to grow the partnership in future years."</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- OBJECTION HANDLING -->
+<div class="section">
+  <span class="eyebrow">When They Push Back</span>
+  <h2 class="section-title">Objection Handling<br><em>What to Say When They Say No</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">A "no" is rarely final. Most objections are really requests for more information, more time, or a different frame. Use these responses to keep the conversation alive without being pushy.</p>
+
+  <div class="objection-list">
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 01</div>
+        <div class="objection-q-text">"Our charitable giving budget is already committed for this year."</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">Completely understood — and I appreciate you being straightforward. If it helps, our commitment form does allow for payment by check, which some partners find easier to route through end-of-year or Q1 budget cycles. Either way, I'd love to keep The Arc of DFW on your radar for 2027 — our event grows every year, and early partnerships tend to get the best visibility. Would it be okay if I reached back out in January?</div>
+      </div>
+    </div>
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 02</div>
+        <div class="objection-q-text">"We get a lot of sponsorship requests — how is this different?"</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">That's a fair question — and I'll give you a direct answer. Most sponsorships put your logo somewhere and call it done. This one puts your team in a room with families who are navigating one of the hardest things a family can face — and watching your support make that easier. The Arc has been doing this for 55 years, entirely volunteer-run. We don't have overhead eating your donation. And at Putts for Progress, your company isn't a footnote — you're a named partner in a community event that people actually talk about.</div>
+      </div>
+    </div>
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 03</div>
+        <div class="objection-q-text">"I'm not sure our team has a personal connection to this cause."</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">That's more common than you'd think — and it changes the moment someone meets the community we serve. One in six people in the U.S. has an intellectual or developmental disability. Statistically, someone on your team, or someone they love, is navigating this. What we've found is that when a company shows up for this cause, employees who never mentioned a personal connection come forward. The event tends to mean more than the company expected — and that's usually the start of a longer relationship.</div>
+      </div>
+    </div>
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 04</div>
+        <div class="objection-q-text">"Can you send us more information first?"</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">Absolutely — I'll send over the sponsorship details now. The full breakdown of packages and benefits is also available at putts4progress.com/sponsorships. Take a look and let me know if a quick call would be helpful to walk through it together — most partners find that 20 minutes answers everything they need to make a decision. I'm happy to work around your schedule.</div>
+      </div>
+    </div>
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 05</div>
+        <div class="objection-q-text">"What's the ROI on something like this?"</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">Honest answer: the measurable ROI is brand visibility, community association, and employee engagement — which is harder to put a number on than an ad buy, but more durable. What we can tell you: your logo will be seen by 100+ attendees who are community leaders, business professionals, and advocates. Your name will be on every communication we send leading up to the event. And your team will walk away with a story they'll actually tell — which is worth more than most marketing spend. For companies focused on ESG reporting, we're also happy to provide a written impact summary after the event.</div>
+      </div>
+    </div>
+
+    <div class="objection-card">
+      <div class="objection-q">
+        <div class="objection-q-label">Objection 06</div>
+        <div class="objection-q-text">"The timing doesn't work — September is too close."</div>
+      </div>
+      <div class="objection-a">
+        <div class="objection-a-label">Your Response</div>
+        <div class="objection-a-text">Totally fair — the event is September 27th, so the window is short. That said, commitments can be finalized quickly and we can accommodate check payments after the event date if needed. If September genuinely doesn't work, I'd love to stay in touch — The Arc's work continues year-round, and Putts for Progress 2027 will have even more runway for partnerships. Would it be okay if I reached back out early next year?</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CADENCE TIMING GUIDE -->
+<div class="about-bg">
+  <div class="section">
+    <span class="eyebrow">Timing Reference</span>
+    <h2 class="section-title">When to Send.<br><em>When to Wait. When to Move On.</em></h2>
+    <hr class="gold-rule">
+
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Stage 1 — Send Day 1</strong>Tuesday through Thursday preferred. 8–10am or 1–3pm local time. Avoid Monday mornings (full inbox) and Friday afternoons (checked out).</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Wait 5–7 business days after Stage 1</strong>If they reply at any point — move to a live conversation. Skip the remaining stage emails and go straight to the sponsorship deck and a scheduled call.</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Stage 2 — Send Day 8–10</strong>Same send-time rules. Keep it short. The goal is a 20-minute call, not a commitment.</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Wait 5–7 business days after Stage 2</strong>If they reply with interest — schedule the call immediately and send the deck in advance. If no reply — proceed to Stage 3.</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Stage 3 — Send Day 15–18</strong>This is the final touch. Personalize the tier recommendation. Include the commitment form link. Close gracefully.</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>After Stage 3 — No More Follow-Up This Cycle</strong>If no response after all three stages, mark the contact as inactive for 2026. Add a reminder to re-engage in January 2027 with a fresh relationship-building email — not a replay of this cadence.</div></div>
+      <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text"><strong>Hard Cutoff — August 25</strong>Do not send new Stage 1 emails after August 25. There is not enough runway to complete the full cadence before the September 27 event. Any prospects not yet in the cadence by August 25 move to the 2027 pipeline.</div></div>
+    </div>
+
+    <div class="mission-block" style="margin-top: 40px;">
+      <p>"Every business we bring into The Arc's ecosystem is a relationship — not a transaction. The goal of this cadence is not to close a $500 check. It's to begin a partnership that grows every year, because they believe in what we do."</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-sub">Corporate Outreach Cadence Playbook · Sales Enablement · For Internal Use Only</div>
+  <hr class="footer-divider">
+  <div class="footer-note">Built &amp; designed by JRZ Consulting Solutions &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Confidential</div>
+  <a class="footer-back" href="./index.html">← Return to Vault Home</a>
+</footer>
+
+</body>
+</html>
