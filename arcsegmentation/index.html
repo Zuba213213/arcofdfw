@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audience Segmentation Proposal — The Arc of DFW Area</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A; --gold: #C9A84C; --gold-lt: #E8D49A;
+    --ivory: #F5F0E8; --coral: #C95B38; --teal: #2A7B6F;
+    --teal-lt: #4FBFB0; --slate: #4A6274; --white: #FFFFFF; --green: #3A7D44;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--navy); color: var(--ivory); font-size: 18px; line-height: 1.7; }
+
+  .topbar { background: var(--gold); color: var(--navy); text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); letter-spacing: 0.04em; }
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; list-style: none; }
+  .nav-links a { color: var(--ivory); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .hero { background: var(--navy); padding: 72px 24px 60px; text-align: center; border-bottom: 3px solid var(--gold); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 16px; margin-bottom: 28px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 7vw, 52px); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 20px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { max-width: 620px; margin: 0 auto 36px; color: rgba(245,240,232,0.8); font-size: 18px; line-height: 1.7; }
+  .dual-bar { display: flex; width: 100%; max-width: 580px; margin: 0 auto 44px; border-radius: 4px; overflow: hidden; }
+  .dual-bar-third { flex: 1; padding: 14px 8px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .bar-gold { background: var(--gold); color: var(--navy); }
+  .bar-coral { background: var(--coral); color: var(--white); }
+  .bar-teal { background: var(--teal); color: var(--white); }
+  .hero-meta { font-size: 13px; color: var(--slate); letter-spacing: 0.06em; }
+
+  .section { padding: 60px 24px; max-width: 780px; margin: 0 auto; }
+  .section-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 0; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 38px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  h2.section-title em { color: var(--gold); font-style: italic; }
+  .section-body { color: rgba(245,240,232,0.82); font-size: 17px; line-height: 1.75; margin-bottom: 30px; }
+  .gold-rule { width: 48px; border: none; border-top: 2px solid var(--gold); margin: 20px 0 28px; }
+
+  .problem-block { background: rgba(201,91,56,0.08); border-left: 4px solid var(--coral); border-radius: 0 8px 8px 0; padding: 28px 28px; margin: 0 0 36px; }
+  .problem-block p { font-size: 17px; color: rgba(245,240,232,0.88); line-height: 1.7; }
+  .problem-block p + p { margin-top: 12px; }
+
+  /* OPTION CARDS */
+  .options-list { display: flex; flex-direction: column; gap: 20px; }
+  .option-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; overflow: hidden; }
+  .option-header { padding: 22px 24px 18px; border-bottom: 1px solid rgba(201,168,76,0.15); display: flex; align-items: flex-start; gap: 16px; }
+  .option-num { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--navy); background: var(--gold); padding: 3px 9px; border-radius: 2px; flex-shrink: 0; margin-top: 4px; }
+  .option-header-text { flex: 1; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); font-weight: 600; margin-bottom: 4px; line-height: 1.2; }
+  .option-subtitle { font-size: 14px; color: rgba(245,240,232,0.55); font-style: italic; }
+  .option-body { padding: 22px 24px; }
+  .option-desc { font-size: 16px; color: rgba(245,240,232,0.82); line-height: 1.75; margin-bottom: 20px; }
+
+  .meta-grid { display: flex; flex-wrap: wrap; gap: 1px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.12); border-radius: 6px; overflow: hidden; margin-bottom: 20px; }
+  .meta-cell { background: rgba(13,27,42,0.85); padding: 12px 16px; flex: 1; min-width: 140px; }
+  .meta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 4px; }
+  .meta-value { font-size: 14px; font-weight: 700; color: var(--ivory); }
+  .meta-value.high { color: var(--coral); }
+  .meta-value.medium { color: var(--teal-lt); }
+  .meta-value.low { color: var(--gold); }
+
+  .how-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .how-block { border-left: 3px solid rgba(201,168,76,0.35); padding-left: 18px; margin-bottom: 18px; }
+  .how-block p { font-size: 15px; color: rgba(245,240,232,0.75); line-height: 1.7; }
+
+  .best-for { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: 6px; padding: 14px 18px; font-size: 14px; color: rgba(245,240,232,0.7); line-height: 1.6; }
+  .best-for strong { color: var(--gold); }
+
+  /* RECOMMENDATION */
+  .rec-block { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 36px 28px; margin: 20px 0; }
+  .rec-block h3 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 30px); color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+  .rec-block h3 em { color: var(--gold); font-style: italic; }
+  .rec-block > p { font-size: 16px; color: rgba(245,240,232,0.75); line-height: 1.75; margin-bottom: 24px; }
+  .rec-steps { display: flex; flex-direction: column; gap: 14px; }
+  .rec-step { display: flex; align-items: flex-start; gap: 16px; background: rgba(13,27,42,0.5); border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 18px 20px; }
+  .rec-step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--navy); background: var(--gold); padding: 3px 9px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+  .rec-step-text { font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.65; }
+  .rec-step-text strong { color: var(--white); }
+
+  .about-bg { background: rgba(245,240,232,0.03); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+  footer { background: rgba(0,0,0,0.35); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 24px; text-align: center; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); margin-bottom: 6px; }
+  .footer-sub { font-size: 13px; color: var(--slate); letter-spacing: 0.06em; }
+  .footer-divider { width: 60px; border: none; border-top: 1px solid rgba(201,168,76,0.3); margin: 20px auto; }
+  .footer-note { font-size: 12px; color: rgba(74,98,116,0.7); }
+  .footer-back { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+  .footer-back:hover { text-decoration: underline; }
+
+  @media (min-width: 600px) { nav { flex-direction: row; justify-content: space-between; padding: 18px 36px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">Marketing Vault — Confidential · Built by JRZ Consulting Solutions</div>
+
+<nav>
+  <div class="nav-brand">The Arc of DFW Area</div>
+  <ul class="nav-links">
+    <li><a href="./index.html">← Vault Home</a></li>
+    <li><a href="./icp/index.html">ICP</a></li>
+    <li><a href="./brand/index.html">Brand Guide</a></li>
+    <li><a href="./arcp4p/index.html">P4P Campaign</a></li>
+    <li><a href="./arcsponsorship/index.html">Sponsor Deck</a></li>
+    <li><a href="./arcroadmap/index.html">Roadmap</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Vault · Strategy Proposal</div>
+  <h1>Audience Segmentation<br><em>Options Menu</em></h1>
+  <p class="hero-sub">Your mission serves three distinct audiences — but your list doesn't know that yet. Here are nine ways to change that, without being pushy, invasive, or asking too much of your team.</p>
+  <div class="dual-bar">
+    <div class="dual-bar-third bar-gold">⬤ &nbsp;Donors &amp; Corporate</div>
+    <div class="dual-bar-third bar-coral">⬤ &nbsp;IDD Families</div>
+    <div class="dual-bar-third bar-teal">⬤ &nbsp;Community</div>
+  </div>
+  <p class="hero-meta">Prepared by JRZ Consulting Solutions &nbsp;·&nbsp; For Arc of DFW Area Leadership Review</p>
+</section>
+
+<!-- PROBLEM -->
+<div class="about-bg">
+  <div class="section">
+    <span class="eyebrow">The Challenge</span>
+    <h2 class="section-title">One List.<br><em>Three Completely Different People.</em></h2>
+    <hr class="gold-rule">
+    <div class="problem-block">
+      <p>Right now, every email you send goes to the same list — corporate sponsors, IDD families, and individual donors all receiving the same message at the same time. That's not a content problem. It's a data problem.</p>
+      <p>The options below are not ranked. They are a menu. Some can be layered together. Some are one-time fixes. Some build long-term infrastructure. The right combination depends on what your team has capacity for — and that's the conversation we're here to have.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- OPTIONS -->
+<div class="section">
+  <span class="eyebrow">Nine Approaches</span>
+  <h2 class="section-title">How to Start Knowing<br><em>Who's Who</em></h2>
+  <hr class="gold-rule">
+  <p class="section-body">Each option below includes what it is, how hard it is to execute, what platform it works with, and what data it actually produces.</p>
+
+  <div class="options-list">
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">01</div>
+        <div class="option-header-text">
+          <div class="option-title">Self-Selection Audience Quiz</div>
+          <div class="option-subtitle">The least pushy way to ask who someone is</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Send a single email to your full list with one question: <em>"Which best describes you?"</em> — three clickable options (Donor / Family / Community Supporter). Each click routes to a different thank-you page and tags the contact in NeonOne or your email platform. No form. One click.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value low">Low</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Minimal — 1 click</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">NeonOne / Any email tool</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Self-reported audience tag</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>Write a warm, honest email explaining that you want to make sure you're sending the right messages to the right people. Three buttons. Each routes to a simple thank-you page. Tag on click. Done.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Getting a quick baseline read on your list composition. Expect 20–40% response rate from an engaged list. Even partial data is better than none.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">02</div>
+        <div class="option-header-text">
+          <div class="option-title">Reply-Based Email Segmentation</div>
+          <div class="option-subtitle">Even lower tech — just reply with a number</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Same concept as the quiz — but instead of clickable buttons, you ask contacts to reply with a number (1, 2, or 3). No links, no landing pages, no platform setup. Works in any email system. Responses get manually tagged in NeonOne.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value low">Very Low</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Minimal — reply to email</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">Any — no integration needed</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Self-reported, manual tagging</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>Send a warm, personal-feeling email. "Reply with 1 if you're a donor, 2 if you have a family member with IDD, 3 if you just care about the community." Someone monitors the inbox and tags each response in NeonOne. Takes half a day to process.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Organizations with limited technical setup. The reply format feels more personal and often gets higher response than a click — people feel like they're talking to a human.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">03</div>
+        <div class="option-header-text">
+          <div class="option-title">Landing Page Lead Capture with Auto-Tagging</div>
+          <div class="option-subtitle">Segment at the point of entry — before they're even on your list</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Build three separate opt-in pages — one for donors, one for IDD families, one for community supporters. Each page has its own form that automatically tags new contacts based on where they signed up. Anyone who finds you through the donor page is tagged as a donor from day one.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value medium">Medium</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">None — they choose their path</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">NeonOne forms / GitHub Pages</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Automated tags at entry</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>JRZ builds three audience-specific landing pages. Each has a unique URL and form. Sharing the right link in the right context (sponsor outreach → donor page, IDD Facebook groups → family page) builds a clean segmented list going forward. Does not fix the existing list — starts fresh from today.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Future-state infrastructure. Every new contact who joins from here forward will be properly tagged. Pairs well with Option 01 or 02 for the existing list.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">04</div>
+        <div class="option-header-text">
+          <div class="option-title">Community Vulnerability Campaign</div>
+          <div class="option-subtitle">Tell them the problem and invite them to be part of the solution</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Send an honest, open email to your full list: <em>"We want to serve you better — but we need your help to do it."</em> Explain that your current system doesn't allow you to distinguish between your different audiences, which means everyone gets the same message whether it's relevant to them or not. Vulnerability creates trust. Trust creates participation.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value low">Low</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Minimal — emotionally invited</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">Any email tool</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Self-reported + community goodwill</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>JRZ writes the email. It's warm, real, and direct — not a survey, not a form. It ends with a simple self-selection mechanism (Option 01 or 02 embedded). The vulnerability of the ask becomes the reason people respond. This approach consistently outperforms standard segmentation emails in mission-driven organizations.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Organizations with a warm, mission-connected list. The Arc's audience already cares — this gives them a reason to lean in. The honesty differentiates you from every other org in their inbox.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">05</div>
+        <div class="option-header-text">
+          <div class="option-title">One-Time List Enrichment</div>
+          <div class="option-subtitle">Research your existing contacts to fill in what you don't know</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Take your current list and run it through a manual research pass — using names, email addresses, and public information to identify whether a contact is a business (corporate donor), an individual, or an IDD-adjacent family member. A one-time sprint that gets your existing list up to date with no action required from the contacts themselves.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value high">High — one-time sprint</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Zero — they never know</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">LinkedIn / Google / NeonOne</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Inferred profile data</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>Export your list. For each contact with a real name and email, run a quick LinkedIn or Google search. Business email domains categorize immediately. Personal emails can often be cross-referenced. Contacts with obvious IDD family connection (prior event registrations, conference attendees) get tagged. Unknowns route to Option 01 or 02.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Getting a meaningful head start before any campaign goes live. Even tagging 30–40% of your list transforms your ability to send targeted content. Best executed by a dedicated volunteer or intern over 1–2 days.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">06</div>
+        <div class="option-header-text">
+          <div class="option-title">In-Person Networking &amp; Live CRM Updating</div>
+          <div class="option-subtitle">Tag people at the moment you meet them</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">At every Arc event, board meeting, conference, and community gathering — the person at check-in tags each contact in NeonOne in real time. "Are you here as a donor, a family member, or a community supporter?" is a natural question at a registration table. The answer goes straight into the CRM.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value medium">Ongoing — low per event</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">None — natural conversation</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">NeonOne — mobile access</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">High-confidence, in-person verified</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>Designate one volunteer per event whose job includes CRM tagging. Build a simple NeonOne lookup into the check-in flow. P4P alone will give you 150–200 verified audience tags in one evening. A Look Ahead Conference attendees are almost entirely IDD families — tag everyone who checks in.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Building the highest-confidence data over time. In-person tags are more reliable than any self-report mechanism. P4P on September 27 is a natural first deployment point.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">07</div>
+        <div class="option-header-text">
+          <div class="option-title">Social Content Self-Selection</div>
+          <div class="option-subtitle">Watch who responds to what — let behavior do the segmenting</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Post three distinct pieces of content in the same week — each targeted at a different audience (sponsor-focused, family-resource, donor story). Track who engages with which posts. The people who comment on the family resource post are likely IDD families. The people who share the sponsor post are likely business-connected. Soft data, but real signal.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value low">Low — content you're posting anyway</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Zero — passive observation</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">Facebook / LinkedIn</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Behavioral signal — soft tag</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>No extra work required — these are posts you'd be making during the campaign anyway. The insight comes from reviewing engagement manually or through Facebook Insights. Not precise enough to build a full segmentation strategy on, but useful for validating other approaches and spotting surprises in who's paying attention.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Supplementing other methods with behavioral confirmation. Use alongside Option 01 or 04 to cross-reference self-reported data with actual behavior.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">08</div>
+        <div class="option-header-text">
+          <div class="option-title">Referral Pathway Tagging</div>
+          <div class="option-subtitle">Tag people by where they came from — not who they say they are</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Create unique registration and signup links for each audience channel. The link shared in an IDD Facebook group is different from the link shared in a corporate newsletter. When someone signs up through either link, they're automatically tagged by source — no extra question required. The channel they came through tells you who they are.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value medium">Medium — setup required</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Zero — invisible to them</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">NeonOne UTM / URL params</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Inferred tag by source channel</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>JRZ creates tagged URLs for each campaign channel. When NeonOne captures the registration, the source tag comes with it. Requires setup but runs automatically from that point forward. Pairs naturally with the landing page approach in Option 03 and P4P's multi-channel distribution.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Passive, scalable segmentation. Once set up, every new sign-up through any channel is automatically contextualized. Zero friction for the contact, zero ongoing effort for the team.</div>
+      </div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-num">09</div>
+        <div class="option-header-text">
+          <div class="option-title">Event Check-In Intake Question</div>
+          <div class="option-subtitle">One question at registration captures what you need</div>
+        </div>
+      </div>
+      <div class="option-body">
+        <p class="option-desc">Add a single optional question to your P4P event registration form and the A Look Ahead Conference registration: <em>"What best describes your relationship to The Arc?"</em> Three options. One click. Every person who registers for any Arc event from this point forward self-identifies at the point of registration — and that answer flows directly into NeonOne.</p>
+        <div class="meta-grid">
+          <div class="meta-cell"><div class="meta-label">Effort</div><div class="meta-value low">Low — one form field</div></div>
+          <div class="meta-cell"><div class="meta-label">Friction for Contact</div><div class="meta-value low">Minimal — optional field</div></div>
+          <div class="meta-cell"><div class="meta-label">Platform</div><div class="meta-value">NeonOne registration forms</div></div>
+          <div class="meta-cell"><div class="meta-label">Data Produced</div><div class="meta-value">Self-reported at highest intent moment</div></div>
+        </div>
+        <div class="how-label">How It Works</div>
+        <div class="how-block"><p>Add the question to the NeonOne event registration form for P4P 2026 before tickets go live. Every ticket buyer answers it. The answer tags them automatically. P4P alone could tag 100–200 contacts in a single registration window — your warmest, most engaged audience, all identified at the moment they're most excited about The Arc.</p></div>
+        <div class="best-for"><strong>Best for:</strong> Capturing your highest-intent contacts with the least friction. People registering for an event are already engaged — they're happy to tell you who they are. Easiest high-confidence data you'll ever collect.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- RECOMMENDATION -->
+<div class="section">
+  <span class="eyebrow">JRZ Recommended Starting Point</span>
+  <h2 class="section-title">You Don't Need All Nine.<br><em>You Need the Right Three.</em></h2>
+  <hr class="gold-rule">
+  <div class="rec-block">
+    <h3>A Practical Stack for<br><em>Before August 3</em></h3>
+    <p>Every option above is valid. But trying to run all nine at once is how nothing gets done. Here's the combination that gets you meaningful segmentation data before the campaign goes live — without overwhelming your team.</p>
+    <div class="rec-steps">
+      <div class="rec-step">
+        <div class="rec-step-num">Step 1</div>
+        <div class="rec-step-text"><strong>Option 04 + 02 — Community Vulnerability Campaign with Reply Segmentation.</strong> Send one honest email to your full list. Ask them to reply with a number. Manual tagging takes half a day. Gets you a baseline read on your existing contacts before the campaign launches.</div>
+      </div>
+      <div class="rec-step">
+        <div class="rec-step-num">Step 2</div>
+        <div class="rec-step-text"><strong>Option 09 — Event Check-In Intake on P4P Registration.</strong> Add one question to the ticket form before it goes live. Every new registrant is tagged automatically. Zero ongoing effort after setup.</div>
+      </div>
+      <div class="rec-step">
+        <div class="rec-step-num">Step 3</div>
+        <div class="rec-step-text"><strong>Option 03 — Landing Page Lead Captures for future contacts.</strong> JRZ builds audience-specific entry points. Everyone who joins your list after August 3 is tagged from day one. Builds infrastructure for 2027 and beyond.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
+  <div class="footer-sub">Audience Segmentation Proposal · Document 07</div>
+  <hr class="footer-divider">
+  <div class="footer-note">Built &amp; designed by JRZ Consulting Solutions &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Confidential</div>
+  <a class="footer-back" href="./index.html">← Return to Vault Home</a>
+</footer>
+
+</body>
+</html>
