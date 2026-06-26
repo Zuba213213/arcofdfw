@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Filming Guide — Putts for Progress 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1B2A;
+  --orange: #E8772A;
+  --gold: #F5B800;
+  --ivory: #FDF8F0;
+  --warm-white: #FFFFFF;
+  --slate: #4A5568;
+  --light-gray: #F7F4EF;
+  --border: #EDE8DF;
+  --text: #1A1A2E;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+/* HEADER */
+.page-header {
+  background: var(--navy);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,119,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 10%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,184,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 32px 44px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.arc-logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+.jrz-credit {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.header-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid rgba(232,119,42,0.4);
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 700;
+  color: var(--warm-white);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+.header-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+.header-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.event-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.event-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ef-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.ef-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--warm-white);
+}
+
+/* PROMISE BLOCK */
+.promise-block {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
+  padding: 36px 32px;
+}
+.promise-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.promise-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.promise-sub {
+  font-size: 15px;
+  color: rgba(13,27,42,0.72);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* MAIN */
+.main { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+/* THANK YOU */
+.thankyou-section { padding: 48px 0 36px; }
+.thankyou-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.thankyou-section h2 em { color: var(--orange); font-style: italic; }
+.body-text {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* SECTION */
+.content-section { padding: 40px 0; }
+.section-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.section-title em { color: var(--orange); font-style: italic; }
+.gold-rule { width: 36px; border: none; border-top: 2px solid var(--gold); margin: 0 0 20px; }
+
+/* TALKING POINTS */
+.questions-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.question-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+}
+.q-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1.2;
+  margin-top: -1px;
+}
+.q-text { font-size: 15px; color: var(--text); line-height: 1.6; }
+
+/* TIP CARDS */
+.tips-grid { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
+.tip-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.tip-header {
+  background: var(--navy);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tip-icon { font-size: 20px; flex-shrink: 0; }
+.tip-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--warm-white);
+  letter-spacing: 0.02em;
+}
+.tip-body { padding: 18px 20px; }
+.tip-body p { font-size: 14px; color: var(--slate); line-height: 1.7; margin-bottom: 10px; }
+.tip-body p:last-child { margin-bottom: 0; }
+
+.do-dont { display: flex; gap: 12px; margin: 12px 0; flex-wrap: wrap; }
+.do-block, .dont-block { flex: 1; min-width: 180px; border-radius: 6px; padding: 12px 14px; }
+.do-block { background: rgba(58,125,68,0.07); border: 1px solid rgba(58,125,68,0.2); }
+.dont-block { background: rgba(201,91,56,0.07); border: 1px solid rgba(201,91,56,0.2); }
+.do-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #3A7D44; margin-bottom: 6px; }
+.dont-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C95B38; margin-bottom: 6px; }
+.do-block li, .dont-block li { font-size: 13px; color: var(--slate); line-height: 1.6; margin-left: 12px; margin-bottom: 3px; }
+
+/* SETTINGS BOX */
+.settings-box {
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 12px 0;
+}
+.settings-box ul { padding-left: 0; list-style: none; }
+.settings-box li {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.settings-box li:last-child { border-bottom: none; }
+.settings-box li::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+
+/* DEADLINE BLOCK */
+.deadline-block {
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 28px 28px;
+  margin: 32px 0;
+}
+.deadline-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.deadline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--warm-white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.deadline-items { display: flex; flex-direction: column; gap: 10px; }
+.deadline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+}
+.deadline-bullet {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* CLOSING */
+.closing-section {
+  background: linear-gradient(135deg, rgba(232,119,42,0.08) 0%, rgba(245,184,0,0.06) 100%);
+  border: 1px solid rgba(232,119,42,0.2);
+  border-radius: 10px;
+  padding: 32px 28px;
+  margin: 8px 0 48px;
+  text-align: center;
+}
+.closing-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.closing-section h3 em { color: var(--orange); font-style: italic; }
+.closing-section p {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 6px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 28px 32px;
+  text-align: center;
+}
+.footer-logo img { height: 36px; width: auto; margin-bottom: 10px; }
+.footer-text { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+.footer-text a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer-jrz { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+@media (max-width: 500px) {
+  .main { padding: 0 20px; }
+  .header-inner { padding: 36px 20px 32px; }
+  .promise-block { padding: 28px 20px; }
+  .deadline-block { padding: 22px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <div class="logo-row">
+      <div class="arc-logo">
+        <img src="https://static.wixstatic.com/media/085de7_7b1c7bfa49a3401f90f31e5ecc50e167~mv2.png/v1/fill/w_200,h_135,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/085de7_7b1c7bfa49a3401f90f31e5ecc50e167~mv2.png" alt="The Arc of DFW Area" />
+      </div>
+      <div class="jrz-credit">Prepared by JRZ Consulting Solutions</div>
+    </div>
+    <div class="header-eyebrow">Putts for Progress 2026 · Advocate Video Series</div>
+    <h1 class="header-title">Your Story.<br><em>Your Voice.</em><br>Your Phone.</h1>
+    <p class="header-sub">Everything you need to film your video for the Putts for Progress campaign — simple, straightforward, and entirely on your terms.</p>
+    <div class="event-strip">
+      <div class="event-fact"><span class="ef-label">Date</span><span class="ef-value">September 27, 2026</span></div>
+      <div class="event-fact"><span class="ef-label">Time</span><span class="ef-value">3:00 PM – 5:00 PM</span></div>
+      <div class="event-fact"><span class="ef-label">Venue</span><span class="ef-value">Puttshack Addison, TX</span></div>
+      <div class="event-fact"><span class="ef-label">Filming Deadline</span><span class="ef-value">July 18, 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROMISE -->
+<div class="promise-block">
+  <div class="promise-inner">
+    <div class="promise-quote">"It doesn't have to be perfect<br>for it to be perfect."</div>
+    <p class="promise-sub">Pauses are okay. Imperfect sentences are okay. Emotion is okay. We have the tools to tighten things up — what we can't add in editing is authenticity. That part is all you, and you already have it.</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- THANK YOU -->
+  <div class="thankyou-section">
+    <h2>First — <em>Thank You</em></h2>
+    <hr class="gold-rule">
+    <p class="body-text">You said yes to something that matters. This video series is the heart of the Putts for Progress campaign, and it works because of real people telling real stories. Not actors. Not scripts. You.</p>
+    <p class="body-text">The people who will watch these videos already know The Arc exists. What they need is to feel something they didn't expect to feel — and that only happens when a real person tells the truth. That's why we called you.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHAT TO TALK ABOUT -->
+  <div class="content-section">
+    <span class="section-eyebrow">No Script — Just You</span>
+    <h2 class="section-title">What to <em>Talk About</em></h2>
+    <hr class="gold-rule">
+    <p class="body-text">There's no script. Answer whichever questions feel natural, in whatever order feels right. You don't need to answer all of them — one great answer is better than five rushed ones. Aim for around 90 seconds, but say what you need to say and stop when it feels done.</p>
+
+    <div class="questions-list">
+      <div class="question-item"><div class="q-mark">"</div><div class="q-text">What does The Arc of DFW mean to you?</div></div>
+      <div class="question-item"><div class="q-mark">"</div><div class="q-text">What would your life — or your family's life — look like without The Arc?</div></div>
+      <div class="question-item"><div class="q-mark">"</div><div class="q-text">What do you wish more people in DFW knew about what The Arc does?</div></div>
+      <div class="question-item"><div class="q-mark">"</div><div class="q-text">Why does Putts for Progress matter to you?</div></div>
+      <div class="question-item"><div class="q-mark">"</div><div class="q-text">What would you say to someone who's never heard of The Arc but is thinking about coming to the event?</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FILMING TIPS -->
+  <div class="content-section">
+    <span class="section-eyebrow">Practical Tips</span>
+    <h2 class="section-title">How to <em>Film It</em></h2>
+    <hr class="gold-rule">
+    <p class="body-text">Your phone shoots better video than most professional cameras from ten years ago. Use it. Here's how to make it look and sound great with zero equipment.</p>
+
+    <div class="tips-grid">
+
+      <!-- SETTINGS -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">📱</div>
+          <div class="tip-title">Phone Settings — Check These First</div>
+        </div>
+        <div class="tip-body">
+          <div class="settings-box">
+            <ul>
+              <li>Open your camera app and switch to <strong>video mode</strong></li>
+              <li>If you have the option, shoot in <strong>1080p</strong> — not 4K (file gets too large to send)</li>
+              <li>Make sure your <strong>storage isn't full</strong> before you start</li>
+              <li>Turn on <strong>Do Not Disturb</strong> so calls don't interrupt mid-take</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIGHT -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">☀️</div>
+          <div class="tip-title">Light — The Single Biggest Factor</div>
+        </div>
+        <div class="tip-body">
+          <p>Good lighting makes everything look better. It's the one thing that makes the biggest difference with the least effort.</p>
+          <div class="do-dont">
+            <div class="do-block">
+              <div class="do-label">✓ Do This</div>
+              <ul>
+                <li>Face a window — let the light hit your face</li>
+                <li>Daytime natural light is ideal</li>
+                <li>Overcast days are actually great — soft and even</li>
+              </ul>
+            </div>
+            <div class="dont-block">
+              <div class="dont-label">✗ Avoid This</div>
+              <ul>
+                <li>Window behind you — you'll be a silhouette</li>
+                <li>Harsh overhead lighting that casts shadows</li>
+                <li>Dark rooms with a single lamp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">🏠</div>
+          <div class="tip-title">Background — You Are the Focus</div>
+        </div>
+        <div class="tip-body">
+          <div class="do-dont">
+            <div class="do-block">
+              <div class="do-label">✓ Works Great</div>
+              <ul>
+                <li>A plain wall — any color</li>
+                <li>A tidy, lived-in room</li>
+                <li>Outside in a shaded spot</li>
+                <li>Anywhere that feels like <em>you</em></li>
+              </ul>
+            </div>
+            <div class="dont-block">
+              <div class="dont-label">✗ Skip These</div>
+              <ul>
+                <li>Cluttered or messy backgrounds</li>
+                <li>Busy public spaces with movement</li>
+                <li>Staged or corporate-looking spaces</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUND -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">🎙️</div>
+          <div class="tip-title">Sound — Almost As Important As Light</div>
+        </div>
+        <div class="tip-body">
+          <p>Bad audio loses viewers faster than anything. A few easy fixes make a huge difference.</p>
+          <div class="do-dont">
+            <div class="do-block">
+              <div class="do-label">✓ Do This</div>
+              <ul>
+                <li>Film somewhere quiet — close windows, turn off fans and TVs</li>
+                <li>Get closer to the camera rather than raising your voice</li>
+                <li>Do a 10-second test and play it back with headphones</li>
+                <li>Use earbuds with a mic if you have them — clip the wire near your mouth</li>
+              </ul>
+            </div>
+            <div class="dont-block">
+              <div class="dont-label">✗ Avoid This</div>
+              <ul>
+                <li>Filming outside on a windy day</li>
+                <li>Rooms with a lot of echo</li>
+                <li>Near a busy road or HVAC unit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HANDHELD / TRIPOD -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">📷</div>
+          <div class="tip-title">Handheld or Propped Up — Both Work</div>
+        </div>
+        <div class="tip-body">
+          <p><strong>Handheld</strong> feels natural and conversational. If you go handheld, hold with both hands and keep your elbows close to your body to reduce shake. Totally fine.</p>
+          <p><strong>Propped up</strong> gives a cleaner, more stable shot. No tripod? Stack some books, use a mug, lean it against anything sturdy. Just make sure the camera is at <strong>eye level</strong> — not looking up from below or down from above. Eye level is everything.</p>
+        </div>
+      </div>
+
+      <!-- FRAMING -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">🎯</div>
+          <div class="tip-title">How to Frame Yourself</div>
+        </div>
+        <div class="tip-body">
+          <div class="settings-box">
+            <ul>
+              <li>Your face and chest should fill most of the frame — not your whole body head to toe</li>
+              <li>Leave a little space above your head — not too much</li>
+              <li>Look at the <strong>camera lens</strong>, not at yourself on the screen — it makes eye contact with the viewer</li>
+              <li>Center yourself or slightly to one side — both work great</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PACING -->
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-icon">🗣️</div>
+          <div class="tip-title">Pacing — Talk Like You're Talking to a Friend</div>
+        </div>
+        <div class="tip-body">
+          <p>The most common thing people get wrong on camera is speeding up. They rush, forget to breathe, and lose the warmth that made us want to film them in the first place.</p>
+          <p><strong>Slow down.</strong> You will feel like you're talking too slowly. You are not. Natural conversation pace feels slow and lands perfectly for the viewer.</p>
+          <p><strong>Pause.</strong> Pauses are powerful. If you need a moment to collect a thought, take it. A pause gives the viewer a moment to feel what you just said.</p>
+          <p><strong>Don't restart every stumble.</strong> Say the thought again from the beginning of that sentence and keep going. We can cut the stumble in editing — a mid-thought restart is much easier to fix than you think.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- DEADLINE + SEND -->
+  <div class="deadline-block">
+    <div class="deadline-eyebrow">When You're Done</div>
+    <div class="deadline-title">How to Send It</div>
+    <div class="deadline-items">
+      <div class="deadline-item"><div class="deadline-bullet"></div>Watch it back once — just to make sure the audio is clear and you can see your face. Then send it anyway.</div>
+      <div class="deadline-item"><div class="deadline-bullet"></div>Send via Google Drive, Dropbox, WeTransfer, or iMessage — whatever is easiest for you.</div>
+      <div class="deadline-item"><div class="deadline-bullet"></div>Send to Joey at JRZ Consulting Solutions — contact details below.</div>
+      <div class="deadline-item"><div class="deadline-bullet"></div><strong style="color:#F5B800;">Deadline: July 18, 2026.</strong> The sooner the better — earlier footage means more time to make it shine.</div>
+      <div class="deadline-item"><div class="deadline-bullet"></div>Questions at any point? Just text or call. That's what we're here for.</div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-section">
+    <h3>One More Time —<br><em>Thank You.</em></h3>
+    <p>What you're doing matters more than you know. Your story is the reason someone buys a ticket. Your voice is the reason someone shows up. And your presence in this campaign is the reason The Arc of DFW keeps doing what it's been doing for 55 years.</p>
+    <p style="margin-top: 12px; font-weight: 500; color: var(--navy);">We can't wait to see what you create.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="https://static.wixstatic.com/media/ec9c31_0069f0837888465da40b45e133b3f54b~mv2.png/v1/fill/w_200,h_108,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ec9c31_0069f0837888465da40b45e133b3f54b~mv2.png" alt="The Arc of DFW Area" />
+  </div>
+  <div class="footer-text">
+    The Arc of DFW Area · Putts for Progress 2026<br>
+    September 27, 2026 · Puttshack Addison · <a href="https://www.putts4progress.com">putts4progress.com</a>
+  </div>
+  <div class="footer-jrz">Campaign infrastructure by JRZ Consulting Solutions · 2026</div>
+</footer>
+
+</body>
+</html>
