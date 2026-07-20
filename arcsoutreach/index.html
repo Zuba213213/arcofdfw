@@ -32,6 +32,51 @@
   .body-text { color: rgba(245,240,232,0.8); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
   .divider { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 0; }
 
+  /* CADENCE CALLOUT — NEW */
+  .cadence-callout {
+    background: rgba(201,168,76,0.07);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px;
+    padding: 28px 26px;
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cadence-callout-header { display: flex; align-items: flex-start; gap: 16px; }
+  .cadence-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .cadence-callout h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: var(--white); margin-bottom: 6px;
+  }
+  .cadence-callout h3 em { color: var(--gold); font-style: italic; }
+  .cadence-callout p { font-size: 15px; color: rgba(245,240,232,0.78); line-height: 1.75; }
+  .cadence-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cadence-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px;
+    padding: 10px 16px;
+    text-align: center;
+    flex: 1; min-width: 100px;
+  }
+  .cadence-stat-num { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 3px; }
+  .cadence-stat-label { font-size: 11px; color: rgba(245,240,232,0.5); line-height: 1.4; }
+  .cadence-link {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+  .cadence-link:hover { opacity: 0.9; }
+
   /* COPY BLOCKS */
   .copy-block { border-radius: 8px; padding: 24px 22px; margin-bottom: 16px; position: relative; }
   .copy-block-teal { background: rgba(42,123,111,0.1); border: 1px solid rgba(79,191,176,0.3); border-left: 3px solid var(--teal-lt); }
@@ -43,7 +88,6 @@
   .label-coral { color: var(--coral); }
   .copy-text { font-size: 16px; line-height: 1.75; color: rgba(245,240,232,0.88); white-space: pre-line; }
   .copy-note { font-size: 13px; color: var(--slate); margin-top: 12px; font-style: italic; }
-
   .copy-btn { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(245,240,232,0.6); cursor: pointer; }
   .copy-btn:hover { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.3); color: var(--gold); }
 
@@ -90,11 +134,12 @@
 <section class="hero">
   <div class="hero-eyebrow">Outreach Kit · Texas IDD Community</div>
   <h1>Spread the Word<br>to the <em>People Who Need It</em></h1>
-  <p class="hero-sub">Ready-to-send copy for schools, parent groups, therapy centers, and disability organizations across Texas. Every template requires zero editing — just copy, paste, and send.</p>
+  <p class="hero-sub">Ready-to-send copy for schools, parent groups, therapy centers, disability organizations, and corporate sponsors across Texas. Every template requires zero editing — just copy, paste, and send.</p>
 </section>
 
 <div class="section-nav">
   <a href="#how">How to Use</a>
+  <a href="#cadence">Sponsor Cadence</a>
   <a href="#targets">Target Orgs</a>
   <a href="#flyer">Event Flyer</a>
   <a href="#email">Email Templates</a>
@@ -118,6 +163,37 @@
       <div style="display:flex;gap:14px;font-size:15px;color:rgba(245,240,232,0.82);"><span style="color:var(--teal-lt);font-weight:700;min-width:24px;">3.</span>Paste it, add their name and org, hit send</div>
     </div>
   </div>
+</div>
+
+<hr class="divider">
+
+<!-- SPONSOR CADENCE — NEW SECTION -->
+<div class="wrap" id="cadence">
+  <span class="eyebrow">Corporate Sponsor Outreach</span>
+  <h2 class="sec-title">How Often to<br><em>Follow Up</em></h2>
+  <hr class="gold-rule">
+  <p class="body-text">Corporate sponsorship decisions don't happen from a single email. The team has asked for clarity on follow-up timing — here's the answer: a structured 6-touchpoint cadence built around how corporate giving decisions actually get made.</p>
+
+  <div class="cadence-callout">
+    <div class="cadence-callout-header">
+      <div class="cadence-icon">📋</div>
+      <div>
+        <h3>The Sponsor Outreach <em>Cadence</em></h3>
+        <p>Six touchpoints across six weeks — email, LinkedIn, phone, and a graceful close. Every step has a specific job, a timing rationale, and word-for-word guidance so the team isn't guessing what to say or when to say it.</p>
+      </div>
+    </div>
+
+    <div class="cadence-stats">
+      <div class="cadence-stat"><div class="cadence-stat-num">6</div><div class="cadence-stat-label">Total Touchpoints</div></div>
+      <div class="cadence-stat"><div class="cadence-stat-num">~6 wks</div><div class="cadence-stat-label">Active Window</div></div>
+      <div class="cadence-stat"><div class="cadence-stat-num">2–4 wks</div><div class="cadence-stat-label">Avg. Decision Cycle</div></div>
+      <div class="cadence-stat"><div class="cadence-stat-num">Sep 5</div><div class="cadence-stat-label">Hard Cutoff</div></div>
+    </div>
+
+    <a class="cadence-link" href="https://zuba213213.github.io/arcofdfw/arccadence/index.html" target="_blank">View the Full Cadence →</a>
+  </div>
+
+  <p class="body-text" style="font-size:14px;color:rgba(245,240,232,0.6);">The cadence page includes step-by-step timing, channel guidance, what to say at each touchpoint, how to handle every type of reply, and a rules section so nothing gets promised beyond what's listed at putts4progress.com/sponsorships.</p>
 </div>
 
 <hr class="divider">
@@ -177,7 +253,7 @@
       <h4>Join us this September in Addison</h4>
       <p>The Arc of DFW Area — 55 years of advocacy for individuals with intellectual and developmental disabilities — is hosting our annual fundraising event at Puttshack Addison. A fun night for a cause that matters in your community.</p>
       <div class="flyer-details">
-        <div class="flyer-detail"><span class="flyer-icon">📅</span><strong>Date:</strong>&nbsp;September 27, 2026 · September 27, 2026</div>
+        <div class="flyer-detail"><span class="flyer-icon">📅</span><strong>Date:</strong>&nbsp;September 27, 2026</div>
         <div class="flyer-detail"><span class="flyer-icon">📍</span><strong>Location:</strong>&nbsp;Puttshack Addison — 5100 Belt Line Rd, Addison, TX 75254</div>
         <div class="flyer-detail"><span class="flyer-icon">🎟</span><strong>Tickets:</strong>&nbsp;Coming soon — visit putts4progress.com to register</div>
         <div class="flyer-detail"><span class="flyer-icon">⛳</span><strong>Sponsorships:</strong>&nbsp;Available from $500 — putts4progress.com/sponsorships</div>
@@ -215,7 +291,7 @@ This September, we're hosting Putts for Progress 2026 at Puttshack in Addison �
 I'm writing to ask if you'd be willing to share this event with your special education families through your parent communication channels. We know your families are always looking for community events that feel relevant to their experience — and this one is.
 
 Event details:
-📅 Date: September 27, 2026 · September 27, 2026
+📅 September 27, 2026
 📍 Puttshack Addison, 5100 Belt Line Rd, Addison TX
 🎟 Tickets coming soon — visit putts4progress.com
 🌐 thearcofdfw.org
@@ -246,7 +322,7 @@ This event raises money for advocacy work that benefits the entire IDD community
 If you're able to share the event with your email list, Facebook group, or newsletter, we'd be deeply grateful. We can provide a copy-paste social post, a shareable flyer, or whatever format works best for your community.
 
 Event info:
-📅 September 27, 2026 · September 27, 2026
+📅 September 27, 2026
 📍 Puttshack Addison, Addison TX
 🎟 Tickets coming soon at putts4progress.com
 🌐 thearcofdfw.org
@@ -286,7 +362,7 @@ The Arc of DFW Area</div>
 
 <hr class="divider">
 
-<!-- SOCIAL COPY FOR ORG PARTNERS -->
+<!-- SOCIAL COPY -->
 <div class="wrap" id="social">
   <span class="eyebrow">Social Copy for Partner Orgs</span>
   <h2 class="sec-title">Copy-Paste Posts<br><em>For Your Partners</em></h2>
@@ -343,7 +419,7 @@ Talk soon.</div>
 
   <div class="copy-block copy-block-gold">
     <div class="copy-label label-gold">Voicemail Version — If They Don't Pick Up</div>
-    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area. I'm calling about our Putts for Progress fundraiser this September — an event that event has raised $51,500 over its first two years for IDD advocacy in DFW.
+    <div class="copy-text">Hi [Name], this is [Your Name] from The Arc of DFW Area. I'm calling about our Putts for Progress fundraiser this September — an event that has raised $51,500 over its first two years for IDD advocacy in DFW.
 
 I was hoping to share it with your community and was wondering if you'd be open to a quick five-minute conversation. I'll send an email too with all the details and copy-paste assets — easy to share if it feels right for your families.
 
