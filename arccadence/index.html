@@ -61,9 +61,10 @@
   .stage-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
   .stage-pill { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); padding: 6px 18px; font-size: 13px; font-weight: 700; color: var(--gold-lt); letter-spacing: 0.06em; border-radius: 2px; }
 
-  .section-nav { background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 24px; overflow-x: auto; white-space: nowrap; }
-  .section-nav a { display: inline-block; padding: 13px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; }
+  .section-nav { background: rgba(10,22,36,0.97); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 0 24px; overflow-x: auto; white-space: nowrap; position: sticky; top: 0; z-index: 90; backdrop-filter: blur(8px); box-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+  .section-nav a { display: inline-block; padding: 13px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
   .section-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .section-nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
 
   .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
   .eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
@@ -236,13 +237,13 @@
   </div>
 </section>
 
-<div class="section-nav">
-  <a href="#prospect">Know Your Prospect</a>
-  <a href="#findthem">Find Them</a>
-  <a href="#cadence">The 3 Stages</a>
-  <a href="#tiers">Tier Close Angles</a>
-  <a href="#objections">Objection Handling</a>
-  <a href="#timing">Timing</a>
+<div class="section-nav" id="top">
+  <a href="#prospect">👤 Know Your Prospect</a>
+  <a href="#findthem">🔍 Find the Right Person</a>
+  <a href="#cadence">📧 The 3 Stages</a>
+  <a href="#tiers">💰 Tier Close Angles</a>
+  <a href="#objections">🛡 Objection Handling</a>
+  <a href="#timing">🗓 Timing Guide</a>
 </div>
 
 <!-- KNOW YOUR PROSPECT -->
@@ -693,5 +694,49 @@ President · The Arc of DFW Area
   <div class="footer-note">Corporate Outreach Cadence Playbook · Sales Enablement · For Internal Use Only · Built by JRZ Consulting Solutions · 2026</div>
 </footer>
 
+<!-- BACK TO TOP -->
+<a href="#top" id="back-to-top" style="
+  position: fixed; bottom: 28px; right: 24px;
+  background: var(--gold); color: var(--navy);
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 10px 16px; border-radius: 4px; text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 200;
+">↑ Top</a>
+
+<script>
+  // Back to top visibility
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    } else {
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
+    }
+  });
+
+  // Active nav highlighting
+  const sections = ['prospect', 'findthem', 'cadence', 'tiers', 'objections', 'timing'];
+  const navLinks = document.querySelectorAll('.section-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+</script>
 </body>
 </html>
