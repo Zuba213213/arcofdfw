@@ -79,6 +79,8 @@
   .vault-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 30px; }
   .vault-card { display: block; text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 24px 22px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
   .vault-card:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); transform: translateX(4px); }
+  .vault-card.teal-card { border-color: rgba(79,191,176,0.25); }
+  .vault-card.teal-card:hover { background: rgba(42,123,111,0.1); border-color: var(--teal-lt); }
   .vault-card.disabled { opacity: 0.45; pointer-events: none; }
   .vault-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
   .vault-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
@@ -96,8 +98,7 @@
   .tag-event { background: rgba(58,125,68,0.2); color: #7DC87D; }
   .tag-teal { background: rgba(42,123,111,0.25); color: var(--teal-lt); }
   .tag-new { background: rgba(201,168,76,0.25); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
-  .tag-future { background: rgba(74,98,116,0.2); color: #9BB5C8; }
-  .tag-soon { background: rgba(255,255,255,0.06); color: rgba(245,240,232,0.4); }
+  .tag-updated { background: rgba(79,191,176,0.15); color: var(--teal-lt); border: 1px solid rgba(79,191,176,0.35); }
 
   .about-bg { background: rgba(245,240,232,0.03); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
 
@@ -112,7 +113,7 @@
 </head>
 <body>
 
-<div class="topbar">Marketing Vault — Confidential · Built by JRZ Consulting Solutions</div>
+<div class="topbar">Marketing Vault — Internal Use Only · Built by JRZ Consulting Solutions</div>
 
 <nav>
   <div class="nav-brand">The Arc of DFW Area</div>
@@ -142,7 +143,7 @@
 <div class="about-bg" id="about">
   <div class="section">
     <span class="eyebrow">Who They Are</span>
-    <h2 class="section-title">50 Years <br><em> of Mission, Community, and Change</em></h2>
+    <h2 class="section-title">55 Years<br><em>of Mission, Community, and Change</em></h2>
     <hr class="gold-rule">
     <p class="section-body">Founded in 1971, The Arc of DFW Area has grown from a single Birdville town hall to the leading all-volunteer advocacy organization for individuals with intellectual and developmental disabilities across 9 DFW counties. They don't provide direct services — they do something harder. They change the systems, the laws, and the culture that shape every life with IDD.</p>
 
@@ -189,7 +190,6 @@
     </div>
   </div>
 
-  <!-- SEGMENTATION CALLOUT — new addition -->
   <div class="seg-callout">
     <span class="seg-callout-label">Active Challenge → Strategy In Progress</span>
     <h4>The list doesn't know which audience is which — yet.</h4>
@@ -204,7 +204,7 @@
   <span class="eyebrow">Marketing Vault</span>
   <h2 class="section-title">Your Complete<br><em>Marketing Infrastructure</em></h2>
   <hr class="gold-rule">
-  <p class="section-body">Five strategic documents. One unified system. Navigate each section below — built for staff, board members, volunteers, and anyone creating content or outreach on behalf of The Arc of DFW Area.</p>
+  <p class="section-body">Six strategic documents. One unified system. Navigate each section below — built for staff, board members, volunteers, and anyone creating content or outreach on behalf of The Arc of DFW Area.</p>
 
   <div class="vault-grid">
 
@@ -230,9 +230,18 @@
       <div class="vault-card-top">
         <div class="vault-icon icon-gold">📋</div>
         <div class="vault-card-title">Corporate Outreach Cadence Playbook</div>
-        <span class="vault-card-tag tag-new">New</span>
+        <span class="vault-card-tag tag-updated">Updated</span>
       </div>
-      <p class="vault-card-desc">Full 3-stage outreach journey for Arc's internal lead — warm storytelling email, low-pressure relationship ask, personalized tier close — plus LinkedIn stakeholder search terms, objection handling for 6 common pushbacks, and a hard cadence timing guide.</p>
+      <p class="vault-card-desc">3-stage outreach journey anyone can pick up and run — warm story email, low-pressure follow-up, personalized close. Includes a "Start Here" guide, LinkedIn search terms to find the right contact, objection handling for 6 common pushbacks, and hard cutoff dates. No sales experience required.</p>
+    </a>
+
+    <a class="vault-card teal-card" href="./txoutreach/index.html">
+      <div class="vault-card-top">
+        <div class="vault-icon icon-teal">📣</div>
+        <div class="vault-card-title">TX Special Needs Outreach Kit</div>
+        <span class="vault-card-tag tag-updated">Updated</span>
+      </div>
+      <p class="vault-card-desc">Ready-to-send copy for schools, parent groups, therapy centers, and disability organizations across Texas. Zero editing required — copy, paste, send. Includes email templates for 3 org types, a shareable event flyer, social copy for partner orgs, a phone script, and a direct link to the corporate sponsor cadence.</p>
     </a>
 
     <a class="vault-card" href="./arcsegmentation/index.html">
@@ -260,7 +269,7 @@
   <div class="footer-brand">The Arc of DFW Area — Marketing Vault</div>
   <div class="footer-sub">391 Las Colinas Blvd E Ste 130-310, Irving TX 75039</div>
   <hr class="footer-divider">
-  <div class="footer-note">Built &amp; designed by JRZ Consulting Solutions &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Confidential</div>
+  <div class="footer-note">Built &amp; designed by JRZ Consulting Solutions &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Internal Use Only</div>
 </footer>
 
 </body>
